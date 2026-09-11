@@ -7,7 +7,13 @@ import { SITE } from "@/content";
 import type { Dictionary, Lang } from "@/content/types";
 import { routes } from "@/lib/routes";
 
-type Props = { lang: Lang; t: Dictionary };
+type Props = {
+  lang: Lang;
+  t: Dictionary;
+  /** Drop the helper line under the button — for tight spots like a CTA card
+      or the sticky bar, where the surrounding copy already sets context. */
+  compact?: boolean;
+};
 
 type FormState = {
   firstName: string;
@@ -60,7 +66,7 @@ function buildMessage(form: FormState, areaLabel: string, lang: Lang, pageUrl: s
     .join("\n");
 }
 
-export function WhatsAppLead({ lang, t }: Props) {
+export function WhatsAppLead({ lang, t, compact = false }: Props) {
   const c = t.contact;
   const w = c.wa;
   const [open, setOpen] = useState(false);
@@ -139,7 +145,7 @@ export function WhatsAppLead({ lang, t }: Props) {
         </svg>
         {c.whatsapp}
       </button>
-      <p className={styles.triggerNote}>{c.whatsappNote}</p>
+      {!compact && <p className={styles.triggerNote}>{c.whatsappNote}</p>}
 
       {open && (
         <div

@@ -460,6 +460,7 @@ export const tr: Dictionary = {
         posts: [
             {
                 slug: "mietminderung-maengel",
+                areaSlug: "zivilrecht",
                 category: "Medeni Hukuk",
                 iso: "2026-09-02",
                 date: "2 Eylül 2026",
@@ -478,6 +479,7 @@ export const tr: Dictionary = {
             },
             {
                 slug: "einbuergerung-2026",
+                areaSlug: "auslaenderrecht",
                 category: "Yabancılar Hukuku",
                 iso: "2026-08-12",
                 date: "12 Ağustos 2026",
@@ -496,6 +498,7 @@ export const tr: Dictionary = {
             },
             {
                 slug: "kuendigung-drei-wochen",
+                areaSlug: "arbeitsrecht",
                 category: "İş Hukuku",
                 iso: "2026-07-28",
                 date: "28 Temmuz 2026",
@@ -513,6 +516,7 @@ export const tr: Dictionary = {
             },
             {
                 slug: "scheidung-tuerkei",
+                areaSlug: "familienrecht",
                 category: "Aile Hukuku",
                 iso: "2026-07-09",
                 date: "9 Temmuz 2026",

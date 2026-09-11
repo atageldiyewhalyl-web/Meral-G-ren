@@ -64,7 +64,11 @@ export type PostBlock =
 
 export interface Post {
   slug: string;
+  /** Localised display label, e.g. "Zivilrecht" / "Medeni Hukuk". */
   category: string;
+  /** Stable, language-independent link to the practice area (for the area
+      page cross-link and the on-page CTA copy). */
+  areaSlug: AreaSlug;
   /** Machine-readable date for <time datetime>. */
   iso: string;
   /** Localised display date. */

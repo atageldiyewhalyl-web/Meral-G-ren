@@ -460,6 +460,7 @@ export const en: Dictionary = {
         posts: [
             {
                 slug: "mietminderung-maengel",
+                areaSlug: "zivilrecht",
                 category: "Civil Law",
                 iso: "2026-09-02",
                 date: "2 September 2026",
@@ -478,6 +479,7 @@ export const en: Dictionary = {
             },
             {
                 slug: "einbuergerung-2026",
+                areaSlug: "auslaenderrecht",
                 category: "Immigration Law",
                 iso: "2026-08-12",
                 date: "12 August 2026",
@@ -496,6 +498,7 @@ export const en: Dictionary = {
             },
             {
                 slug: "kuendigung-drei-wochen",
+                areaSlug: "arbeitsrecht",
                 category: "Employment Law",
                 iso: "2026-07-28",
                 date: "28 July 2026",
@@ -513,6 +516,7 @@ export const en: Dictionary = {
             },
             {
                 slug: "scheidung-tuerkei",
+                areaSlug: "familienrecht",
                 category: "Family Law",
                 iso: "2026-07-09",
                 date: "9 July 2026",
