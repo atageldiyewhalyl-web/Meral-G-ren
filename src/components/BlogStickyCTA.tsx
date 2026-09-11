@@ -18,13 +18,14 @@ type Props = {
 export function BlogStickyCTA({ lang, t, title, sub }: Props) {
   return (
     <div className={styles.bar}>
+      <div className={styles.accentLine} aria-hidden="true" />
       <div className={styles.inner}>
         <div className={styles.copy}>
           <p className={styles.title}>{title}</p>
           <p className={styles.sub}>{sub}</p>
         </div>
         <div className={styles.action}>
-          <WhatsAppLead lang={lang} t={t} compact />
+          <WhatsAppLead lang={lang} t={t} compact variant="onDark" />
         </div>
       </div>
     </div>

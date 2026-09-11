@@ -282,6 +282,7 @@ function ArticleBody({
           key="cta-2"
           lang={lang}
           t={t}
+          icon="scale"
           eyebrow={copy.inline2.eyebrow}
           title={copy.inline2.title}
           text={copy.inline2.text}
@@ -295,6 +296,7 @@ function ArticleBody({
           key="cta-1"
           lang={lang}
           t={t}
+          icon="handshake"
           eyebrow={copy.inline1.eyebrow}
           title={copy.inline1.title}
           text={copy.inline1.text}
@@ -393,9 +395,14 @@ export default async function BlogPostPage({ params }: Props) {
                   <span aria-hidden="true">→</span>
                 </Link>
               )}
+              <ul className={styles.trust}>
+                {t.page.areaTrust.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
             <div className={styles.bottomAction}>
-              <WhatsAppLead lang={lang} t={t} />
+              <WhatsAppLead lang={lang} t={t} variant="onDark" />
             </div>
           </section>
 

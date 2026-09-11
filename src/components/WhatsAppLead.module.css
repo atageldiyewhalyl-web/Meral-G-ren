@@ -20,6 +20,21 @@
   background: var(--accent-hover);
 }
 
+/* For a trigger placed on a dark card or bar, where the navy fill would
+   otherwise disappear into the background. */
+.triggerOnDark {
+  background: var(--on-dark);
+  color: var(--accent);
+}
+
+.triggerOnDark:hover {
+  background: var(--paper-deep);
+}
+
+.triggerNoteOnDark {
+  color: var(--on-dark-muted);
+}
+
 .trigger:active {
   transform: translateY(1px);
 }

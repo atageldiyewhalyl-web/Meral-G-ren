@@ -221,10 +221,11 @@
 .bottomPanel {
   display: grid;
   gap: 24px;
-  padding: clamp(28px, 4vw, 44px);
+  padding: clamp(32px, 5vw, 52px);
   border-radius: var(--radius);
-  background: var(--dark-deep);
+  background: linear-gradient(155deg, var(--dark) 0%, var(--dark-deep) 100%);
   color: var(--on-dark);
+  box-shadow: var(--shadow-card-hover);
 }
 
 @media (min-width: 720px) {
@@ -265,6 +266,20 @@
 
 .areaLink:hover {
   text-decoration: underline;
+}
+
+.trust {
+  margin: 22px 0 0;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--line-dark);
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font: 500 clamp(11px, 0.82vw, 12px) / 1.55 var(--font-sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--on-dark-muted);
 }
 
 .bottomAction {
