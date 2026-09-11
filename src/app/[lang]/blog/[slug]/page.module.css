@@ -16,6 +16,84 @@
   color: var(--muted);
 }
 
+.h2 {
+  margin-top: 26px;
+}
+
+.h3 {
+  margin-top: 12px;
+}
+
+.note {
+  border-left: 3px solid var(--accent, currentColor);
+  background: var(--surface, rgba(0, 0, 0, 0.03));
+  padding: 16px 18px;
+  font: 400 16px/26px var(--font-sans);
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--muted);
+  font: 400 16px/26px var(--font-sans);
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  font: 400 15px/22px var(--font-sans);
+}
+
+.table caption {
+  caption-side: bottom;
+  padding-top: 8px;
+  font: 400 13px/20px var(--font-sans);
+  color: var(--muted);
+  text-align: left;
+}
+
+.table th,
+.table td {
+  border: 1px solid var(--border, rgba(0, 0, 0, 0.15));
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.table th {
+  font-weight: 600;
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faqItem {
+  border-bottom: 1px solid var(--border, rgba(0, 0, 0, 0.15));
+  padding-bottom: 8px;
+}
+
+.faqItem summary {
+  cursor: pointer;
+  font: 600 16px/24px var(--font-sans);
+  padding: 6px 0;
+}
+
+.faqItem p {
+  color: var(--muted);
+  font: 400 16px/26px var(--font-sans);
+  margin: 6px 0 0;
+}
+
 .back {
   align-self: flex-start;
   margin-top: 12px;

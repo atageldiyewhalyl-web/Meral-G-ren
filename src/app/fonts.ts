@@ -1,16 +1,10 @@
-import { Inter_Tight } from "next/font/google";
+import { Cormorant_Garamond, Inter_Tight } from "next/font/google";
 
 /**
- * One grotesque for the whole site, in the manner of the Pitblado reference.
+ * Body and UI: one grotesque, kept compact.
  *
- * That site is set in Suisse Int'l, which is a licensed Swiss Typefaces family
- * and cannot be redistributed here. Inter Tight is the closest freely
- * licensable match — the same neo-grotesque skeleton at Suisse's compact
- * widths — and it ships `latin-ext`, so German umlauts and the Turkish
+ * Inter Tight carries `latin-ext`, so German umlauts and the Turkish
  * ğ ş İ Ğ Ş all come from the webfont on every device.
- *
- * If the Kanzlei licenses Suisse Int'l, swap this for a `next/font/local`
- * declaration exposing the same `--font-sans` variable; nothing else changes.
  */
 export const interTight = Inter_Tight({
   subsets: ["latin", "latin-ext"],
@@ -18,4 +12,17 @@ export const interTight = Inter_Tight({
   display: "swap",
 });
 
-export const fontVariables = interTight.variable;
+/**
+ * Headings: a high-contrast old-style serif, in the manner of the cooperation
+ * partner's site (Cormorant Garamond). A serif on the titles reads as a law
+ * office rather than a product — the grotesque alone felt too much like tech.
+ * Also ships `latin-ext` for the umlauts and the Turkish letters.
+ */
+export const cormorant = Cormorant_Garamond({
+  subsets: ["latin", "latin-ext"],
+  weight: ["500", "600", "700"],
+  variable: "--font-serif-raw",
+  display: "swap",
+});
+
+export const fontVariables = `${interTight.variable} ${cormorant.variable}`;

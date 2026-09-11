@@ -1,9 +1,10 @@
+import Link from "next/link";
 import styles from "./Why.module.css";
 import type { Dictionary } from "@/content/types";
 
 export function Why({ t }: { t: Dictionary }) {
   return (
-    <section aria-labelledby="why-title" className="section section--accent onDark">
+    <section aria-labelledby="why-title" className={`section section--accent onDark ${styles.why}`}>
       <div className="container">
         <div className="sectionHead reveal">
           <p className="eyebrow">{t.why.label}</p>
@@ -20,6 +21,14 @@ export function Why({ t }: { t: Dictionary }) {
               <p className={`body ${styles.itemText}`}>{item.text}</p>
             </article>
           ))}
+        </div>
+
+        <div className="sectionCta reveal">
+          <p>{t.why.ctaText}</p>
+          <Link href="#kontakt" className="btn btn--onDark">
+            {t.cta}
+            <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </div>
     </section>

@@ -23,6 +23,7 @@ export function SiteFooter({ lang, t }: { lang: Lang; t: Dictionary }) {
       title: t.footer.contactTitle,
       links: [
         { label: `${t.footer.callLink}: ${SITE.phone}`, href: SITE.phoneHref },
+        { label: SITE.email, href: SITE.emailHref },
         { label: t.footer.waLink, href: SITE.whatsapp, external: true },
         { label: t.footer.formLink, href: "#kontakt" },
         { label: t.footer.route, href: SITE.maps, external: true },
@@ -39,11 +40,12 @@ export function SiteFooter({ lang, t }: { lang: Lang; t: Dictionary }) {
             <p className={`h3 ${styles.blurb}`}>{t.footer.blurb}</p>
             <div className={styles.contact}>
               <p>
-                {SITE.street} · {SITE.postalCode} {SITE.city}
+                {SITE.street}, {SITE.streetExtra} · {SITE.postalCode} {SITE.city}
               </p>
               <a href={SITE.phoneHref}>{SITE.phone}</a>
+              <a href={SITE.emailHref}>{SITE.email}</a>
               <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer">
-                WhatsApp: {SITE.phone}
+                WhatsApp
               </a>
             </div>
           </div>
@@ -75,6 +77,14 @@ export function SiteFooter({ lang, t }: { lang: Lang; t: Dictionary }) {
             <Link href={routes.imprint(lang)}>{t.footer.imprint}</Link>
             <Link href={routes.privacy(lang)}>{t.footer.privacy}</Link>
           </div>
+          <a
+            className={styles.madeBy}
+            href="https://nuell-agentur.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t.footer.madeBy} <span>nüll</span>
+          </a>
           <p className={styles.copyright}>{t.footer.copyright}</p>
         </div>
       </div>

@@ -21,61 +21,49 @@ export function Partner({ t }: { t: Dictionary }) {
   const p = t.partner;
 
   return (
-    <section aria-labelledby="partner-title" className="section section--paperDeep">
-      <div className="container">
-        <div className={`${styles.card} reveal`}>
-          <div className={styles.panel}>
-            <p className="eyebrow">{p.label}</p>
-            <h2 id="partner-title" className={`h2 ${styles.title}`}>
+    <section aria-labelledby="partner-title" className={styles.compactSection}>
+      <div className={styles.compactInner}>
+        <div className={`${styles.compactCard} reveal`}>
+          <aside className={styles.compactProfile}>
+            <div className={styles.compactPortrait}>
+              <Image
+                src="/images/partner-dogru-portrait.webp"
+                alt={p.person}
+                width={1026}
+                height={1179}
+                sizes="(max-width: 899px) 220px, 240px"
+                className={styles.compactPhoto}
+              />
+            </div>
+            <div className={styles.compactIdentity}>
+              <h3 className={`h4 ${styles.compactFirm}`}>{p.firm}</h3>
+              <p className={styles.compactPerson}>{p.person}</p>
+              <p className={styles.compactMeta}>{p.locations}</p>
+              <p className={styles.compactMeta}>{p.languages}</p>
+            </div>
+          </aside>
+
+          <div className={styles.compactCopy}>
+            <p className={`eyebrow ${styles.compactLabel}`}>{p.label}</p>
+            <h2 id="partner-title" className={`h2 ${styles.compactTitle}`}>
               {p.title}
             </h2>
-            <p className={`lead ${styles.text}`}>{p.text}</p>
+            <p className={styles.compactText}>{p.text}</p>
 
-            <p className={styles.areasLabel}>{p.areasLabel}</p>
-            <ul className={styles.areas}>
-              {p.areas.map((area) => (
-                <li key={area} className={styles.area}>
+            <ul className={styles.compactAreas} aria-label={p.areasLabel}>
+              {p.areas.map((area, index) => (
+                <li key={area} className={styles.compactArea}>
+                  <span>{`0${index + 1}`}</span>
                   {area}
                 </li>
               ))}
             </ul>
-          </div>
 
-          <aside className={`onDark ${styles.identity}`}>
-            <Image
-              src="/images/partner-dogru.avif"
-              alt={p.person}
-              width={621}
-              height={528}
-              sizes="(max-width: 899px) 100vw, 480px"
-              className={styles.photo}
-            />
-
-            <h3 className={`h3 ${styles.firm}`}>{p.firm}</h3>
-            <p className={styles.person}>{p.person}</p>
-            <p className={`body ${styles.bio}`}>{p.bio}</p>
-
-            <dl className={styles.meta}>
-              <div className={styles.metaRow}>
-                <dt className={styles.metaKey}>{p.locationsLabel}</dt>
-                <dd className={styles.metaValue}>{p.locations}</dd>
-              </div>
-              <div className={styles.metaRow}>
-                <dt className={styles.metaKey}>{p.languagesLabel}</dt>
-                <dd className={styles.metaValue}>{p.languages}</dd>
-              </div>
-            </dl>
-
-            <a
-              href={SITE.partnerUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`btn btn--onDark ${styles.cta}`}
-            >
+            <a href={SITE.partnerUrl} target="_blank" rel="noopener noreferrer" className={styles.compactCta}>
               {p.cta}
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">→</span>
             </a>
-          </aside>
+          </div>
         </div>
       </div>
     </section>

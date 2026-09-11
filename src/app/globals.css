@@ -30,9 +30,10 @@
   /* Image overlays, as an rgb() triplet. */
   --scrim: 22 25 28;
 
-  /* One family throughout — see src/app/fonts.ts. */
+  /* Grotesque for body and UI, old-style serif for headings — see fonts.ts. */
   --font-sans: var(--font-sans-raw), "Helvetica Neue", Arial, sans-serif;
-  --font-display: var(--font-sans);
+  --font-display: var(--font-serif-raw), "Iowan Old Style", "Palatino Linotype",
+    "Times New Roman", Georgia, serif;
 
   /* Cards sit on lift rather than outline. */
   --shadow-card:
@@ -164,30 +165,52 @@ a:focus-visible {
   margin-top: 20px;
 }
 
+/* A closing nudge under a section's content — one line of copy and a button,
+   centred. Works on light and dark grounds. */
+.sectionCta {
+  margin-top: clamp(40px, 5vw, 64px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px 22px;
+  text-align: center;
+}
+
+.sectionCta p {
+  font: 400 clamp(16px, 1.4vw, 18px) / 1.5 var(--font-sans);
+  color: var(--muted);
+}
+
+.onDark .sectionCta p {
+  color: var(--on-dark-muted);
+}
+
 /* --------------------------------------------------------------------- Type */
-/* Page titles carry the wordmark's weight and tracking, so the h1 and the
-   logo read as the same voice. Section headings stay light for contrast. */
+/* An old-style serif carries the headings. It runs small and open, so the
+   sizes are a touch larger than a grotesque would need and the tracking sits
+   near zero rather than tight. */
 .display {
-  font: 700 clamp(38px, 5.4vw, 68px) / 1.06 var(--font-display);
-  letter-spacing: -0.045em;
+  font: 600 clamp(42px, 6vw, 76px) / 1.05 var(--font-display);
+  letter-spacing: -0.01em;
   text-wrap: balance;
 }
 
 .h2 {
-  font: 600 clamp(30px, 3.6vw, 50px) / 1.1 var(--font-display);
-  letter-spacing: -0.03em;
+  font: 600 clamp(33px, 4vw, 56px) / 1.12 var(--font-display);
+  letter-spacing: -0.005em;
   text-wrap: balance;
 }
 
 .h3 {
-  font: 600 clamp(20px, 1.7vw, 24px) / 1.3 var(--font-display);
-  letter-spacing: -0.02em;
+  font: 600 clamp(22px, 1.9vw, 27px) / 1.3 var(--font-display);
+  letter-spacing: 0;
   text-wrap: balance;
 }
 
 .h4 {
-  font: 600 18px/1.4 var(--font-display);
-  letter-spacing: -0.015em;
+  font: 600 20px/1.4 var(--font-display);
+  letter-spacing: 0;
   text-wrap: balance;
 }
 

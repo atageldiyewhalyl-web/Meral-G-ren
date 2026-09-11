@@ -10,6 +10,10 @@ export type Lead = {
   message: string;
   lang: string;
   source: string;
+  /** How the visitor says they found the Kanzlei — the attribution signal that
+      lets nüll show which channel produced the enquiry. Empty for the plain
+      contact form; set by the WhatsApp lead-capture modal. */
+  foundVia: string;
   submittedAt: string;
 };
 
@@ -17,7 +21,7 @@ export type ValidationResult =
   | { ok: true; lead: Lead }
   | { ok: false; errors: string[] };
 
-const MAX = { name: 120, email: 160, phone: 40, area: 60, message: 5000 };
+const MAX = { name: 120, email: 160, phone: 40, area: 60, message: 5000, foundVia: 60 };
 
 function str(value: unknown, limit: number): string {
   return typeof value === "string" ? value.trim().slice(0, limit) : "";
@@ -54,6 +58,7 @@ export function validateLead(input: unknown): ValidationResult {
       message,
       lang,
       source: str(raw.source, 60) || "website",
+      foundVia: str(raw.foundVia, MAX.foundVia),
       submittedAt: new Date().toISOString(),
     },
   };
@@ -67,13 +72,14 @@ function renderMail(lead: Lead): string {
   return [
     `Neue Anfrage über ${SITE.url}`,
     "",
-    `Name:        ${lead.name}`,
-    `E-Mail:      ${lead.email}`,
-    `Telefon:     ${lead.phone || "—"}`,
-    `Rechtsgebiet: ${lead.area}`,
-    `Sprache:     ${lead.lang}`,
-    `Quelle:      ${lead.source}`,
-    `Eingegangen: ${lead.submittedAt}`,
+    `Name:         ${lead.name}`,
+    `E-Mail:       ${lead.email}`,
+    `Telefon:      ${lead.phone || "—"}`,
+    `Rechtsgebiet:  ${lead.area}`,
+    `Gefunden über: ${lead.foundVia || "—"}`,
+    `Sprache:      ${lead.lang}`,
+    `Kanal:        ${lead.source}`,
+    `Eingegangen:  ${lead.submittedAt}`,
     "",
     "Nachricht:",
     lead.message,
@@ -106,11 +112,16 @@ export async function deliverLead(lead: Lead): Promise<boolean> {
       : undefined,
   });
 
+  const viaWhatsApp = lead.source === "whatsapp";
+
   await transport.sendMail({
     to: process.env.LEAD_NOTIFY_TO,
+    // A second recipient (nüll) for attribution reporting — every enquiry the
+    // site produces is visible to the agency that drives the traffic.
+    cc: process.env.LEAD_NOTIFY_CC || undefined,
     from: process.env.LEAD_NOTIFY_FROM ?? process.env.LEAD_NOTIFY_TO,
     replyTo: lead.email,
-    subject: `Anfrage über die Website: ${lead.name} (${lead.area})`,
+    subject: `${viaWhatsApp ? "[WhatsApp] " : ""}Anfrage über die Website: ${lead.name} (${lead.area})`,
     text: renderMail(lead),
   });
 

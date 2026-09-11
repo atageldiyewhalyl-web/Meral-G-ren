@@ -9,6 +9,7 @@ import { BlogTeaser } from "@/components/sections/BlogTeaser";
 import { Contact } from "@/components/sections/Contact";
 import { Hero } from "@/components/sections/Hero";
 import { Partner } from "@/components/sections/Partner";
+import { Reviews } from "@/components/sections/Reviews";
 import { Why } from "@/components/sections/Why";
 import { getDictionary, isLang } from "@/content";
 import { buildNav } from "@/lib/nav";
@@ -37,8 +38,9 @@ export default async function LandingPage({
       <main id="start" className="anchor">
         <Hero t={t} />
         <Areas lang={lang} t={t} />
-        <About t={t} />
+        <About lang={lang} t={t} />
         <Why t={t} />
+        <Reviews t={t} />
         <Partner t={t} />
         <BlogTeaser lang={lang} t={t} />
         <Contact lang={lang} t={t} />

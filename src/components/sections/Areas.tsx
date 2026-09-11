@@ -4,12 +4,14 @@ import { AreaIcon } from "../AreaIcon";
 import type { Dictionary, Lang } from "@/content/types";
 import { routes } from "@/lib/routes";
 
+const CONTACT = "#kontakt";
+
 export function Areas({ lang, t }: { lang: Lang; t: Dictionary }) {
   return (
     <section
       id="rechtsgebiete"
       aria-labelledby="areas-title"
-      className="anchor section section--paper"
+      className={`anchor section section--paper ${styles.section}`}
     >
       <div className="container">
         <div className={`sectionHead reveal`}>
@@ -38,6 +40,14 @@ export function Areas({ lang, t }: { lang: Lang; t: Dictionary }) {
               </Link>
             </article>
           ))}
+        </div>
+
+        <div className="sectionCta reveal">
+          <p>{t.areas.ctaText}</p>
+          <Link href={CONTACT} className="btn btn--primary">
+            {t.cta}
+            <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </div>
     </section>

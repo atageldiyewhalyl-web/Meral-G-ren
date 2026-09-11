@@ -1,3 +1,15 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--paper);
+}
+
+.section :global(.container) {
+  position: relative;
+  z-index: 1;
+}
+
 /* Three across, two rows. Flex rather than grid so the two cards left over on
    the second row centre under the three above instead of hugging the left edge
    with a hole beside them — CSS Grid cannot centre a partial final row. */

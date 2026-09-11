@@ -10,7 +10,7 @@ export type NavItem = { label: string; href: string };
 export function buildNav(lang: Lang, t: Dictionary): NavItem[] {
   return [
     { label: t.nav.home, href: "#start" },
-    { label: t.nav.about, href: "#ueber-mich" },
+    { label: t.nav.about, href: routes.about(lang) },
     { label: t.nav.areas, href: "#rechtsgebiete" },
     { label: t.nav.blog, href: routes.blog(lang) },
     { label: t.nav.contact, href: "#kontakt" },

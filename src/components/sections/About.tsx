@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./About.module.css";
-import type { Dictionary } from "@/content/types";
+import type { Dictionary, Lang } from "@/content/types";
+import { routes } from "@/lib/routes";
 
-export function About({ t }: { t: Dictionary }) {
+export function About({ lang, t }: { lang: Lang; t: Dictionary }) {
   return (
     <section
       id="ueber-mich"
@@ -30,11 +31,15 @@ export function About({ t }: { t: Dictionary }) {
             </h2>
             <p className={`lead ${styles.p1}`}>{t.about.p1}</p>
             <p className={`lead ${styles.p2}`}>{t.about.p2}</p>
-            <p className={`lead ${styles.background}`}>{t.about.background}</p>
-            <Link href="#kontakt" className={`btn btn--ghost ${styles.cta}`}>
-              {t.about.cta}
-              <span aria-hidden="true">→</span>
-            </Link>
+            <div className={styles.actions}>
+              <Link href={routes.about(lang)} className="btn btn--onDark">
+                {t.about.more}
+                <span aria-hidden="true">→</span>
+              </Link>
+              <Link href="#kontakt" className="btn btn--ghost">
+                {t.about.cta}
+              </Link>
+            </div>
           </div>
         </div>
       </div>

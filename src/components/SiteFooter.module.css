@@ -1,9 +1,56 @@
+/* Set apart from the navy contact band above: a neutral near-black ground with
+   a hairline seam, and the firm's two emblems — Justitia and the gavel —
+   anchored into the bottom corners as faint reliefs so the page closes on a
+   distinctly "footer" note rather than another flat panel. */
 .footer {
-  background: var(--accent);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--dark-deep);
   color: var(--on-dark);
+  border-top: 1px solid var(--line-dark);
+}
+
+.footer::before,
+.footer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.footer::before {
+  right: max(-96px, calc((100vw - var(--container)) / 2 - 96px));
+  width: clamp(220px, 24vw, 400px);
+  aspect-ratio: 685 / 889;
+  opacity: 0.055;
+  background: url("/images/footer-justice.webp") right bottom / contain no-repeat;
+}
+
+.footer::after {
+  left: max(-48px, calc((100vw - var(--container)) / 2 - 56px));
+  bottom: clamp(20px, 3.5vw, 48px);
+  width: clamp(160px, 17vw, 260px);
+  aspect-ratio: 535 / 354;
+  opacity: 0.045;
+  background: url("/images/footer-gavel.webp") left bottom / contain no-repeat;
+}
+
+@media (max-width: 767px) {
+  .footer::after {
+    display: none;
+  }
+
+  .footer::before {
+    width: 200px;
+    opacity: 0.08;
+  }
 }
 
 .inner {
+  position: relative;
+  z-index: 1;
   max-width: var(--container);
   margin: 0 auto;
   padding: clamp(56px, 6vw, 88px) var(--gutter) 0;
@@ -98,11 +145,29 @@
 }
 
 .legalLinks a,
-.copyright {
+.copyright,
+.madeBy {
   font: 400 14px/22px var(--font-sans);
   color: var(--on-dark-muted);
 }
 
 .legalLinks a:hover {
   color: var(--on-dark);
+}
+
+.madeBy {
+  transition: color 160ms ease;
+}
+
+.madeBy span {
+  color: var(--on-dark);
+  font-weight: 500;
+}
+
+.madeBy:hover {
+  color: var(--on-dark);
+}
+
+.madeBy:hover span {
+  opacity: 0.7;
 }

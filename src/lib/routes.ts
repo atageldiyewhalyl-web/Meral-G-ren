@@ -17,6 +17,7 @@ function base(lang: Lang): string {
 
 export const routes = {
   home: (lang: Lang) => localePath(lang),
+  about: (lang: Lang) => localePath(lang, "/ueber-mich"),
   contact: (lang: Lang) => `${base(lang) || "/"}#kontakt`,
   areasAnchor: (lang: Lang) => `${base(lang) || "/"}#rechtsgebiete`,
   blog: (lang: Lang) => localePath(lang, "/blog"),

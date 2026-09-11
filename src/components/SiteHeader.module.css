@@ -1,39 +1,16 @@
-/* A negative bottom margin pulls the hero up by exactly the header height, so
-   the bar sits on the photograph instead of above it. Sticky (rather than
-   fixed) keeps it in flow, which the mobile menu positions against. */
 .header {
   position: sticky;
   top: 0;
   z-index: 50;
-  margin-bottom: calc(-1 * var(--header-h));
-  background: var(--paper);
-  color: var(--accent);
-  transition:
-    background-color 260ms ease,
-    color 260ms ease;
-}
-
-/* Clear over the hero while the page is at the top. Everything inside is drawn
-   in currentColor, so the whole bar inverts with this one declaration. */
-.header[data-at-top="true"] {
-  background: transparent;
+  background: #041c2c;
+  background-image: none;
   color: var(--on-dark);
 }
 
-/* The hero photograph is bright exactly where the navigation sits, so the clear
-   bar needs a graded ground of its own or the links drop to ~1.6:1. It bleeds
-   past the bar and fades out, so it reads as light falloff rather than a band. */
-.header[data-at-top="true"]::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 -40px;
-  background: linear-gradient(
-    180deg,
-    rgb(var(--scrim) / 0.72) 0%,
-    rgb(var(--scrim) / 0.55) 62%,
-    rgb(var(--scrim) / 0) 100%
-  );
-  pointer-events: none;
+.header[data-at-top="true"] {
+  background: #041c2c;
+  background-image: none;
+  color: var(--on-dark);
 }
 
 /* A short probe at the document origin: once it scrolls out of view the header
@@ -94,12 +71,12 @@
 .cta {
   height: 40px;
   padding: 0 20px;
-  background: var(--accent);
-  color: var(--paper);
+  background: var(--paper);
+  color: var(--ink);
 }
 
 .cta:hover {
-  background: var(--accent-hover);
+  background: var(--paper-deep);
 }
 
 .header[data-at-top="true"] .cta {
