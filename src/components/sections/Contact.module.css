@@ -72,6 +72,10 @@
   gap: 22px;
 }
 
+.mobileWhatsApp {
+  display: none;
+}
+
 /* Divider from the form on wide layouts; drops away once the aside wraps. */
 @media (min-width: 980px) {
   .aside {
@@ -136,4 +140,51 @@ a.infoValue:hover {
   margin-top: 4px;
   font: 400 13px/20px var(--font-sans);
   color: var(--muted);
+}
+
+@media (max-width: 699px) {
+  .panel {
+    display: block;
+    margin-top: 28px;
+    padding: 20px;
+    background: rgb(246 248 251 / 0.9);
+  }
+
+  .main,
+  .desktopWhatsApp {
+    display: none;
+  }
+
+  .aside {
+    display: block;
+  }
+
+  .mobileWhatsApp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 0 18px;
+    border-radius: var(--radius);
+    background: #25d366;
+    color: #062a18;
+    font: 700 15px/1 var(--font-sans);
+  }
+
+  .mobileWhatsApp svg {
+    width: 20px;
+    height: 20px;
+    flex: none;
+  }
+
+  .info {
+    margin-top: 22px;
+    gap: 18px;
+  }
+
+  .infoRow {
+    padding-top: 18px;
+    border-top: 1px solid rgb(4 28 44 / 0.12);
+  }
 }

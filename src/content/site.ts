@@ -27,9 +27,9 @@ export const SITE = {
   name: "Rechtsanwaltskanzlei Meral Gören",
   shortName: "M | GÖREN",
   person: "Meral Gören",
-  street: "Bahnhofstr. 18",
-  streetExtra: "1. OG",
-  postalCode: "69469",
+  street: "R1 2-3",
+  streetExtra: "",
+  postalCode: "68161",
   city: "Mannheim",
   countryCode: "DE",
   phone: "06201 84 57 95",
@@ -39,7 +39,7 @@ export const SITE = {
   email: "anwalt@kanzlei-goeren.de",
   emailHref: "mailto:anwalt@kanzlei-goeren.de",
   whatsapp: "https://wa.me/4917631186560",
-  maps: "https://www.google.com/maps/search/?api=1&query=Bahnhofstr.+18+69469+Mannheim",
+  maps: "https://www.google.com/maps/search/?api=1&query=R1+2-3+68161+Mannheim",
   /** Supervising bar association. */
   barAssociation: "Rechtsanwaltskammer Karlsruhe",
   /** Cooperation partner for Turkish law. */

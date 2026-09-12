@@ -225,3 +225,17 @@
     animation: none;
   }
 }
+
+@media (max-width: 767px) {
+  .trigger {
+    height: 48px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  .triggerNote {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}

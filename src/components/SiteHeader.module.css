@@ -2,15 +2,17 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: #041c2c;
-  background-image: none;
-  color: var(--on-dark);
+  background: rgb(250 251 253 / 0.96);
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
 }
 
 .header[data-at-top="true"] {
-  background: #041c2c;
-  background-image: none;
-  color: var(--on-dark);
+  background: #f7f0e5;
+  color: var(--ink);
+  border-bottom-color: rgb(168 121 46 / 0.14);
 }
 
 /* A short probe at the document origin: once it scrolls out of view the header
@@ -43,15 +45,76 @@
   gap: 32px;
 }
 
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--header-h);
+}
+
 .navLink {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
   font: 400 14px/1 var(--font-sans);
   color: inherit;
   opacity: 0.62;
   transition: opacity 180ms ease;
 }
 
-.navLink:hover {
+.navLink:hover,
+.navItem:focus-within .navLink {
   opacity: 1;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% - 8px);
+  left: 50%;
+  min-width: 250px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgb(250 251 253 / 0.98);
+  color: var(--accent);
+  box-shadow: var(--shadow-card-hover);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 8px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.dropdown::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 14px;
+}
+
+.navItem:hover .dropdown,
+.navItem:focus-within .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.dropdownLink {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 12px;
+  border-radius: 6px;
+  font: 500 14px/1.25 var(--font-sans);
+  color: var(--accent);
+}
+
+.dropdownLink:hover,
+.dropdownLink:focus-visible {
+  background: var(--paper-deep);
 }
 
 /* Dimmed links are fine on the solid bar; over the photograph they need
@@ -71,27 +134,46 @@
 .cta {
   height: 40px;
   padding: 0 20px;
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--accent);
+  color: var(--paper);
 }
 
 .cta:hover {
-  background: var(--paper-deep);
+  background: var(--accent-hover);
 }
 
 .header[data-at-top="true"] .cta {
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--accent);
+  color: var(--paper);
 }
 
 .header[data-at-top="true"] .cta:hover {
-  background: var(--paper-deep);
+  background: var(--accent-hover);
 }
 
 .mobileActions {
   display: none;
   align-items: center;
   gap: 4px;
+}
+
+.mobileMenu {
+  display: block;
+}
+
+.menuToggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.menuToggle:focus-visible + .burger {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
 }
 
 .burger {
@@ -106,6 +188,7 @@
   border: 0;
   cursor: pointer;
   color: inherit;
+  list-style: none;
 }
 
 .burger span {
@@ -113,24 +196,47 @@
   width: 20px;
   height: 1px;
   background: currentColor;
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+
+.menuToggle:checked + .burger span:first-child {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menuToggle:checked + .burger span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuToggle:checked + .burger span:last-child {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* The menu only ever opens with the bar in its filled state — SiteHeader forces
    data-at-top false while it is open — so it is always the light panel. */
 .menu {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: var(--header-h);
   left: 0;
   right: 0;
+  bottom: 0;
   background: var(--paper);
   color: var(--accent);
   box-shadow: 0 18px 40px rgba(28, 31, 34, 0.1);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: none;
+}
+
+.menuToggle:checked ~ .menu {
+  display: block;
 }
 
 .menuInner {
   max-width: var(--container);
   margin: 0 auto;
-  padding: 8px var(--gutter) 24px;
+  padding: 10px var(--gutter) max(26px, env(safe-area-inset-bottom));
 }
 
 .menuLink {
@@ -139,6 +245,23 @@
   height: 52px;
   border-bottom: 1px solid var(--line);
   font: 400 16px/1 var(--font-sans);
+  color: var(--accent);
+}
+
+.menuChildren {
+  padding: 4px 0 8px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.menuChildLink {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  font: 500 14px/1.25 var(--font-sans);
+  color: var(--muted);
+}
+
+.menuChildLink:hover {
   color: var(--accent);
 }
 
@@ -161,5 +284,11 @@
 
   .mobileActions {
     display: flex;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu {
+    display: none;
   }
 }

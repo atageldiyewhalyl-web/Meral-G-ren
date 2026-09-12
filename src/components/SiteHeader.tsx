@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import styles from "./SiteHeader.module.css";
 import { LangSwitch } from "./LangSwitch";
@@ -28,9 +28,9 @@ export function SiteHeader({
   languageLabel,
   homeHref,
 }: SiteHeaderProps) {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [atTop, setAtTop] = useState(true);
   const sentinelRef = useRef<HTMLDivElement>(null);
+  const mobileMenuId = useId();
 
   // The bar is clear while the page sits at the top, over the hero photograph,
   // and fills in once that scrolls away. A probe element is cheaper and
@@ -45,33 +45,36 @@ export function SiteHeader({
     return () => observer.disconnect();
   }, []);
 
-  // The menu only exists below 1024px; close it if the viewport grows past that
-  // while it is open, so it can never be left hanging under a desktop header.
-  useEffect(() => {
-    const mq = window.matchMedia("(min-width: 1024px)");
-    const onChange = () => mq.matches && setMenuOpen(false);
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, []);
-
-  const closeMenu = () => setMenuOpen(false);
-
   return (
     <>
       <div ref={sentinelRef} aria-hidden="true" className={styles.sentinel} />
       <header
         className={styles.header}
-        // Solid while the mobile menu is open, so the panel reads as attached.
-        data-at-top={atTop && !menuOpen}
+        data-at-top={atTop}
       >
         <div className={styles.inner}>
           <Logo href={homeHref} />
 
           <nav aria-label={navLabel} className={styles.nav}>
             {nav.map((item) => (
-              <Link key={item.href} href={item.href} className={styles.navLink}>
-                {item.label}
-              </Link>
+              <div key={item.href} className={styles.navItem}>
+                <Link href={item.href} className={styles.navLink}>
+                  {item.label}
+                </Link>
+                {item.children && (
+                  <div className={styles.dropdown}>
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        className={styles.dropdownLink}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </nav>
 
@@ -84,48 +87,52 @@ export function SiteHeader({
 
           <div className={styles.mobileActions}>
             <LangSwitch current={lang} label={languageLabel} />
-            <button
-              type="button"
-              onClick={() => setMenuOpen((open) => !open)}
-              aria-expanded={menuOpen}
-              aria-controls="mobile-menu"
-              aria-label={menuLabel}
-              className={styles.burger}
-            >
-              <span />
-              <span />
-              <span />
-            </button>
+            <div className={styles.mobileMenu}>
+              <input
+                id={mobileMenuId}
+                type="checkbox"
+                aria-label={menuLabel}
+                className={styles.menuToggle}
+              />
+              <label htmlFor={mobileMenuId} className={styles.burger}>
+                <span />
+                <span />
+                <span />
+              </label>
+              <nav
+                id="mobile-menu"
+                aria-label={navLabel}
+                className={styles.menu}
+              >
+                <div className={styles.menuInner}>
+                  {nav.map((item) => (
+                    <div key={item.href} className={styles.menuGroup}>
+                      <Link href={item.href} className={styles.menuLink}>
+                        {item.label}
+                      </Link>
+                      {item.children && (
+                        <div className={styles.menuChildren}>
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              className={styles.menuChildLink}
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                  <Link href="#kontakt" className={`btn ${styles.menuCta}`}>
+                    {cta}
+                  </Link>
+                </div>
+              </nav>
+            </div>
           </div>
         </div>
-
-        {menuOpen && (
-          <nav
-            id="mobile-menu"
-            aria-label={navLabel}
-            className={styles.menu}
-          >
-            <div className={styles.menuInner}>
-              {nav.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={closeMenu}
-                  className={styles.menuLink}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <Link
-                href="#kontakt"
-                onClick={closeMenu}
-                className={`btn ${styles.menuCta}`}
-              >
-                {cta}
-              </Link>
-            </div>
-          </nav>
-        )}
       </header>
     </>
   );

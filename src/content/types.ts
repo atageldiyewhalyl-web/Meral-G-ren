@@ -77,6 +77,10 @@ export interface Post {
   updated?: string;
   title: string;
   excerpt: string;
+  /** One closing line written for this post specifically — the reason a reader
+      of *this* article should get in touch, shown in the trust strip at the
+      end. Generic copy belongs in `page.postCta`, not here. */
+  ctaLine: string;
   body: PostBlock[];
   /** Path under /public. */
   image: string;
@@ -223,6 +227,19 @@ export interface Dictionary {
       close: string;
     };
   };
+  finalCta: {
+    label: string;
+    title: string;
+    text: string;
+    panelText: string;
+    listTitle: string;
+    items: string[];
+    note: string;
+    primary: string;
+    bottomLabel: string;
+    bottomTitle: string;
+    bottomText: string;
+  };
   footer: {
     blurb: string;
     navTitle: string;
@@ -288,6 +305,9 @@ export interface Dictionary {
     areaTrust: string[];
     /** Shown under every article — general information, not advice. */
     postDisclaimer: string;
+    /** Copy for the thin trust strip that closes every article. The trust
+        points themselves are reused from `areaTrust`. */
+    postCta: { eyebrow: string; call: string; role: string };
     legalNote: string;
     blog: { eyebrow: string; title: string; lead: string };
     danke: {

@@ -1,61 +1,65 @@
+/* Inline conversion strips inside an article body.
+   Same navy band and gold hairline as the closing PostCta strip, so the two
+   inline prompts and the sign-off read as one recurring offer rather than as
+   three different components. Full-bleed, like the closing strip: at the
+   article's measure a dark card looks like a sidebar, while a band reads as a
+   break in the page and is much harder to scroll past. */
 .card {
   position: relative;
+  isolation: isolate;
   overflow: hidden;
-  margin: 40px 0;
-  border-radius: var(--radius);
-  background: linear-gradient(155deg, var(--dark) 0%, var(--dark-deep) 100%);
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  margin-block: clamp(38px, 5vw, 56px);
+  border-top: 1px solid rgb(250 251 253 / 0.1);
+  border-bottom: 1px solid rgb(250 251 253 / 0.1);
+  background:
+    radial-gradient(circle at 88% 0%, rgb(184 144 56 / 0.16), transparent 42%),
+    linear-gradient(90deg, var(--accent) 0%, #062338 54%, var(--accent) 100%);
   color: var(--on-dark);
-  box-shadow: var(--shadow-card-hover);
 }
 
+/* Gold hairline sweeping the full width — the strip's signature. */
 .bar {
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent-hover), var(--accent));
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(184 144 56 / 0.9) 30%,
+    rgb(184 144 56 / 0.9) 70%,
+    transparent
+  );
 }
 
 .body {
-  padding: clamp(26px, 4vw, 40px);
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(34px, 4.4vw, 56px) var(--gutter);
   display: grid;
-  gap: 22px;
-  grid-template-columns: auto 1fr;
-  align-items: start;
-}
-
-.badge {
-  flex: none;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  display: flex;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: center;
-  background: rgb(250 251 253 / 0.1);
-  border: 1px solid rgb(250 251 253 / 0.16);
+  gap: clamp(20px, 3.4vw, 44px);
 }
 
-.badge svg {
-  width: 26px;
-  height: 26px;
-  color: var(--on-dark);
+.portrait {
+  position: relative;
+  display: block;
+  flex: none;
+  width: clamp(76px, 7vw, 96px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgb(184 144 56 / 0.5);
+  box-shadow: 0 10px 26px rgb(2 10 18 / 0.45);
+}
+
+.portrait img {
+  object-fit: cover;
+  object-position: 50% 22%;
 }
 
 .copy {
   min-width: 0;
-  grid-column: 2;
-}
-
-@media (max-width: 480px) {
-  .body {
-    grid-template-columns: 1fr;
-  }
-
-  .badge {
-    display: none;
-  }
-
-  .copy {
-    grid-column: 1;
-  }
 }
 
 .eyebrow {
@@ -63,31 +67,43 @@
   font: 600 11px/1 var(--font-sans);
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--on-dark-muted);
+  color: rgb(184 144 56);
 }
 
 .title {
-  margin: 10px 0 8px;
-  font: 600 clamp(21px, 2.4vw, 27px) / 1.28 var(--font-display);
+  margin: 12px 0 8px;
+  font: 400 clamp(21px, 2.2vw, 28px) / 1.28 var(--font-display);
 }
 
 .text {
   margin: 0;
-  max-width: 46ch;
-  color: var(--on-dark-muted);
+  max-width: 52ch;
+  color: rgb(250 251 253 / 0.7);
   font: 400 15px/24px var(--font-sans);
 }
 
 .action {
-  grid-column: 2;
-  width: 100%;
-  max-width: 300px;
-  margin-top: 4px;
+  width: min(288px, 100%);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1040px) {
+  .body {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  /* Button drops to its own row rather than squeezing the copy. */
   .action {
-    grid-column: 1;
-    max-width: none;
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+}
+
+@media (max-width: 620px) {
+  .body {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait {
+    width: 68px;
   }
 }

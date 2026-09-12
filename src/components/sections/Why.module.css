@@ -15,9 +15,9 @@
   z-index: -1;
   width: clamp(220px, 17vw, 330px);
   background-image: url("/images/ionic-column.png");
-  background-position: center bottom;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: auto 108%;
   opacity: 1;
   pointer-events: none;
 }
@@ -84,14 +84,44 @@
 }
 
 @media (max-width: 899px) {
+  .why {
+    background:
+      linear-gradient(180deg, rgb(4 28 44 / 0.94), rgb(4 28 44 / 0.99)),
+      radial-gradient(circle at 18% 12%, rgb(213 179 106 / 0.2), transparent 42%);
+  }
+
   .why::before,
+  .why::after {
+    display: block;
+    top: auto;
+    right: -78px;
+    bottom: -38px;
+    left: auto;
+    width: 210px;
+    height: 340px;
+    background-size: auto 100%;
+    opacity: 0.2;
+    transform: rotate(-7deg);
+  }
+
   .why::after {
     display: none;
   }
 
+  .why :global(.sectionHead) {
+    text-align: left;
+    margin: 0;
+  }
+
+  .why :global(.sectionHead) > * + * {
+    margin-top: 14px;
+  }
+
   .grid {
     width: 100%;
+    margin-top: 32px;
     grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .item,
@@ -102,7 +132,66 @@
   }
 
   .item {
-    padding-left: 22px;
+    display: grid;
+    grid-template-columns: 50px minmax(0, 1fr);
+    gap: 0 16px;
+    padding: 22px 0;
+    border-bottom: 1px solid rgb(250 251 253 / 0.13);
+    background: transparent;
+    box-shadow: none;
+    overflow: hidden;
+  }
+
+  .item::before {
+    display: none;
+  }
+
+  .item::after {
+    display: none;
+  }
+
+  .num {
+    grid-row: 1 / span 2;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgb(250 251 253 / 0.18);
+    border-radius: 50%;
+    background: rgb(250 251 253 / 0.04);
+    color: #e9d29b;
+  }
+
+  .itemTitle {
+    margin-top: 0;
+    font-size: 20px;
+  }
+
+  .itemText {
+    margin-top: 8px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .why :global(.sectionCta) {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+    padding: 18px;
+    border: 1px solid rgb(213 179 106 / 0.22);
+    border-radius: var(--radius);
+    background: rgb(250 251 253 / 0.07);
+    text-align: left;
+  }
+
+  .why :global(.sectionCta p) {
+    color: rgb(250 251 253 / 0.78);
+  }
+
+  .why :global(.sectionCta .btn) {
+    width: 100%;
+    margin-top: 2px;
   }
 }
 

@@ -433,7 +433,7 @@ export const de: Dictionary = {
             },
             {
                 title: "Kanzlei in Mannheim",
-                text: "Bahnhofstr. 18, 1. OG. Termine vor Ort oder telefonisch."
+                text: "R1 2-3, 68161 Mannheim. Termine vor Ort oder telefonisch."
             },
             {
                 title: "Klare Kommunikation",
@@ -444,11 +444,11 @@ export const de: Dictionary = {
     reviews: {
         label: "Bewertungen",
         title: "Was Mandantinnen und Mandanten sagen",
-        note: "[Platzhalter: durch echte Google-Bewertungen der Kanzlei ersetzen – Zitat, Name oder Initialen und Rechtsgebiet. Die folgenden Einträge sind Platzhalter.]",
+        note: "Aus den Bewertungen der Kanzlei.",
         items: [
-            { quote: "[Platzhalter: Zitat aus einer echten Bewertung]", name: "[Platzhalter: Name/Initialen]", context: "[Platzhalter: Rechtsgebiet]" },
-            { quote: "[Platzhalter: Zitat aus einer echten Bewertung]", name: "[Platzhalter: Name/Initialen]", context: "[Platzhalter: Rechtsgebiet]" },
-            { quote: "[Platzhalter: Zitat aus einer echten Bewertung]", name: "[Platzhalter: Name/Initialen]", context: "[Platzhalter: Rechtsgebiet]" }
+            { quote: "Ich bin mit der Beratung von Frau Meral Gören sehr zufrieden. Sie war freundlich, professionell und hat sich Zeit genommen, alles verständlich zu erklären. Ich habe mich sehr gut aufgehoben gefühlt und kann sie definitiv weiterempfehlen.", name: "Mandantin / Mandant", context: "Bewertung" },
+            { quote: "Frau Gören ist sehr kompetent und zuverlässig. Die Kommunikation war schnell und unkompliziert, und meine Fragen wurden immer ausführlich beantwortet. Vielen Dank für die tolle Unterstützung!", name: "Mandantin / Mandant", context: "Bewertung" },
+            { quote: "Eine sehr positive Erfahrung mit Frau Meral Gören. Sie arbeitet professionell, ist sehr sympathisch und geht aufmerksam auf ihre Kunden ein. Ich würde mich jederzeit wieder an sie wenden und kann sie uneingeschränkt empfehlen.", name: "Mandantin / Mandant", context: "Bewertung" }
         ]
     },
     blog: {
@@ -459,21 +459,320 @@ export const de: Dictionary = {
         moreTo: "Weiterlesen:",
         posts: [
             {
+                slug: "erbfall-tuerkei",
+                areaSlug: "zivilrecht",
+                category: "Zivilrecht",
+                iso: "2026-09-12",
+                date: "12. September 2026",
+                title: "Erbfall mit Bezug zur Türkei: Welches Recht gilt?",
+                excerpt: "Deutsches oder türkisches Erbrecht? Warum das Nachlassabkommen von 1929 der EU-Erbrechtsverordnung vorgeht und was das für Immobilien in der Türkei bedeutet.",
+                ctaLine: "Ein Erbfall mit Türkeibezug verzeiht keine Reihenfolgefehler: Wer zuerst ausschlägt oder umschreiben lässt, ohne die Rechtslage geklärt zu haben, korrigiert das später selten.",
+                body: [
+                    "Bei einem Erbfall mit Bezug zu Deutschland und zur Türkei gilt nicht ein einziges Erbrecht, sondern in aller Regel zwei nebeneinander. Maßgeblich ist das deutsch-türkische Nachlassabkommen: Für unbewegliches Vermögen gilt das Recht des Staates, in dem das Grundstück liegt; für bewegliches Vermögen das Recht des Staates, dessen Staatsangehörigkeit die verstorbene Person besaß.",
+                    "Das ist der Punkt, an dem die meisten Ratgeber in die Irre führen. Seit 2015 regelt die EU-Erbrechtsverordnung, dass grundsätzlich das Recht am letzten gewöhnlichen Aufenthalt gilt. Für deutsch-türkische Erbfälle gilt dieser Grundsatz gerade nicht: Die Verordnung lässt ältere bilaterale Abkommen ausdrücklich unberührt, und das deutsch-türkische Abkommen ist ein solches.",
+                    "Praktisch heißt das: Ein türkischer Staatsangehöriger, der seit vierzig Jahren in Mannheim lebt und eine Eigentumswohnung in Izmir besitzt, vererbt diese Wohnung nach türkischem Recht – auch wenn sein gesamtes Leben in Deutschland stattgefunden hat. Sein Bankguthaben in Deutschland vererbt er ebenfalls nach türkischem Recht, weil es beweglich ist und er türkischer Staatsangehöriger war. Sein Haus in Mannheim dagegen nach deutschem Recht.",
+                    {
+                        note: "Wichtig: Das deutsch-türkische Nachlassabkommen geht der EU-Erbrechtsverordnung vor. Wer seine Planung auf den gewöhnlichen Aufenthalt stützt, plant am geltenden Recht vorbei – mit Folgen für Pflichtteile, Testamentsgestaltung und die Frage, welches Gericht überhaupt zuständig ist."
+                    },
+                    {
+                        h2: "Das deutsch-türkische Nachlassabkommen – die Grundregel"
+                    },
+                    "Das Abkommen ist die Anlage zu Artikel 20 des deutsch-türkischen Konsularvertrags vom 28. Mai 1929, nach dem Zweiten Weltkrieg am 29. Mai 1952 wieder in Kraft gesetzt. Es ist ein völkerrechtlicher Vertrag und geht dem nationalen Kollisionsrecht beider Staaten vor.",
+                    "Die Grundregel lautet:",
+                    {
+                        list: [
+                            "Unbewegliches Vermögen – Grundstücke, Wohnungen, Häuser: Es gilt das Recht des Staates, in dem das Grundstück liegt. Deutsches Recht für die Immobilie in Deutschland, türkisches Recht für die Immobilie in der Türkei.",
+                            "Bewegliches Vermögen – Bankguthaben, Fahrzeuge, Hausrat, Forderungen, Gesellschaftsanteile: Es gilt das Recht des Staates, dessen Staatsangehörigkeit die verstorbene Person im Zeitpunkt des Todes besaß."
+                        ]
+                    },
+                    {
+                        h3: "Was Nachlassspaltung konkret bedeutet"
+                    },
+                    "Der Nachlass zerfällt in zwei getrennte Vermögensmassen, die jeweils eigenen Regeln folgen. Es gibt dann nicht eine Erbquote, sondern zwei – und sie können unterschiedlich ausfallen. Wer in einer Masse Erbe ist, ist es in der anderen nicht zwingend im selben Umfang.",
+                    "Das wirkt sich auf fast alles aus: auf die gesetzliche Erbfolge, auf Pflichtteilsansprüche, auf die Wirksamkeit eines Testaments und darauf, welche Nachweise Banken und Grundbuchämter verlangen.",
+                    {
+                        h2: "Doppelte Staatsangehörigkeit – der häufigste Sonderfall"
+                    },
+                    "Seit der Reform des Staatsangehörigkeitsrechts 2024 ist die Mehrstaatigkeit der Regelfall. Damit wächst die Zahl der Erbfälle, in denen die verstorbene Person beide Staatsangehörigkeiten besaß – und für das bewegliche Vermögen knüpft das Abkommen gerade an die Staatsangehörigkeit an.",
+                    "Welche Staatsangehörigkeit dann maßgeblich ist, ist nicht trivial und war wiederholt Gegenstand gerichtlicher Entscheidungen. Wer beide Pässe besitzt, sollte das nicht ungeklärt lassen: Die Frage entscheidet im Ergebnis darüber, nach welchem Recht das gesamte bewegliche Vermögen vererbt wird.",
+                    {
+                        h2: "Welche Nachweise Sie brauchen – Erbschein oder veraset ilamı"
+                    },
+                    "Ein Europäisches Nachlasszeugnis hilft hier nicht weiter, weil die Türkei nicht an der EU-Erbrechtsverordnung teilnimmt. In der Praxis gilt:",
+                    {
+                        list: [
+                            "Für Grundbesitz in Deutschland benötigen die Erben einen deutschen Erbschein. Das Grundbuchamt trägt ohne ihn nicht um.",
+                            "Hinterlässt eine türkische Staatsangehörige in Deutschland ausschließlich bewegliches Vermögen, kann ein türkischer Erbschein – veraset ilamı – genügen. Er muss dann über die zuständige türkische Auslandsvertretung legalisiert beziehungsweise mit Apostille versehen und beglaubigt übersetzt werden.",
+                            "Für Grundbesitz in der Türkei ist die Umschreibung im türkischen Grundbuch, dem Tapu, erforderlich. Hierfür gelten türkisches Recht und türkisches Verfahren."
+                        ]
+                    },
+                    "Rechnen Sie damit, dass beide Seiten Unterlagen der jeweils anderen Seite verlangen: Sterbeurkunde, Personenstandsregisterauszug aus der Türkei, Nachweise zur Staatsangehörigkeit – jeweils übersetzt und überbeglaubigt.",
+                    {
+                        h2: "Fristen – und warum sie hier gefährlich sind"
+                    },
+                    {
+                        table: {
+                            caption: "Fristen im Vergleich: Deutschland und Türkei",
+                            head: [
+                                "Vorgang",
+                                "Deutschland",
+                                "Türkei"
+                            ],
+                            rows: [
+                                [
+                                    "Ausschlagung der Erbschaft",
+                                    "6 Wochen ab Kenntnis; 6 Monate, wenn die verstorbene Person ihren letzten Wohnsitz nur im Ausland hatte oder der Erbe sich bei Fristbeginn im Ausland aufhält (§ 1944 BGB)",
+                                    "3 Monate ab Kenntnis (Art. 606 türk. ZGB)"
+                                ],
+                                [
+                                    "Teilausschlagung",
+                                    "nicht möglich",
+                                    "nicht möglich"
+                                ],
+                                [
+                                    "Anzeige beim Finanzamt",
+                                    "in der Regel binnen 3 Monaten (§ 30 ErbStG)",
+                                    "eigene Fristen nach türkischem Recht"
+                                ]
+                            ]
+                        }
+                    },
+                    "Die verlängerte Frist von sechs Monaten nach § 1944 BGB ist in genau diesen Fällen der Normalfall und wird oft übersehen – in beide Richtungen. Manche Erben glauben, sie hätten nur sechs Wochen, und handeln überstürzt; andere verlassen sich auf sechs Monate, obwohl die Voraussetzungen nicht vorliegen.",
+                    "Beachten Sie außerdem: Eine Ausschlagung erfasst immer den gesamten Nachlass. Sie können nicht die überschuldete Immobilie in der Türkei ausschlagen und das deutsche Bankguthaben behalten.",
+                    {
+                        h2: "Pflichtteil – die Systeme unterscheiden sich"
+                    },
+                    "Auch beim Pflichtteil laufen beide Rechtsordnungen auseinander, und bei einer Nachlassspaltung gelten sie nebeneinander.",
+                    "Nach türkischem Recht sind die gesetzlichen Erbteile in bestimmtem Umfang gebunden: Abkömmlinge sind mit der Hälfte ihres gesetzlichen Erbteils geschützt, Eltern mit einem Viertel, und dem überlebenden Ehegatten steht sein gesetzlicher Erbteil als Pflichtteil zu. Der deutsche Pflichtteil ist demgegenüber ein reiner Geldanspruch in Höhe der Hälfte des gesetzlichen Erbteils.",
+                    "Wer ein Testament errichtet, das beide Vermögensmassen erfassen soll, muss deshalb beide Pflichtteilsordnungen mitdenken. Ein Testament, das nach deutschem Recht einwandfrei ist, kann für die türkische Masse angreifbar sein.",
+                    {
+                        h2: "Erbschaftsteuer – und das Risiko der Doppelbesteuerung"
+                    },
+                    "Zwischen Deutschland und der Türkei besteht kein Doppelbesteuerungsabkommen für die Erbschaftsteuer. Beide Staaten können denselben Erwerb besteuern; eine Anrechnung ausländischer Steuer kommt nur nach Maßgabe des nationalen Rechts in Betracht.",
+                    "Die deutschen persönlichen Freibeträge nach § 16 ErbStG betragen derzeit unter anderem:",
+                    {
+                        table: {
+                            caption: "Persönliche Freibeträge nach § 16 ErbStG (Stand 2026)",
+                            head: [
+                                "Erwerber",
+                                "Freibetrag"
+                            ],
+                            rows: [
+                                [
+                                    "Ehegatte oder eingetragener Lebenspartner",
+                                    "500.000 € zzgl. Versorgungsfreibetrag von 256.000 €"
+                                ],
+                                [
+                                    "Kinder und Stiefkinder",
+                                    "400.000 €"
+                                ],
+                                [
+                                    "Enkel",
+                                    "200.000 €"
+                                ],
+                                [
+                                    "Eltern und Großeltern bei Erwerb von Todes wegen",
+                                    "100.000 €"
+                                ]
+                            ]
+                        }
+                    },
+                    "In Steuerklasse I liegen die Steuersätze zwischen 7 und 30 Prozent. Wichtig für Familien mit Türkeibezug: Diese Freibeträge stehen in voller Höhe nur bei unbeschränkter Steuerpflicht zur Verfügung. Wo weder Erblasser noch Erbe in Deutschland ansässig sind, greift die beschränkte Steuerpflicht und es wird nur das Inlandsvermögen erfasst – mit deutlich engeren Folgen. Ob Sie unbeschränkt oder beschränkt steuerpflichtig sind, sollte früh geprüft werden.",
+                    {
+                        h2: "Was Sie zuerst tun sollten"
+                    },
+                    {
+                        list: [
+                            "Sichern Sie die Unterlagen: Sterbeurkunde, Ausweise und Nachweise zur Staatsangehörigkeit beider Seiten, Personenstandsregisterauszug aus der Türkei.",
+                            "Erstellen Sie ein Verzeichnis des Vermögens, getrennt nach beweglich und unbeweglich und nach Belegenheit – das ist die Grundlage jeder weiteren Einschätzung.",
+                            "Klären Sie die Staatsangehörigkeit der verstorbenen Person im Todeszeitpunkt.",
+                            "Prüfen Sie, ob ein Testament existiert – in Deutschland, in der Türkei oder in beiden Ländern.",
+                            "Klären Sie die Ausschlagungsfrist, bevor Sie etwas unterschreiben oder Nachlassgegenstände in Besitz nehmen."
+                        ]
+                    },
+                    {
+                        h2: "Wie wir vorgehen"
+                    },
+                    "In der Regel klären wir zuerst, welche Vermögensmassen entstehen und welches Recht auf welche Masse anzuwenden ist. Erst danach lassen sich Erbquoten, Pflichtteile und die erforderlichen Nachweise sinnvoll bestimmen. Wir beraten Sie dabei auf Deutsch und auf Türkisch. Für Fragen, die sich nach türkischem Recht beurteilen – etwa die Umschreibung im Tapu oder ein Verfahren vor einem türkischen Gericht –, arbeiten wir mit einer auf türkisches Recht spezialisierten Kanzlei zusammen, sodass beide Seiten des Falls abgedeckt sind.",
+                    {
+                        h2: "Häufige Fragen zum Erbfall mit Türkeibezug"
+                    },
+                    {
+                        faq: [
+                            {
+                                q: "Gilt bei einem Erbfall mit Türkeibezug die EU-Erbrechtsverordnung?",
+                                a: "Nein. Das deutsch-türkische Nachlassabkommen von 1929 ist ein bilateraler Staatsvertrag und geht der EU-Erbrechtsverordnung vor. Maßgeblich ist deshalb nicht der letzte gewöhnliche Aufenthalt, sondern die Unterscheidung zwischen unbeweglichem Vermögen nach Belegenheitsrecht und beweglichem Vermögen nach Heimatrecht."
+                            },
+                            {
+                                q: "Nach welchem Recht wird eine Immobilie in der Türkei vererbt?",
+                                a: "Nach türkischem Recht, unabhängig davon, wo die verstorbene Person gelebt hat und welche Staatsangehörigkeit sie besaß. Für unbewegliches Vermögen gilt stets das Recht des Staates, in dem das Grundstück liegt."
+                            },
+                            {
+                                q: "Brauche ich einen deutschen Erbschein oder genügt ein veraset ilamı?",
+                                a: "Für Grundbesitz in Deutschland benötigen Sie einen deutschen Erbschein. Hinterlässt eine türkische Staatsangehörige in Deutschland nur bewegliches Vermögen, kann ein türkischer Erbschein genügen; er muss legalisiert beziehungsweise mit Apostille versehen und beglaubigt übersetzt werden."
+                            },
+                            {
+                                q: "Wie lange habe ich Zeit, die Erbschaft auszuschlagen?",
+                                a: "In Deutschland sechs Wochen ab Kenntnis, aber sechs Monate, wenn die verstorbene Person ihren letzten Wohnsitz nur im Ausland hatte oder Sie sich bei Fristbeginn im Ausland aufhalten (§ 1944 BGB). Nach türkischem Recht beträgt die Frist drei Monate ab Kenntnis."
+                            },
+                            {
+                                q: "Kann ich die Erbschaft in der Türkei ausschlagen und in Deutschland annehmen?",
+                                a: "Nein. Eine Teilausschlagung ist weder nach deutschem noch nach türkischem Recht zulässig. Die Ausschlagung erfasst immer den gesamten Nachlass."
+                            },
+                            {
+                                q: "Was passiert bei doppelter Staatsangehörigkeit?",
+                                a: "Da das Abkommen für bewegliches Vermögen an die Staatsangehörigkeit anknüpft, muss geklärt werden, welche Staatsangehörigkeit maßgeblich ist. Das ist eine Frage des Einzelfalls und sollte nicht offengelassen werden, weil davon das gesamte bewegliche Vermögen abhängt."
+                            },
+                            {
+                                q: "Muss ich in beiden Ländern Erbschaftsteuer zahlen?",
+                                a: "Das ist möglich. Zwischen Deutschland und der Türkei besteht kein Doppelbesteuerungsabkommen für die Erbschaftsteuer, sodass beide Staaten denselben Erwerb besteuern können. Eine Anrechnung richtet sich nach nationalem Recht und sollte frühzeitig geprüft werden."
+                            }
+                        ]
+                    },
+                    "Wenn ein Erbfall mit Türkeibezug eingetreten ist, bringen Sie die Sterbeurkunde, Unterlagen zur Staatsangehörigkeit und eine grobe Aufstellung des Vermögens mit. Damit lässt sich meist schon im ersten Gespräch sagen, in welche Massen der Nachlass zerfällt und welcher Schritt zuerst ansteht."
+                ],
+                image: "/images/blog/erbrecht.webp"
+            },
+            {
                 slug: "mietminderung-maengel",
                 areaSlug: "zivilrecht",
                 category: "Zivilrecht",
                 iso: "2026-09-02",
                 date: "2. September 2026",
-                title: "Mietminderung: Wann Sie die Miete kürzen dürfen",
-                excerpt: "Schimmel, Heizungsausfall, Baulärm – wann ein Mangel zur Minderung berechtigt und was Sie vorher erledigen müssen.",
+                title: "Mietminderung 2026: Wann Sie die Miete kürzen dürfen",
+                excerpt: "Schimmel, Heizungsausfall, Baulärm – wann ein Mangel zur Minderung berechtigt, wie hoch Sie kürzen dürfen und warum der sicherste Weg die Zahlung unter Vorbehalt ist.",
+                ctaLine: "Bevor Sie die Miete kürzen, lassen Sie die Quote einschätzen. Ein Gespräch kostet Sie eine halbe Stunde – ein zu hoch angesetzter Prozentsatz kann Sie die Wohnung kosten.",
                 body: [
-                    "Ist die Wohnung mangelhaft, ist die Miete kraft Gesetzes gemindert (§ 536 BGB). Das ist ein wichtiger Unterschied zu vielen anderen Rechten: Sie müssen die Minderung nicht erst erklären, sie tritt automatisch ein. Voraussetzung ist ein Mangel, der die Tauglichkeit der Wohnung zum vertragsgemäßen Gebrauch nicht nur unerheblich beeinträchtigt.",
-                    "Typische Fälle sind Schimmel, ein Heizungsausfall in der Heizperiode, undichte Fenster, Wasserschäden oder länger andauernder Baulärm. Auch Umstände außerhalb der Wohnung können einen Mangel begründen, wenn sie das Wohnen spürbar beeinträchtigen.",
-                    "Zwingend ist die Mängelanzeige. Nach § 536c BGB müssen Sie den Mangel unverzüglich anzeigen. Unterlassen Sie das, verlieren Sie Ansprüche und können sich unter Umständen sogar schadensersatzpflichtig machen. Zeigen Sie den Mangel deshalb schriftlich an, beschreiben Sie ihn konkret und setzen Sie eine angemessene Frist zur Beseitigung.",
-                    "Sichern Sie parallel die Beweise: Fotos mit Datum, ein Protokoll mit Uhrzeiten und Dauer der Störung – bei Lärm ein Lärmprotokoll –, Zeugen sowie den gesamten Schriftverkehr. Im Streit entscheidet regelmäßig, wer den Mangel und sein Ausmaß belegen kann.",
-                    "Die Höhe der Minderung richtet sich nach der tatsächlichen Beeinträchtigung. Die kursierenden Minderungstabellen geben allenfalls eine grobe Orientierung; Gerichte entscheiden im Einzelfall. Hier liegt das eigentliche Risiko: Wer zu viel mindert, gerät in Zahlungsrückstand – und bei einem Rückstand von zwei Monatsmieten kann der Vermieter fristlos kündigen (§ 543 Abs. 2 Nr. 3 BGB).",
-                    "Der sichere Weg ist deshalb, die Miete zunächst in voller Höhe ausdrücklich unter Vorbehalt der Rückforderung weiterzuzahlen und den geminderten Betrag anschließend zurückzuverlangen. Sie behalten damit Ihre Ansprüche, riskieren aber keine Kündigung.",
-                    "Kein Minderungsrecht besteht, wenn Sie den Mangel bei Vertragsschluss kannten (§ 536b BGB) oder ihn selbst verursacht haben. Auch deshalb lohnt es sich, den Zustand der Wohnung bei der Übergabe sorgfältig zu protokollieren."
+                    "Ist die Wohnung mangelhaft, ist die Miete kraft Gesetzes gemindert (§ 536 BGB). Sie müssen die Minderung nicht erst erklären und auch nicht beantragen – sie tritt automatisch ein, sobald der Mangel die Tauglichkeit der Wohnung zum vertragsgemäßen Gebrauch nicht nur unerheblich beeinträchtigt.",
+                    "Genau diese Automatik führt aber zu dem Fehler, der in der Praxis am teuersten ist. Das Minderungsrecht ist selten das Problem. Das Problem sind die Höhe und der Zeitpunkt: Wer eigenmächtig zu viel kürzt, gerät in Zahlungsrückstand – und riskiert die Kündigung der Wohnung, in der er gerade um eine funktionierende Heizung kämpft.",
+                    "Die kurze Antwort lautet deshalb: Zeigen Sie den Mangel sofort schriftlich an, sichern Sie die Beweise, und zahlen Sie die Miete zunächst in voller Höhe ausdrücklich unter Vorbehalt der Rückforderung weiter. Den zu viel gezahlten Betrag holen Sie sich anschließend zurück. Sie verlieren damit nichts – außer dem Kündigungsrisiko.",
+                    {
+                        note: "Wichtig: Wer die Miete zu stark kürzt, gerät in Zahlungsverzug. Erreicht der Rückstand zwei Monatsmieten, kann der Vermieter fristlos kündigen (§ 543 Abs. 2 Nr. 3 BGB). Dass der Mangel tatsächlich vorlag, schützt davor nicht – entscheidend ist allein, ob die von Ihnen gewählte Minderungsquote am Ende gerichtlich Bestand hat."
+                    },
+                    {
+                        h2: "Was rechtlich ein Mangel ist"
+                    },
+                    "Ein Mangel liegt vor, wenn der tatsächliche Zustand der Wohnung vom vertraglich geschuldeten Zustand abweicht und der Gebrauch dadurch spürbar eingeschränkt ist. Es kommt nicht darauf an, ob den Vermieter ein Verschulden trifft. Auch ein Wasserrohrbruch, für den niemand etwas kann, ist ein Mangel.",
+                    "Typische Fälle aus der Beratungspraxis:",
+                    {
+                        list: [
+                            "Schimmel in Wohn- oder Schlafräumen, insbesondere wenn er auf Bauschäden oder Wärmebrücken zurückgeht",
+                            "Ausfall oder Unterdimensionierung der Heizung während der Heizperiode",
+                            "undichte Fenster, Zugluft, dauerhaft feuchte Wände",
+                            "Wasserschäden und deren Folgeschäden",
+                            "Ausfall von Warmwasser, Aufzug oder Sanitäranlagen",
+                            "erheblicher, länger andauernder Baulärm – auch von einer fremden Baustelle",
+                            "eine Wohnfläche, die die im Mietvertrag angegebene Fläche deutlich unterschreitet"
+                        ]
+                    },
+                    "Auch Umstände außerhalb der Wohnung können einen Mangel begründen, wenn sie das Wohnen spürbar beeinträchtigen. Unerhebliche Beeinträchtigungen bleiben dagegen außer Betracht: Ein tropfender Wasserhahn oder eine einzelne laute Nacht genügen nicht.",
+                    {
+                        h2: "Die Mängelanzeige – der Schritt, den Sie nicht überspringen dürfen"
+                    },
+                    "Nach § 536c BGB müssen Sie den Mangel unverzüglich anzeigen. Das ist keine Formalie, sondern die eigentliche Pflicht des Mieters. Unterlassen Sie die Anzeige, verlieren Sie Ansprüche und können sich unter Umständen sogar schadensersatzpflichtig machen – etwa wenn aus einem kleinen, früh gemeldeten Leck ein großer Feuchtigkeitsschaden geworden wäre.",
+                    "Eine brauchbare Mängelanzeige enthält vier Dinge: eine konkrete Beschreibung des Mangels, den Zeitpunkt seines Auftretens, die Aufforderung zur Beseitigung und eine angemessene Frist. Schreiben Sie nicht „die Wohnung ist feucht\", sondern „an der Außenwand des Schlafzimmers, links neben dem Fenster, hat sich auf etwa 0,5 m² schwarzer Schimmel gebildet, erstmals bemerkt am 3. September\".",
+                    "Wählen Sie einen nachweisbaren Weg. E-Mail mit Lesebestätigung, Einwurf-Einschreiben oder Übergabe mit Zeugen. Ein Anruf ist rechtlich wirksam, aber im Streit wertlos, weil Sie ihn nicht belegen können.",
+                    {
+                        h2: "Beweise sichern, bevor der Mangel verschwindet"
+                    },
+                    "Im Streit entscheidet regelmäßig nicht, wer Recht hat, sondern wer den Mangel und sein Ausmaß belegen kann. Mängel haben die Eigenschaft, zu verschwinden: Der Schimmel wird überstrichen, die Baustelle wird fertig, die Heizung läuft im Frühjahr wieder. Dokumentieren Sie deshalb sofort und laufend.",
+                    {
+                        list: [
+                            "Fotos und kurze Videos mit erkennbarem Datum, möglichst mit Maßstab im Bild",
+                            "bei Lärm ein Lärmprotokoll mit Datum, Uhrzeit, Dauer und Art der Störung",
+                            "bei Heizungsausfall Temperaturmessungen zu festen Tageszeiten, notiert mit Datum",
+                            "Namen und Anschriften möglicher Zeugen – Besucher, Nachbarn, Handwerker",
+                            "den vollständigen Schriftverkehr mit Vermieter und Hausverwaltung",
+                            "das Übergabeprotokoll vom Einzug"
+                        ]
+                    },
+                    {
+                        h2: "Wie hoch darf die Minderung sein?"
+                    },
+                    "Die Höhe richtet sich nach der tatsächlichen Beeinträchtigung im Einzelfall, gemessen an der Bruttomiete. Die im Internet kursierenden Minderungstabellen geben allenfalls eine grobe Orientierung. Sie sind Sammlungen von Einzelfallentscheidungen und keine Rechtsnormen – ein Gericht ist daran nicht gebunden und entscheidet nach den Umständen Ihrer Wohnung.",
+                    "Maßgeblich sind vor allem: welche Räume betroffen sind und wie intensiv sie genutzt werden, wie lange der Mangel andauert, ob er ganztägig oder nur zeitweise auftritt, und ob die Wohnung noch bewohnbar bleibt. Ein Heizungsausfall im Januar wiegt schwerer als derselbe Ausfall im Mai.",
+                    "Weil diese Bewertung im Vorhinein niemand sicher treffen kann, ist die selbst gewählte Quote das eigentliche Risiko – und nicht der Mangel.",
+                    {
+                        h2: "Drei Wege, mit der Miete umzugehen"
+                    },
+                    {
+                        table: {
+                            caption: "Vorgehen bei einem festgestellten Mangel – Vorteile und Risiken",
+                            head: [
+                                "Vorgehen",
+                                "Vorteil",
+                                "Risiko"
+                            ],
+                            rows: [
+                                [
+                                    "Miete voll und vorbehaltlos weiterzahlen",
+                                    "Kein Kündigungsrisiko",
+                                    "Die Rückforderung kann nach längerer Zeit ausgeschlossen sein (§ 814 BGB), wenn Sie in Kenntnis des Mangels vorbehaltlos zahlen"
+                                ],
+                                [
+                                    "Miete voll zahlen, ausdrücklich unter Vorbehalt der Rückforderung",
+                                    "Kein Kündigungsrisiko, Ansprüche bleiben vollständig erhalten",
+                                    "Sie gehen zunächst in Vorleistung und müssen den Betrag später geltend machen"
+                                ],
+                                [
+                                    "Miete eigenmächtig kürzen",
+                                    "Sofortige finanzielle Entlastung",
+                                    "Bei zu hoch angesetzter Quote Zahlungsverzug – ab zwei Monatsmieten Rückstand ist die fristlose Kündigung möglich"
+                                ]
+                            ]
+                        }
+                    },
+                    "Formulieren Sie den Vorbehalt ausdrücklich und schriftlich, am besten im Verwendungszweck der Überweisung und zusätzlich per E-Mail: „Zahlung unter Vorbehalt der Rückforderung wegen des mit Schreiben vom … angezeigten Mangels\". Ein stillschweigender Vorbehalt genügt nicht.",
+                    {
+                        h2: "Wann das Minderungsrecht ganz entfällt"
+                    },
+                    "Kein Minderungsrecht besteht, wenn Sie den Mangel bei Vertragsschluss kannten (§ 536b BGB) oder ihn selbst verursacht haben – etwa Schimmel durch nachweislich falsches Heiz- und Lüftungsverhalten. Auch deshalb lohnt es sich, den Zustand der Wohnung bei der Übergabe sorgfältig zu protokollieren.",
+                    "Ein zweiter, weniger bekannter Fall: Wer den Mangel kennt und die Miete über längere Zeit vorbehaltlos in voller Höhe weiterzahlt, riskiert, die Rückforderung nach § 814 BGB nicht mehr durchsetzen zu können. Das Gesetz wertet die vorbehaltlose Zahlung als bewusste Leistung auf eine nicht geschuldete Forderung. Der Vorbehalt ist damit nicht nur eine Vorsichtsmaßnahme, sondern der Grund, warum die Zahlungsvariante überhaupt funktioniert.",
+                    {
+                        h3: "Sonderfall Baulärm aus der Nachbarschaft"
+                    },
+                    "Baulärm von einem fremden Grundstück ist ein häufiger Streitpunkt. Entscheidend ist, ob die Beeinträchtigung erheblich ist und ob der Vermieter sie ihrerseits gegenüber dem Verursacher abwehren könnte. Ein Lärmprotokoll ist hier praktisch unverzichtbar, weil sich der Umfang der Störung im Nachhinein sonst nicht mehr rekonstruieren lässt.",
+                    {
+                        h2: "Wie wir in solchen Fällen vorgehen"
+                    },
+                    "In der Regel prüfen wir zuerst, ob der Mangel belegbar und die Anzeige wirksam erfolgt ist – das entscheidet über alles Weitere. Danach ordnen wir die realistische Größenordnung der Minderung ein und klären, ob neben der Minderung weitere Ansprüche bestehen, etwa auf Mangelbeseitigung, Aufwendungsersatz oder Schadensersatz. Häufig lässt sich die Sache außergerichtlich klären, wenn die Dokumentation von Anfang an sauber ist.",
+                    "Wir beraten und vertreten Sie dabei auf Deutsch und auf Türkisch, außergerichtlich wie vor Gericht.",
+                    {
+                        h2: "Häufige Fragen zur Mietminderung"
+                    },
+                    {
+                        faq: [
+                            {
+                                q: "Muss ich die Mietminderung beim Vermieter ankündigen?",
+                                a: "Die Minderung selbst tritt kraft Gesetzes ein und muss nicht erklärt werden (§ 536 BGB). Anzeigen müssen Sie aber den Mangel, und zwar unverzüglich (§ 536c BGB). Ohne diese Mängelanzeige verlieren Sie Ihre Rechte. Die Anzeige ist die eigentliche Pflicht, nicht die Minderungserklärung."
+                            },
+                            {
+                                q: "Ab wann kann ich die Miete mindern?",
+                                a: "Grundsätzlich ab dem Auftreten des Mangels, praktisch aber erst ab Zugang Ihrer Mängelanzeige beim Vermieter. Für die Zeit davor besteht in der Regel kein Anspruch, weil der Vermieter von dem Mangel nichts wusste und ihn deshalb nicht beseitigen konnte."
+                            },
+                            {
+                                q: "Wie viel Prozent darf ich mindern?",
+                                a: "Es gibt keine gesetzlichen Prozentsätze. Maßgeblich ist die tatsächliche Beeinträchtigung im Einzelfall, bezogen auf die Bruttomiete. Minderungstabellen im Internet sind Sammlungen von Einzelfallurteilen und für ein Gericht nicht bindend. Lassen Sie die Größenordnung prüfen, bevor Sie kürzen."
+                            },
+                            {
+                                q: "Kann mir wegen einer Mietminderung gekündigt werden?",
+                                a: "Ja, wenn Sie zu viel mindern. Die einbehaltenen Beträge gelten dann als Rückstand. Erreicht dieser zwei Monatsmieten, ist die fristlose Kündigung nach § 543 Abs. 2 Nr. 3 BGB möglich. Deshalb ist die Zahlung unter Vorbehalt der sicherere Weg."
+                            },
+                            {
+                                q: "Was bedeutet „Zahlung unter Vorbehalt\" genau?",
+                                a: "Sie zahlen die volle Miete weiter, erklären aber ausdrücklich und schriftlich, dass die Zahlung nur unter Vorbehalt der Rückforderung erfolgt. Damit geraten Sie nicht in Verzug, behalten aber den Anspruch, den zu viel gezahlten Anteil später zurückzuverlangen."
+                            },
+                            {
+                                q: "Ich habe den Mangel monatelang hingenommen. Ist es jetzt zu spät?",
+                                a: "Nicht zwingend, aber es wird schwieriger. Wer den Mangel kennt und vorbehaltlos weiterzahlt, kann die Rückforderung nach § 814 BGB verlieren. Für die Zukunft bleibt das Minderungsrecht meist bestehen. Erklären Sie deshalb ab sofort den Vorbehalt und lassen Sie die Vergangenheit gesondert prüfen."
+                            },
+                            {
+                                q: "Brauche ich für eine Mietminderung einen Anwalt?",
+                                a: "Für die Mängelanzeige nicht. Sobald es um die Höhe der Minderung, um eine Kündigungsdrohung des Vermieters oder um die Rückforderung bereits gezahlter Miete geht, ist eine anwaltliche Einschätzung sinnvoll, weil ab diesem Punkt ein Fehler die Wohnung kosten kann."
+                            }
+                        ]
+                    },
+                    "Wenn Sie unsicher sind, ob Ihre Situation einen Mangel darstellt oder in welcher Höhe eine Minderung realistisch ist, schildern Sie uns den Fall kurz. Oft genügt ein Blick auf die Mängelanzeige und die Dokumentation, um die richtige Reihenfolge festzulegen."
                 ],
                 image: "/images/blog/zivilrecht.webp"
             },
@@ -483,16 +782,153 @@ export const de: Dictionary = {
                 category: "Ausländerrecht",
                 iso: "2026-08-12",
                 date: "12. August 2026",
-                title: "Einbürgerung 2026: Welche Voraussetzungen jetzt gelten",
-                excerpt: "Aufenthaltsdauer, Sprachnachweis, Lebensunterhalt – ein Überblick über die aktuellen Anforderungen.",
+                updated: "2026-09-12",
+                title: "Einbürgerung 2026: Voraussetzungen, Kosten und Fristen",
+                excerpt: "Fünf Jahre Aufenthalt, B1, gesicherter Lebensunterhalt – und die Einbürgerung nach drei Jahren ist seit Oktober 2025 abgeschafft. Der aktuelle Stand im Überblick.",
+                ctaLine: "Fünf Jahre, Lebensunterhalt, B1: Ob Sie die Voraussetzungen heute schon erfüllen, lässt sich vorab klären. Das ist der Unterschied zwischen einem Antrag und einem bewilligten Antrag.",
                 body: [
-                    "Seit der Reform des Staatsangehörigkeitsrechts vom 27. Juni 2024 ist die Einbürgerung in der Regel schon nach fünf Jahren rechtmäßigem gewöhnlichem Aufenthalt möglich – zuvor waren es acht. Ebenso wichtig: Die bisherige Staatsangehörigkeit muss grundsätzlich nicht mehr aufgegeben werden. Für viele, die den Antrag jahrelang aufgeschoben haben, hat sich die Rechnung damit verändert.",
-                    "Die Voraussetzungen im Überblick: ein gültiger Aufenthaltstitel beziehungsweise ein Daueraufenthaltsrecht, fünf Jahre rechtmäßiger gewöhnlicher Aufenthalt in Deutschland, ein gesicherter Lebensunterhalt, Deutschkenntnisse auf dem Niveau B1, der bestandene Einbürgerungstest, keine relevanten Vorstrafen und ein Bekenntnis zur freiheitlichen demokratischen Grundordnung.",
-                    "Der Lebensunterhalt ist in der Praxis der häufigste Stolperstein. Sie müssen den Unterhalt für sich und Ihre unterhaltsberechtigten Angehörigen grundsätzlich ohne Leistungen nach dem SGB II oder SGB XII bestreiten können. Von diesem Grundsatz gibt es eng gefasste Ausnahmen – etwa für Angehörige der ehemaligen Gastarbeitergeneration oder für Menschen, die in Vollzeit erwerbstätig sind. Ob eine dieser Ausnahmen greift, sollten Sie prüfen lassen, bevor Sie den Antrag zurückstellen.",
-                    "Beim Sprachnachweis genügt in der Regel ein Zertifikat auf dem Niveau B1 oder ein deutscher Schulabschluss. Für Fälle von Alter, Krankheit oder Behinderung sieht das Gesetz Erleichterungen vor.",
-                    "Neu ist seit der Reform außerdem ein ausdrückliches Bekenntnis zum Schutz der Menschenwürde und zur besonderen historischen Verantwortung Deutschlands. Antisemitisch, rassistisch oder sonst menschenverachtend motivierte Taten schließen die Einbürgerung aus.",
-                    "Die Regelungen zur beschleunigten Einbürgerung bei besonderen Integrationsleistungen sind seit 2024 mehrfach Gegenstand gesetzlicher Änderungen gewesen. Bevor Sie Ihre Planung darauf stützen, lassen Sie den aktuellen Stand für Ihren Fall prüfen.",
-                    "Was Sie jetzt zusammenstellen sollten: den lückenlosen Nachweis Ihrer Aufenthaltszeiten und -titel, Einkommensnachweise der letzten Monate, den Rentenverlauf, das Sprachzertifikat, die Bescheinigung über den Einbürgerungstest und Ihre Identitätsdokumente. Lücken in der Aufenthaltshistorie sind der häufigste Grund für Verzögerungen – und sie lassen sich fast immer schließen, wenn man früh damit beginnt."
+                    "Die Einbürgerung ist in der Regel nach fünf Jahren rechtmäßigem gewöhnlichem Aufenthalt in Deutschland möglich (§ 10 StAG). Die bisherige Staatsangehörigkeit müssen Sie dabei grundsätzlich nicht mehr aufgeben – die Mehrstaatigkeit ist seit der Reform vom 27. Juni 2024 der Regelfall und nicht mehr die Ausnahme.",
+                    "Für viele, die den Antrag jahrelang aufgeschoben haben, hat sich die Rechnung damit grundlegend verändert. Vor der Reform waren acht Jahre Aufenthalt erforderlich, und wer Deutscher werden wollte, musste seinen bisherigen Pass in aller Regel abgeben. Beides gilt nicht mehr.",
+                    "Ein Punkt hat sich allerdings wieder in die andere Richtung bewegt, und er wird in vielen älteren Ratgebern noch falsch dargestellt.",
+                    {
+                        note: "Wichtig: Die 2024 eingeführte beschleunigte Einbürgerung nach drei Jahren bei besonderen Integrationsleistungen ist abgeschafft. Der Bundestag hat die Änderung am 8. Oktober 2025 beschlossen, das Gesetz ist am 30. Oktober 2025 in Kraft getreten. Es gilt wieder ausnahmslos die Frist von fünf Jahren. Wenn Ihre Planung auf dem Drei-Jahres-Weg beruht, sollten Sie sie überprüfen lassen."
+                    },
+                    {
+                        h2: "Die Voraussetzungen im Überblick"
+                    },
+                    "Für die Anspruchseinbürgerung nach § 10 StAG müssen Sie folgende Voraussetzungen erfüllen:",
+                    {
+                        list: [
+                            "ein gültiger Aufenthaltstitel oder ein Daueraufenthaltsrecht",
+                            "fünf Jahre rechtmäßiger gewöhnlicher Aufenthalt in Deutschland",
+                            "ein gesicherter Lebensunterhalt für Sie und Ihre unterhaltsberechtigten Angehörigen",
+                            "Deutschkenntnisse auf dem Niveau B1 des Gemeinsamen Europäischen Referenzrahmens",
+                            "der bestandene Einbürgerungstest oder ein gleichwertiger Nachweis",
+                            "keine relevanten Vorstrafen",
+                            "ein Bekenntnis zur freiheitlichen demokratischen Grundordnung, zum Schutz der Menschenwürde und zur besonderen historischen Verantwortung Deutschlands"
+                        ]
+                    },
+                    "Die Voraussetzungen müssen im Zeitpunkt der Entscheidung über Ihren Antrag vorliegen, nicht nur bei Antragstellung. Das ist praktisch bedeutsam, weil zwischen Antrag und Bescheid je nach Behörde viele Monate liegen können – ein Jobverlust in dieser Zeit kann das Verfahren gefährden.",
+                    {
+                        h2: "Fünf Jahre Aufenthalt: was zählt und was nicht"
+                    },
+                    "Gezählt werden Zeiten rechtmäßigen gewöhnlichen Aufenthalts. Nicht jede Zeit in Deutschland ist das. Zeiten der Duldung zählen grundsätzlich nicht, ebenso wenig Aufenthalte zu einem seiner Natur nach vorübergehenden Zweck. Zeiten eines Asylverfahrens können bei späterer Anerkennung angerechnet werden.",
+                    "Längere Auslandsaufenthalte können die Kette unterbrechen. Wer über Monate im Ausland war – etwa wegen einer Pflegesituation in der Familie –, sollte die Auswirkung auf die Aufenthaltszeiten klären lassen, bevor er den Antrag stellt.",
+                    "Lücken in der Aufenthaltshistorie sind nach unserer Erfahrung der häufigste Grund für Verzögerungen. Sie lassen sich fast immer schließen, wenn man früh genug damit beginnt – etwa durch Auskünfte aus der Ausländerakte.",
+                    {
+                        h2: "Der gesicherte Lebensunterhalt – der häufigste Stolperstein"
+                    },
+                    "Sie müssen den Unterhalt für sich und Ihre unterhaltsberechtigten Angehörigen grundsätzlich ohne Leistungen nach dem SGB II oder SGB XII bestreiten können. Kindergeld, Elterngeld, Wohngeld und BAföG sind unschädlich; Bürgergeld ist es nicht.",
+                    "Von diesem Grundsatz gibt es eng gefasste Ausnahmen. Sie greifen insbesondere für Angehörige der ehemaligen Gastarbeitergeneration und für Menschen, die in Vollzeit erwerbstätig sind und den Leistungsbezug nicht zu vertreten haben. Ob eine dieser Ausnahmen in Ihrem Fall einschlägig ist, sollten Sie prüfen lassen, bevor Sie den Antrag zurückstellen – viele Betroffene halten sich für ausgeschlossen, ohne es zu sein.",
+                    {
+                        h2: "Sprachnachweis B1 – und wer davon befreit ist"
+                    },
+                    "In der Regel genügt ein Zertifikat auf dem Niveau B1, ein deutscher Schulabschluss, ein abgeschlossenes Studium in deutscher Sprache oder ein vergleichbarer Nachweis. Der Nachweis muss die vier Fertigkeiten abdecken, nicht nur das Sprechen.",
+                    "Für Angehörige der Gastarbeitergeneration, die im Rahmen der Anwerbeabkommen nach Deutschland gekommen sind, sieht das Gesetz eine Erleichterung vor: Der Nachweis kann mündlich erbracht werden, die schriftliche Prüfung entfällt. Weitere Erleichterungen bestehen bei Alter, Krankheit oder Behinderung, wenn der Nachweis aus diesen Gründen nicht zumutbar ist.",
+                    {
+                        h2: "Einbürgerungstest"
+                    },
+                    "Der Test besteht aus 33 Fragen zu Rechtsordnung, Geschichte und Gesellschaft, von denen 17 richtig beantwortet werden müssen. Wer einen deutschen Schulabschluss hat, ist davon in der Regel befreit. Der Test kann beliebig oft wiederholt werden; die Gebühr fällt allerdings jedes Mal erneut an.",
+                    {
+                        h2: "Kosten und Dauer"
+                    },
+                    {
+                        table: {
+                            caption: "Typische Kosten der Einbürgerung (Stand 2026, ohne Gewähr im Einzelfall)",
+                            head: [
+                                "Position",
+                                "Betrag",
+                                "Anmerkung"
+                            ],
+                            rows: [
+                                [
+                                    "Einbürgerungsgebühr",
+                                    "255 €",
+                                    "pro erwachsener Person"
+                                ],
+                                [
+                                    "Miteinbürgerung eines minderjährigen Kindes",
+                                    "51 €",
+                                    "wenn zusammen mit einem Elternteil eingebürgert"
+                                ],
+                                [
+                                    "Einbürgerungstest",
+                                    "25 €",
+                                    "je Antritt, auch bei Wiederholung"
+                                ],
+                                [
+                                    "B1-Sprachprüfung",
+                                    "ca. 150–250 €",
+                                    "je nach Anbieter und Prüfungsort"
+                                ],
+                                [
+                                    "Urkunden, Übersetzungen, Beglaubigungen",
+                                    "variabel",
+                                    "abhängig von Herkunftsland und Umfang"
+                                ]
+                            ]
+                        }
+                    },
+                    "Die Bearbeitungsdauer unterscheidet sich erheblich zwischen den Einbürgerungsbehörden und hängt vor allem von der Vollständigkeit Ihrer Unterlagen ab. Ein vollständiger Antrag ist der wirksamste Hebel, den Sie selbst in der Hand haben.",
+                    {
+                        h2: "Doppelte Staatsangehörigkeit – besonders für türkische Staatsangehörige"
+                    },
+                    "Seit der Reform 2024 müssen Sie Ihre bisherige Staatsangehörigkeit grundsätzlich nicht mehr aufgeben. Für türkische Staatsangehörige bedeutet das eine spürbare Vereinfachung: Der frühere Weg über die Entlassung aus der türkischen Staatsangehörigkeit und die anschließende Blaue Karte (Mavi Kart) ist für Neuanträge nicht mehr erforderlich.",
+                    "Ob und welche Wirkungen die Einbürgerung nach türkischem Recht auf Ihre türkische Staatsangehörigkeit, auf Erbrechtsfragen oder auf Grundbesitz in der Türkei hat, ist eine Frage des türkischen Rechts und gehört gesondert geprüft. Für solche Fragen arbeiten wir mit einer auf türkisches Recht spezialisierten Kanzlei zusammen.",
+                    {
+                        h2: "Was Sie jetzt zusammenstellen sollten"
+                    },
+                    {
+                        list: [
+                            "lückenloser Nachweis Ihrer Aufenthaltszeiten und aller Aufenthaltstitel",
+                            "Einkommensnachweise der letzten Monate, bei Selbständigen zusätzlich die Gewinnermittlung",
+                            "Rentenverlauf der Deutschen Rentenversicherung",
+                            "Sprachzertifikat oder Schul-/Hochschulzeugnis",
+                            "Bescheinigung über den bestandenen Einbürgerungstest",
+                            "Identitätsdokumente, Geburtsurkunde, gegebenenfalls Heiratsurkunde – mit beglaubigten Übersetzungen",
+                            "Mietvertrag und Meldebescheinigung"
+                        ]
+                    },
+                    {
+                        h2: "Wie wir unterstützen"
+                    },
+                    "Sinnvoll ist eine Prüfung vor der Antragstellung: Sind die fünf Jahre wirklich lückenlos belegt? Steht der Lebensunterhalt so da, wie die Behörde ihn bewerten wird? Greift eine der Ausnahmen? Wenn ein Antrag abgelehnt wurde, prüfen wir den Bescheid und die Erfolgsaussichten der Rechtsmittel. Wir beraten Sie dabei auf Deutsch und auf Türkisch.",
+                    {
+                        h2: "Häufige Fragen zur Einbürgerung"
+                    },
+                    {
+                        faq: [
+                            {
+                                q: "Gibt es die Einbürgerung nach drei Jahren noch?",
+                                a: "Nein. Die 2024 eingeführte beschleunigte Einbürgerung nach drei Jahren wurde am 8. Oktober 2025 vom Bundestag abgeschafft; das Gesetz trat am 30. Oktober 2025 in Kraft. Maßgeblich ist wieder die Frist von fünf Jahren rechtmäßigen gewöhnlichen Aufenthalts."
+                            },
+                            {
+                                q: "Muss ich meine türkische Staatsangehörigkeit aufgeben?",
+                                a: "Grundsätzlich nein. Seit der Reform vom 27. Juni 2024 ist die Mehrstaatigkeit der Regelfall. Die frühere Entlassung aus der türkischen Staatsangehörigkeit und der Weg über die Blaue Karte sind für Neuanträge nicht mehr erforderlich."
+                            },
+                            {
+                                q: "Kann ich eingebürgert werden, wenn ich Bürgergeld beziehe?",
+                                a: "In der Regel nicht, da der Lebensunterhalt ohne Leistungen nach dem SGB II oder SGB XII gesichert sein muss. Es gibt jedoch eng gefasste Ausnahmen, etwa für Angehörige der Gastarbeitergeneration oder bei unverschuldetem Bezug trotz Vollzeittätigkeit. Das sollte im Einzelfall geprüft werden."
+                            },
+                            {
+                                q: "Welches Sprachniveau brauche ich?",
+                                a: "Erforderlich ist das Niveau B1. Anerkannt werden auch ein deutscher Schulabschluss oder ein in deutscher Sprache abgeschlossenes Studium. Für die Gastarbeitergeneration genügt der mündliche Nachweis; bei Alter, Krankheit oder Behinderung sind weitere Erleichterungen möglich."
+                            },
+                            {
+                                q: "Was kostet die Einbürgerung insgesamt?",
+                                a: "Die Gebühr beträgt 255 € pro erwachsener Person und 51 € für ein miteingebürgertes minderjähriges Kind. Hinzu kommen 25 € für den Einbürgerungstest, etwa 150–250 € für die B1-Prüfung sowie Kosten für Urkunden und beglaubigte Übersetzungen."
+                            },
+                            {
+                                q: "Wie lange dauert das Verfahren?",
+                                a: "Das hängt stark von der zuständigen Behörde und von der Vollständigkeit Ihrer Unterlagen ab und reicht von einigen Monaten bis zu deutlich über einem Jahr. Lücken bei den Aufenthaltsnachweisen sind die häufigste Ursache für Verzögerungen."
+                            },
+                            {
+                                q: "Mein Antrag wurde abgelehnt. Was kann ich tun?",
+                                a: "Gegen den Ablehnungsbescheid können Rechtsmittel in Betracht kommen; maßgeblich sind die Begründung und die Fristen im Bescheid. Lassen Sie den Bescheid zeitnah prüfen, da die Rechtsbehelfsfristen kurz sind."
+                            }
+                        ]
+                    },
+                    "Wenn Sie wissen möchten, ob Sie die Voraussetzungen heute schon erfüllen, bringen Sie Ihre Aufenthaltstitel, die Einkommensnachweise und den Rentenverlauf mit. Damit lässt sich in den meisten Fällen bereits im ersten Gespräch einschätzen, ob der Antrag Aussicht auf Erfolg hat."
                 ],
                 image: "/images/blog/auslaenderrecht.webp"
             },
@@ -502,15 +938,139 @@ export const de: Dictionary = {
                 category: "Arbeitsrecht",
                 iso: "2026-07-28",
                 date: "28. Juli 2026",
-                title: "Kündigung erhalten – die ersten drei Wochen entscheiden",
-                excerpt: "Warum die Frist für die Kündigungsschutzklage so wichtig ist und was Sie sofort tun sollten.",
+                title: "Kündigung erhalten: Die ersten drei Wochen entscheiden",
+                excerpt: "Die Frist für die Kündigungsschutzklage beträgt drei Wochen ab Zugang – und sie gilt auch für offensichtlich unwirksame Kündigungen. Was jetzt zu tun ist.",
+                ctaLine: "Die drei Wochen laufen ab heute, nicht ab dem Tag, an dem Sie sich entschieden haben. Melden Sie sich, solange die Frist offen ist – danach wird auch eine fehlerhafte Kündigung wirksam.",
                 body: [
                     "Wenn Sie eine Kündigung erhalten, läuft ab dem Zugang eine Frist von drei Wochen. Innerhalb dieser Frist muss die Kündigungsschutzklage beim Arbeitsgericht eingegangen sein (§ 4 KSchG). Versäumen Sie die Frist, gilt die Kündigung nach § 7 KSchG als von Anfang an wirksam – unabhängig davon, wie angreifbar sie inhaltlich gewesen wäre.",
-                    "Entscheidend ist der Zugang, nicht das Datum auf dem Schreiben. Bei einem Einwurf in den Briefkasten kommt es auf den Tag an, an dem üblicherweise mit der Leerung zu rechnen ist. Notieren Sie deshalb sofort, wann und auf welchem Weg Sie die Kündigung erhalten haben, und heben Sie den Umschlag auf.",
-                    "Die Frist gilt auch dann, wenn die Kündigung offensichtlich unwirksam erscheint – etwa weil sie nicht eigenhändig unterschrieben ist, von einer nicht vertretungsberechtigten Person stammt oder ein Sonderkündigungsschutz wegen Schwangerschaft, Elternzeit oder Schwerbehinderung übergangen wurde. Auch diese Einwände müssen innerhalb der drei Wochen erhoben werden.",
-                    "Nur ausnahmsweise lässt § 5 KSchG eine nachträgliche Zulassung der Klage zu, wenn Sie trotz aller zumutbaren Sorgfalt gehindert waren, rechtzeitig zu klagen. Darauf sollte niemand seine Planung stützen.",
-                    "Unabhängig von der Klage gilt: Melden Sie sich spätestens drei Tage nach Kenntnis der Kündigung bei der Agentur für Arbeit arbeitsuchend (§ 38 SGB III), sonst droht eine Minderung des Arbeitslosengeldes. Und unterschreiben Sie nichts vorschnell – ein Aufhebungs- oder Abwicklungsvertrag kann eine Sperrzeit auslösen und nimmt Ihnen zugleich die Verhandlungsposition.",
-                    "Ob am Ende die Weiterbeschäftigung, eine Abfindung oder ein verbessertes Zeugnis steht, entscheidet sich meist im Gütetermin, der häufig schon wenige Wochen nach Klageeingang stattfindet. Die drei Wochen sind der Zugang zu dieser Verhandlung. Deshalb ist der frühe Anruf wichtiger als die perfekt vorbereitete Akte."
+                    "Das ist die härteste Regel des deutschen Kündigungsschutzrechts, und sie überrascht die meisten Betroffenen. Eine Kündigung, die sozial ungerechtfertigt, formell fehlerhaft oder von einer gar nicht vertretungsberechtigten Person unterschrieben wurde, wird durch bloßen Zeitablauf wirksam. Es gibt danach nichts mehr zu prüfen.",
+                    "Die praktische Konsequenz: Der frühe Anruf ist wichtiger als die perfekt vorbereitete Akte. Was Ihnen später nützt, sind drei Dinge – der Umschlag, das Datum und die rechtzeitige Klage.",
+                    {
+                        note: "Wichtig: Maßgeblich ist der Eingang der Klageschrift beim Arbeitsgericht, nicht deren Absendung. Eine am 20. Tag zur Post gegebene Klage, die am 22. Tag ankommt, ist verspätet. Rechnen Sie nie bis zum letzten Tag."
+                    },
+                    {
+                        h2: "Wann die Frist zu laufen beginnt"
+                    },
+                    "Entscheidend ist der Zugang der Kündigung, nicht das Datum auf dem Schreiben. Zugang bedeutet: Das Schreiben ist so in Ihren Machtbereich gelangt, dass Sie unter normalen Umständen davon Kenntnis nehmen konnten.",
+                    {
+                        list: [
+                            "Bei Einwurf in den Briefkasten kommt es auf den Tag an, an dem üblicherweise mit der Leerung zu rechnen ist – bei einem Einwurf am späten Nachmittag regelmäßig erst der Folgetag",
+                            "Bei persönlicher Übergabe ist der Tag der Übergabe maßgeblich",
+                            "Bei Einschreiben mit Rückschein der Tag der Aushändigung, nicht der Tag des Benachrichtigungszettels",
+                            "Urlaub oder Krankheit hemmen den Zugang grundsätzlich nicht"
+                        ]
+                    },
+                    "Notieren Sie deshalb sofort, wann und auf welchem Weg Sie die Kündigung erhalten haben, und heben Sie den Umschlag mit dem Poststempel auf. Der Umschlag ist im Streitfall das wichtigste Beweismittel und wird fast immer weggeworfen.",
+                    {
+                        h2: "Die Frist gilt auch bei offensichtlichen Fehlern"
+                    },
+                    "Auch die folgenden Einwände müssen innerhalb der drei Wochen erhoben werden, sonst sind sie verloren:",
+                    {
+                        list: [
+                            "die Kündigung ist nicht eigenhändig unterschrieben oder wurde nur per E-Mail oder Messenger übermittelt",
+                            "sie stammt von einer Person ohne Vertretungsmacht",
+                            "der Betriebsrat wurde nicht ordnungsgemäß angehört",
+                            "ein Sonderkündigungsschutz wegen Schwangerschaft, Elternzeit, Pflegezeit oder Schwerbehinderung wurde übergangen",
+                            "die Kündigungsfrist wurde falsch berechnet"
+                        ]
+                    },
+                    "Nur ausnahmsweise lässt § 5 KSchG eine nachträgliche Zulassung der Klage zu, wenn Sie trotz aller zumutbaren Sorgfalt an der rechtzeitigen Klage gehindert waren. Der Maßstab ist streng; darauf sollte niemand seine Planung stützen.",
+                    {
+                        h2: "Die Fristen auf einen Blick"
+                    },
+                    {
+                        table: {
+                            caption: "Was nach Zugang der Kündigung wann zu erledigen ist",
+                            head: [
+                                "Frist",
+                                "Was zu tun ist",
+                                "Folge bei Versäumnis"
+                            ],
+                            rows: [
+                                [
+                                    "Sofort",
+                                    "Zugangsdatum notieren, Umschlag aufbewahren, nichts unterschreiben",
+                                    "Beweisprobleme im späteren Verfahren"
+                                ],
+                                [
+                                    "3 Tage nach Kenntnis der Kündigung",
+                                    "Arbeitsuchend melden bei der Agentur für Arbeit (§ 38 SGB III)",
+                                    "Minderung des Arbeitslosengeldes"
+                                ],
+                                [
+                                    "3 Wochen ab Zugang",
+                                    "Kündigungsschutzklage beim Arbeitsgericht (§ 4 KSchG)",
+                                    "Kündigung gilt als wirksam (§ 7 KSchG)"
+                                ],
+                                [
+                                    "Spätestens zum Beendigungstermin",
+                                    "Arbeitslos melden bei der Agentur für Arbeit",
+                                    "Späterer Leistungsbeginn"
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        h2: "Unterschreiben Sie nichts vorschnell"
+                    },
+                    "Wird Ihnen zusammen mit der Kündigung ein Aufhebungs- oder Abwicklungsvertrag vorgelegt, oft verbunden mit dem Hinweis, das Angebot gelte nur heute, ist Zurückhaltung geboten. Ein Aufhebungsvertrag kann eine Sperrzeit beim Arbeitslosengeld auslösen, die in der Regel zwölf Wochen beträgt. Zugleich geben Sie damit Ihre Verhandlungsposition auf, bevor Sie sie überhaupt genutzt haben.",
+                    "Auch eine Ausgleichsquittung oder eine Erklärung, mit der Sie auf die Erhebung der Kündigungsschutzklage verzichten, sollten Sie nicht ohne Prüfung unterschreiben.",
+                    {
+                        h2: "Was im Verfahren tatsächlich passiert"
+                    },
+                    "Nach Eingang der Klage bestimmt das Arbeitsgericht einen Gütetermin, der häufig schon wenige Wochen später stattfindet. Dort wird nicht entschieden, sondern verhandelt: über Beendigungszeitpunkt, Abfindung, Freistellung, Resturlaub und Zeugnis. Ein großer Teil der Kündigungsschutzverfahren endet in diesem Stadium durch Vergleich.",
+                    "Wichtig zu wissen: Ein gesetzlicher Anspruch auf eine Abfindung besteht in der Regel nicht. Die Abfindung ist das Ergebnis einer Verhandlung, und die Verhandlungsposition entsteht erst durch die rechtzeitig erhobene Klage. Wer nicht klagt, verhandelt nicht.",
+                    "Im arbeitsgerichtlichen Verfahren erster Instanz trägt jede Partei ihre eigenen Anwaltskosten, unabhängig vom Ausgang (§ 12a ArbGG). Das ist eine Besonderheit gegenüber anderen Gerichtsverfahren und sollte in die Entscheidung einbezogen werden.",
+                    {
+                        h2: "Was Sie zum ersten Gespräch mitbringen sollten"
+                    },
+                    {
+                        list: [
+                            "das Kündigungsschreiben und den Umschlag",
+                            "den Arbeitsvertrag samt Nachträgen",
+                            "die letzten drei Lohnabrechnungen",
+                            "Angaben zur Betriebsgröße und zur Dauer Ihrer Beschäftigung",
+                            "Hinweise auf einen etwaigen Sonderkündigungsschutz",
+                            "alles, was Ihnen zusätzlich vorgelegt wurde"
+                        ]
+                    },
+                    "Betriebsgröße und Beschäftigungsdauer entscheiden darüber, ob das Kündigungsschutzgesetz überhaupt anwendbar ist. Aber selbst wenn es das nicht ist, bleibt die Drei-Wochen-Frist für viele Einwände maßgeblich – die Klage ist deshalb auch im Kleinbetrieb zu prüfen.",
+                    {
+                        h2: "Häufige Fragen zur Kündigung"
+                    },
+                    {
+                        faq: [
+                            {
+                                q: "Wie lange habe ich Zeit, gegen eine Kündigung vorzugehen?",
+                                a: "Drei Wochen ab Zugang der schriftlichen Kündigung. Innerhalb dieser Frist muss die Klage beim Arbeitsgericht eingegangen sein (§ 4 KSchG). Nach Ablauf gilt die Kündigung nach § 7 KSchG als von Anfang an wirksam."
+                            },
+                            {
+                                q: "Gilt die Frist auch, wenn die Kündigung offensichtlich unwirksam ist?",
+                                a: "Ja. Auch eine nicht unterschriebene Kündigung, eine Kündigung ohne Betriebsratsanhörung oder eine Kündigung trotz Sonderkündigungsschutz muss innerhalb der drei Wochen angegriffen werden. Andernfalls wird sie durch Zeitablauf wirksam."
+                            },
+                            {
+                                q: "Ab wann läuft die Frist genau?",
+                                a: "Ab dem Zugang, nicht ab dem Datum des Schreibens. Beim Einwurf in den Briefkasten ist der Tag maßgeblich, an dem üblicherweise mit der Leerung zu rechnen ist. Urlaub oder Krankheit verschieben den Zugang grundsätzlich nicht."
+                            },
+                            {
+                                q: "Habe ich Anspruch auf eine Abfindung?",
+                                a: "In der Regel nicht kraft Gesetzes. Abfindungen entstehen meist im Vergleich, häufig bereits im Gütetermin. Die Verhandlungsposition dafür entsteht durch die rechtzeitig erhobene Kündigungsschutzklage."
+                            },
+                            {
+                                q: "Soll ich einen Aufhebungsvertrag unterschreiben?",
+                                a: "Nicht ohne vorherige Prüfung. Ein Aufhebungsvertrag kann eine Sperrzeit beim Arbeitslosengeld von in der Regel zwölf Wochen auslösen und nimmt Ihnen zugleich die Verhandlungsposition im Kündigungsschutzverfahren."
+                            },
+                            {
+                                q: "Muss ich mich bei der Agentur für Arbeit melden?",
+                                a: "Ja, und zwar spätestens drei Tage nach Kenntnis der Kündigung arbeitsuchend (§ 38 SGB III). Versäumen Sie das, droht eine Minderung des Arbeitslosengeldes. Diese Pflicht besteht unabhängig davon, ob Sie gegen die Kündigung klagen."
+                            },
+                            {
+                                q: "Was kostet ein Kündigungsschutzverfahren?",
+                                a: "In der ersten Instanz vor dem Arbeitsgericht trägt jede Partei ihre eigenen Anwaltskosten, unabhängig vom Ausgang (§ 12a ArbGG). Eine Rechtsschutzversicherung übernimmt die Kosten häufig; das sollte vor Klageerhebung geklärt werden."
+                            }
+                        ]
+                    },
+                    "Wenn Sie eine Kündigung erhalten haben, warten Sie mit der Einschätzung nicht bis zum Ende der Frist. Melden Sie sich, solange die drei Wochen noch laufen – alles Weitere lässt sich dann in Ruhe klären."
                 ],
                 image: "/images/blog/arbeitsrecht.webp"
             },
@@ -521,15 +1081,129 @@ export const de: Dictionary = {
                 iso: "2026-07-09",
                 date: "9. Juli 2026",
                 title: "Scheidung mit Bezug zur Türkei: Welches Recht gilt?",
-                excerpt: "Deutsches oder türkisches Familienrecht – wovon die Antwort abhängt.",
+                excerpt: "Zuständigkeit, anwendbares Recht, Anerkennung auf beiden Seiten – warum eine türkische Scheidung in Deutschland nicht automatisch gilt und was das für Sie bedeutet.",
+                ctaLine: "Zuständigkeit, anwendbares Recht, Anerkennung auf beiden Seiten: Wer die Reihenfolge vorab klärt, erspart sich einen Personenstand, der in einem der beiden Länder nicht stimmt.",
                 body: [
-                    "Wenn Eheleute Bezüge zu Deutschland und zur Türkei haben, sind zwei Fragen sauber zu trennen: Welches Gericht ist zuständig – und welches Recht wendet dieses Gericht an? Die Antworten fallen nicht zwingend zusammen. Ein deutsches Gericht kann türkisches Recht anwenden, und umgekehrt.",
-                    "Die internationale Zuständigkeit deutscher Gerichte richtet sich nach der Brüssel-IIb-Verordnung. Sie knüpft vor allem an den gewöhnlichen Aufenthalt an: Leben beide Eheleute in Deutschland, sind deutsche Gerichte zuständig – auch dann, wenn beide ausschließlich die türkische Staatsangehörigkeit besitzen.",
-                    "Welches Recht anzuwenden ist, bestimmt die Rom-III-Verordnung. Sie gilt auch im Verhältnis zu Staaten, die selbst nicht beteiligt sind; die Türkei gehört dazu. Maßgeblich ist in erster Linie der gewöhnliche Aufenthalt der Eheleute zum Zeitpunkt der Anrufung des Gerichts. Leben beide in Deutschland, wird in der Regel deutsches Scheidungsrecht angewendet.",
-                    "Wichtig ist die Möglichkeit der Rechtswahl: Die Eheleute können in notarieller Form vereinbaren, welches Recht auf die Scheidung anwendbar sein soll – etwa türkisches Recht. Das kann sinnvoll sein, wirkt sich aber nicht auf alle Folgesachen aus. Unterhalt, Versorgungsausgleich und Güterrecht folgen jeweils eigenen Kollisionsregeln.",
-                    "Eine in der Türkei ausgesprochene Scheidung wird in Deutschland nicht automatisch anerkannt. Erforderlich ist grundsätzlich ein Anerkennungsverfahren bei der zuständigen Landesjustizverwaltung (§ 107 FamFG). Ohne diese Anerkennung gelten Sie in Deutschland weiterhin als verheiratet – mit allen Folgen für eine erneute Eheschließung, das Erbrecht und das Melderecht.",
-                    "Umgekehrt muss eine deutsche Scheidung in der Türkei registriert werden, damit sie dort im Personenstandsregister nachvollzogen wird. Beides sollte man von Beginn an mitdenken: Wer nur eines der beiden Verfahren betreibt, hat am Ende einen Personenstand, der in einem der beiden Länder nicht stimmt.",
-                    "Für die Beratung heißt das: Zuerst klären wir Zuständigkeit und anwendbares Recht, dann die Folgesachen, dann die Anerkennung auf der jeweils anderen Seite. In dieser Reihenfolge lassen sich die meisten späteren Überraschungen vermeiden."
+                    "Wenn Eheleute Bezüge zu Deutschland und zur Türkei haben, sind zwei Fragen sauber zu trennen: Welches Gericht ist zuständig – und welches Recht wendet dieses Gericht an? Die Antworten fallen nicht zwingend zusammen. Ein deutsches Gericht kann türkisches Recht anwenden, und ein türkisches Gericht kann deutsches Recht anwenden.",
+                    "Die häufigste Fehlannahme in der Beratung ist eine andere: dass eine in der Türkei ausgesprochene Scheidung in Deutschland ohne Weiteres gilt. Das tut sie nicht. Ohne ein förmliches Anerkennungsverfahren sind Sie in Deutschland weiterhin verheiratet – mit allen Folgen für eine erneute Eheschließung, für das Erbrecht und für das Melderecht.",
+                    {
+                        note: "Wichtig: Eine türkische Scheidung entfaltet in Deutschland erst nach förmlicher Anerkennung Wirkung (§ 107 FamFG). Wer in der Türkei geschieden wurde und in Deutschland erneut heiratet, ohne die Anerkennung durchlaufen zu haben, riskiert eine unwirksame zweite Ehe."
+                    },
+                    {
+                        h2: "Welches Gericht zuständig ist"
+                    },
+                    "Die internationale Zuständigkeit deutscher Gerichte richtet sich nach der Brüssel-IIb-Verordnung. Sie knüpft vor allem an den gewöhnlichen Aufenthalt an. Leben beide Eheleute in Deutschland, sind deutsche Gerichte zuständig – auch dann, wenn beide ausschließlich die türkische Staatsangehörigkeit besitzen. Die Staatsangehörigkeit allein entscheidet also nicht.",
+                    "Möglich ist auch, dass die Gerichte beider Staaten zuständig sind. Dann kann es darauf ankommen, wer zuerst das Verfahren einleitet. Diese Frage sollte man früh stellen, weil sie sich später nicht mehr korrigieren lässt.",
+                    {
+                        h2: "Welches Recht angewendet wird"
+                    },
+                    "Welches Recht auf die Scheidung anzuwenden ist, bestimmt die Rom-III-Verordnung. Sie gilt auch im Verhältnis zu Staaten, die selbst nicht beteiligt sind; die Türkei gehört dazu. Maßgeblich ist in erster Linie der gewöhnliche Aufenthalt der Eheleute zum Zeitpunkt der Anrufung des Gerichts.",
+                    "Leben beide in Deutschland, wird in der Regel deutsches Scheidungsrecht angewendet – auch von einem deutschen Gericht, das über zwei türkische Staatsangehörige entscheidet.",
+                    {
+                        h3: "Die Rechtswahl"
+                    },
+                    "Die Eheleute können vereinbaren, welches Recht auf die Scheidung anwendbar sein soll, etwa türkisches Recht. Diese Rechtswahl bedarf der notariellen Form. Sie kann sinnvoll sein, wirkt sich aber nicht auf alle Folgesachen aus: Unterhalt, Versorgungsausgleich und Güterrecht folgen jeweils eigenen Kollisionsregeln. Eine Rechtswahl, die nur die Scheidung selbst erfasst, löst deshalb selten alle Fragen.",
+                    {
+                        h2: "Die Folgesachen folgen eigenen Regeln"
+                    },
+                    {
+                        table: {
+                            caption: "Welche Regelwerke für welche Frage gelten",
+                            head: [
+                                "Frage",
+                                "Maßgebliches Regelwerk",
+                                "Anknüpfung im Regelfall"
+                            ],
+                            rows: [
+                                [
+                                    "Zuständigkeit des Gerichts",
+                                    "Brüssel-IIb-Verordnung",
+                                    "gewöhnlicher Aufenthalt der Eheleute"
+                                ],
+                                [
+                                    "Anwendbares Scheidungsrecht",
+                                    "Rom-III-Verordnung",
+                                    "gewöhnlicher Aufenthalt, Rechtswahl möglich"
+                                ],
+                                [
+                                    "Ehegatten- und Kindesunterhalt",
+                                    "Haager Unterhaltsprotokoll",
+                                    "gewöhnlicher Aufenthalt der berechtigten Person"
+                                ],
+                                [
+                                    "Güterrecht",
+                                    "EU-Güterrechtsverordnung bzw. Übergangsrecht",
+                                    "abhängig vom Zeitpunkt der Eheschließung"
+                                ],
+                                [
+                                    "Anerkennung einer türkischen Scheidung",
+                                    "§ 107 FamFG",
+                                    "Antrag bei der Landesjustizverwaltung"
+                                ]
+                            ]
+                        }
+                    },
+                    "Diese Aufspaltung ist der Grund, warum pauschale Aussagen wie „bei uns gilt türkisches Recht\" fast immer zu kurz greifen. Es können in einem einzigen Verfahren mehrere Rechtsordnungen nebeneinander zur Anwendung kommen.",
+                    {
+                        h2: "Die Anerkennung einer türkischen Scheidung in Deutschland"
+                    },
+                    "Da die Türkei nicht Mitglied der Europäischen Union ist, ist für eine dort ausgesprochene Scheidung grundsätzlich ein förmliches Anerkennungsverfahren erforderlich (§ 107 FamFG). Zuständig ist die Landesjustizverwaltung des Bundeslandes, in dem einer der Ehegatten seinen gewöhnlichen Aufenthalt hat; die Aufgabe ist vielfach auf die Oberlandesgerichte übertragen.",
+                    "Geprüft wird insbesondere, ob das türkische Gericht zuständig war und ob beide Ehegatten rechtliches Gehör hatten. Die Gebühr richtet sich nach dem Einkommen und bewegt sich in der Regel zwischen etwa 10 und 305 Euro. Wird die Anerkennung ausgesprochen, wirkt sie auf den Zeitpunkt der türkischen Entscheidung zurück.",
+                    {
+                        list: [
+                            "das türkische Scheidungsurteil mit Rechtskraftvermerk",
+                            "eine beglaubigte Übersetzung ins Deutsche",
+                            "die Apostille oder Legalisation, soweit erforderlich",
+                            "Heiratsurkunde und Nachweise zum gewöhnlichen Aufenthalt",
+                            "Angaben zum Ablauf des türkischen Verfahrens, insbesondere zur Ladung des anderen Ehegatten"
+                        ]
+                    },
+                    {
+                        h2: "Der umgekehrte Weg: die deutsche Scheidung in der Türkei"
+                    },
+                    "Eine in Deutschland ausgesprochene Scheidung muss in der Türkei registriert werden, damit sie dort im Personenstandsregister nachvollzogen wird. Geschieht das nicht, sind Sie in einem der beiden Länder geschieden und im anderen weiterhin verheiratet.",
+                    "Beides sollte man deshalb von Beginn an zusammen denken. Wer nur eines der beiden Verfahren betreibt, hat am Ende einen Personenstand, der nicht stimmt – und merkt es typischerweise erst Jahre später, bei einer neuen Eheschließung oder in einem Erbfall.",
+                    {
+                        h2: "Wie wir vorgehen"
+                    },
+                    "In der Regel klären wir zuerst Zuständigkeit und anwendbares Recht, dann die Folgesachen, dann die Anerkennung auf der jeweils anderen Seite. In dieser Reihenfolge lassen sich die meisten späteren Überraschungen vermeiden.",
+                    "Wir beraten Sie auf Deutsch und auf Türkisch. Für Fragen, die sich nach türkischem Recht beurteilen, arbeiten wir mit einer auf türkisches Recht spezialisierten Kanzlei zusammen, sodass beide Seiten des Falls abgedeckt sind.",
+                    {
+                        h2: "Häufige Fragen zur Scheidung mit Türkeibezug"
+                    },
+                    {
+                        faq: [
+                            {
+                                q: "Wird meine türkische Scheidung in Deutschland automatisch anerkannt?",
+                                a: "Nein. Erforderlich ist grundsätzlich ein Anerkennungsverfahren nach § 107 FamFG bei der zuständigen Landesjustizverwaltung. Bis zur Anerkennung gelten Sie in Deutschland weiterhin als verheiratet, mit Folgen für Eheschließung, Erbrecht und Melderecht."
+                            },
+                            {
+                                q: "Können deutsche Gerichte entscheiden, wenn beide Ehegatten türkische Staatsangehörige sind?",
+                                a: "Ja. Die Zuständigkeit richtet sich nach der Brüssel-IIb-Verordnung und knüpft vor allem an den gewöhnlichen Aufenthalt an. Leben beide Eheleute in Deutschland, sind deutsche Gerichte zuständig, unabhängig von der Staatsangehörigkeit."
+                            },
+                            {
+                                q: "Können wir wählen, dass türkisches Recht angewendet wird?",
+                                a: "Eine Rechtswahl nach der Rom-III-Verordnung ist möglich und bedarf der notariellen Form. Sie erfasst allerdings nur die Scheidung selbst. Unterhalt, Versorgungsausgleich und Güterrecht folgen eigenen Kollisionsregeln und werden davon nicht automatisch erfasst."
+                            },
+                            {
+                                q: "Was kostet das Anerkennungsverfahren?",
+                                a: "Die Gebühr richtet sich nach dem Einkommen und liegt in der Regel zwischen etwa 10 und 305 Euro. Hinzu kommen Kosten für beglaubigte Übersetzungen und gegebenenfalls für die Apostille des türkischen Urteils."
+                            },
+                            {
+                                q: "Welche Unterlagen brauche ich für die Anerkennung?",
+                                a: "In der Regel das türkische Scheidungsurteil mit Rechtskraftvermerk, eine beglaubigte Übersetzung, erforderlichenfalls die Apostille, die Heiratsurkunde sowie Nachweise zum gewöhnlichen Aufenthalt beider Ehegatten."
+                            },
+                            {
+                                q: "Muss eine deutsche Scheidung in der Türkei eingetragen werden?",
+                                a: "Ja. Damit die Scheidung im türkischen Personenstandsregister nachvollzogen wird, ist eine Registrierung erforderlich. Ohne sie sind Sie in der Türkei weiterhin als verheiratet eingetragen."
+                            },
+                            {
+                                q: "Wir leben getrennt in beiden Ländern. Wo sollten wir das Verfahren führen?",
+                                a: "Das lässt sich nicht pauschal beantworten. Sind die Gerichte beider Staaten zuständig, kann es auf den zeitlichen Vorrang ankommen, und die Wahl wirkt sich auf Unterhalt, Versorgungsausgleich und Güterrecht aus. Diese Frage sollte vor Einleitung des Verfahrens geklärt werden."
+                            }
+                        ]
+                    },
+                    "Wenn eine Scheidung mit Türkeibezug ansteht oder in der Türkei bereits ausgesprochen wurde, lohnt sich eine frühe Einordnung. Bringen Sie die Heiratsurkunde und – falls vorhanden – das türkische Urteil mit; damit lässt sich meist schnell sagen, welcher Schritt als Nächstes ansteht."
                 ],
                 image: "/images/blog/familienrecht.webp"
             }
@@ -584,6 +1258,23 @@ export const de: Dictionary = {
             error: "Konnte nicht gesendet werden. WhatsApp öffnet erst, wenn Ihre Angaben angekommen sind.",
             close: "Schließen"
         }
+    },
+    finalCta: {
+        label: "Letzter Schritt",
+        title: "Lassen Sie Ihr Anliegen prüfen, bevor Fristen oder Beweise verloren gehen.",
+        text: "Persönliche Ersteinschätzung für rechtliche Fragen in Mannheim – auf Deutsch und Türkisch.",
+        panelText: "Schicken Sie uns die wichtigsten Unterlagen und eine kurze Schilderung. Rechtsanwältin Meral Gören ordnet Ihr Anliegen ein, klärt den nächsten sinnvollen Schritt und sagt Ihnen offen, was jetzt Priorität hat.",
+        listTitle: "Was wir für Sie übernehmen",
+        items: [
+            "Prüfung von Schreiben, Bescheiden, Verträgen und gerichtlichen Unterlagen",
+            "Einschätzung von Fristen, Erfolgsaussichten, Risiken und Kosten",
+            "Außergerichtliche Vertretung und gerichtliches Vorgehen, wenn es nötig wird"
+        ],
+        note: "Zivilrecht · Arbeitsrecht · Ausländerrecht · Familienrecht · Verkehrsrecht",
+        primary: "Anliegen jetzt prüfen lassen",
+        bottomLabel: "Schneller Kontakt",
+        bottomTitle: "Kurz schildern, Unterlagen senden, Rückmeldung erhalten.",
+        bottomText: "Kontaktformular, Telefon oder vorbereitete WhatsApp-Anfrage."
     },
     footer: {
         blurb: "Rechtsanwaltskanzlei in Mannheim. Wir verhelfen Ihnen zu Ihrem Recht – auf Deutsch und Türkisch.",
@@ -669,6 +1360,11 @@ export const de: Dictionary = {
             "Kanzlei in Mannheim"
         ],
         postDisclaimer: "Dieser Beitrag gibt einen allgemeinen Überblick und ersetzt keine Beratung im Einzelfall. Maßgeblich ist die Rechtslage zum Zeitpunkt Ihres Anliegens.",
+        postCta: {
+            eyebrow: "Nächster Schritt",
+            call: "Anrufen:",
+                role: "Rechtsanwältin, Mannheim"
+        },
         legalNote: "Alle in eckigen Klammern markierten Angaben sind Platzhalter und müssen vor Veröffentlichung von der Mandantin ergänzt bzw. juristisch geprüft werden.",
         blog: {
             eyebrow: "Blog",
@@ -690,7 +1386,7 @@ export const de: Dictionary = {
                 {
                     heading: "Anbieterin",
                     paragraphs: [
-                        "Meral Gören – Rechtsanwältin\nBahnhofstr. 18, 1. OG\n69469 Mannheim\nDeutschland"
+                        "Meral Gören – Rechtsanwältin\nR1 2-3\n68161 Mannheim\nDeutschland"
                     ]
                 },
                 {
@@ -739,7 +1435,7 @@ export const de: Dictionary = {
                 {
                     heading: "1. Verantwortliche",
                     paragraphs: [
-                        "Rechtsanwältin Meral Gören, Bahnhofstr. 18, 69469 Mannheim, Telefon 06201 84 57 95, E-Mail anwalt@kanzlei-goeren.de."
+                        "Rechtsanwältin Meral Gören, R1 2-3, 68161 Mannheim, Telefon 06201 84 57 95, E-Mail anwalt@kanzlei-goeren.de."
                     ]
                 },
                 {

@@ -10,6 +10,10 @@ type FooterLink = { label: string; href: string; external?: boolean };
 
 /** Landing-page footer: brand block, three link columns and a legal bar. */
 export function SiteFooter({ lang, t }: { lang: Lang; t: Dictionary }) {
+  const streetLine = SITE.streetExtra
+    ? `${SITE.street}, ${SITE.streetExtra}`
+    : SITE.street;
+  const cityLine = `${SITE.postalCode} ${SITE.city}`;
   const columns: { title: string; links: FooterLink[] }[] = [
     { title: t.footer.navTitle, links: buildNav(lang, t) },
     {
@@ -39,9 +43,7 @@ export function SiteFooter({ lang, t }: { lang: Lang; t: Dictionary }) {
             <Logo href="#start" size="lg" />
             <p className={`h3 ${styles.blurb}`}>{t.footer.blurb}</p>
             <div className={styles.contact}>
-              <p>
-                {SITE.street}, {SITE.streetExtra} · {SITE.postalCode} {SITE.city}
-              </p>
+              <p>{streetLine} · {cityLine}</p>
               <a href={SITE.phoneHref}>{SITE.phone}</a>
               <a href={SITE.emailHref}>{SITE.email}</a>
               <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer">

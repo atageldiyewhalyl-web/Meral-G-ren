@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import styles from "./page.module.css";
@@ -36,20 +37,33 @@ export default async function BlogIndexPage({ params }: Props) {
       lead={t.page.blog.lead}
     >
       <div className={styles.grid}>
-        {t.blog.posts.map((post) => (
+        {t.blog.posts.map((post, index) => (
           <article key={post.slug} className={styles.card}>
-            <p className={styles.meta}>
-              {post.category} · <time dateTime={post.iso}>{post.date}</time>
-            </p>
-            <h2 className={`h3 ${styles.title}`}>{post.title}</h2>
-            <p className={`body ${styles.excerpt}`}>{post.excerpt}</p>
-            <Link
-              href={routes.post(lang, post.slug)}
-              className={`linkArrow ${styles.link}`}
-            >
-              {t.page.more}
-              <span aria-hidden="true">→</span>
+            <Link href={routes.post(lang, post.slug)} className={styles.mediaLink}>
+              <Image
+                src={post.image}
+                alt=""
+                fill
+                sizes="(max-width: 560px) 100vw, (max-width: 899px) 50vw, 25vw"
+                className={styles.cardImage}
+                priority={index === 0}
+              />
+              <span className={styles.category}>{post.category}</span>
             </Link>
+            <div className={styles.cardBody}>
+              <p className={styles.meta}>
+                <time dateTime={post.iso}>{post.date}</time>
+              </p>
+              <h2 className={`h3 ${styles.title}`}>{post.title}</h2>
+              <p className={`body ${styles.excerpt}`}>{post.excerpt}</p>
+              <Link
+                href={routes.post(lang, post.slug)}
+                className={`linkArrow ${styles.link}`}
+              >
+                {t.page.more}
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
           </article>
         ))}
       </div>

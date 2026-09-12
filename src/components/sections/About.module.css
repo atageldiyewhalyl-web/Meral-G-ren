@@ -75,6 +75,10 @@
       rgb(var(--scrim) / 0.25);
   }
 
+  .media img {
+    object-position: 22% center;
+  }
+
   .inner {
     justify-content: flex-start;
     min-height: 0;

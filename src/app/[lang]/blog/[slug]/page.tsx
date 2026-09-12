@@ -7,10 +7,11 @@ import styles from "./page.module.css";
 import { BlogCTA } from "@/components/BlogCTA";
 import { BlogStickyCTA } from "@/components/BlogStickyCTA";
 import { SiteFooter } from "@/components/SiteFooter";
+import { PostCta } from "@/components/PostCta";
 import { SiteHeader } from "@/components/SiteHeader";
-import { WhatsAppLead } from "@/components/WhatsAppLead";
 import { SITE, getDictionary, isLang } from "@/content";
 import type { Dictionary, Lang, Post, PostBlock } from "@/content/types";
+import { buildNav } from "@/lib/nav";
 import { altLanguages, localePath, routes } from "@/lib/routes";
 
 type Props = { params: Promise<{ lang: string; slug: string }> };
@@ -272,7 +273,18 @@ function ArticleBody({
   const noteIndex = blocks.findIndex((b) => typeof b !== "string" && "note" in b);
   const faqIndex = blocks.findIndex((b) => typeof b !== "string" && "faq" in b);
   const cta1After = noteIndex >= 0 ? noteIndex : Math.floor(blocks.length * 0.3);
-  const cta2Before = faqIndex >= 0 ? faqIndex : Math.floor(blocks.length * 0.75);
+  // The FAQ is introduced by its own heading. Anchoring on the FAQ block alone
+  // would drop the card between that heading and the questions it announces, so
+  // step back over the heading and place the card ahead of the whole section.
+  const beforeFaq = faqIndex > 0 ? blocks[faqIndex - 1] : undefined;
+  const headingBeforeFaq =
+    beforeFaq !== undefined &&
+    typeof beforeFaq !== "string" &&
+    ("h2" in beforeFaq || "h3" in beforeFaq);
+  const cta2Before =
+    faqIndex >= 0
+      ? faqIndex - (headingBeforeFaq ? 1 : 0)
+      : Math.floor(blocks.length * 0.75);
 
   const nodes: ReactNode[] = [];
   blocks.forEach((block, index) => {
@@ -282,7 +294,6 @@ function ArticleBody({
           key="cta-2"
           lang={lang}
           t={t}
-          icon="scale"
           eyebrow={copy.inline2.eyebrow}
           title={copy.inline2.title}
           text={copy.inline2.text}
@@ -296,7 +307,6 @@ function ArticleBody({
           key="cta-1"
           lang={lang}
           t={t}
-          icon="handshake"
           eyebrow={copy.inline1.eyebrow}
           title={copy.inline1.title}
           text={copy.inline1.text}
@@ -319,19 +329,11 @@ export default async function BlogPostPage({ params }: Props) {
   const readTime = readTimeLabel(lang, wordCount(post.body));
   const related = t.blog.posts.filter((p) => p.slug !== post.slug).slice(0, 3);
 
-  const nav = [
-    { label: t.nav.home, href: routes.home(lang) },
-    { label: t.nav.about, href: routes.about(lang) },
-    { label: t.nav.areas, href: routes.areasAnchor(lang) },
-    { label: t.nav.blog, href: routes.blog(lang) },
-    { label: t.nav.contact, href: "#kontakt" },
-  ];
-
   return (
     <div className={styles.page}>
       <SiteHeader
         lang={lang}
-        nav={nav}
+        nav={buildNav(lang, t)}
         cta={t.cta}
         menuLabel={t.menuLabel}
         navLabel={t.navLabel}
@@ -383,36 +385,40 @@ export default async function BlogPostPage({ params }: Props) {
             <p className="note">{t.page.postDisclaimer}</p>
           </article>
 
-          {/* Bottom conversion panel */}
-          <section id="kontakt" className={styles.bottomPanel}>
-            <div>
-              <p className={styles.bottomEyebrow}>{copy.bottomEyebrow}</p>
-              <h2 className={styles.bottomTitle}>{copy.bottomTitle}</h2>
-              <p className={styles.bottomText}>{copy.bottomText}</p>
-              {area && (
-                <Link href={routes.area(lang, area.slug)} className={styles.areaLink}>
-                  {copy.areaLink}
-                  <span aria-hidden="true">→</span>
-                </Link>
-              )}
-              <ul className={styles.trust}>
-                {t.page.areaTrust.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-            <div className={styles.bottomAction}>
-              <WhatsAppLead lang={lang} t={t} variant="onDark" />
-            </div>
-          </section>
+          <PostCta lang={lang} t={t} line={post.ctaLine} />
 
           {related.length > 0 && (
             <nav aria-label={copy.related} className={styles.related}>
               <p className={styles.relatedLabel}>{copy.related}</p>
-              <ul className={styles.relatedList}>
+              {/* Real cards rather than a text list: these are the only internal
+                  links out of an article, so they have to compete with the back
+                  button for the reader's next click. Mirrors the blog index. */}
+              <ul className={styles.relatedGrid}>
                 {related.map((p) => (
-                  <li key={p.slug}>
-                    <Link href={routes.post(lang, p.slug)}>{p.title}</Link>
+                  <li key={p.slug} className={styles.relatedCard}>
+                    <Link href={routes.post(lang, p.slug)} className={styles.relatedMedia}>
+                      <Image
+                        src={p.image}
+                        alt=""
+                        width={600}
+                        height={375}
+                        sizes="(max-width: 720px) 100vw, 33vw"
+                        className={styles.relatedImage}
+                      />
+                      <span className={styles.relatedCategory}>{p.category}</span>
+                    </Link>
+                    <div className={styles.relatedBody}>
+                      <time dateTime={p.iso} className={styles.relatedDate}>
+                        {p.date}
+                      </time>
+                      <h2 className={styles.relatedTitle}>
+                        <Link href={routes.post(lang, p.slug)}>{p.title}</Link>
+                      </h2>
+                      <p className={styles.relatedExcerpt}>{p.excerpt}</p>
+                      <span className={styles.relatedMore} aria-hidden="true">
+                        {t.blog.more} <span>&rarr;</span>
+                      </span>
+                    </div>
                   </li>
                 ))}
               </ul>

@@ -14,8 +14,8 @@ export function Reviews({ t }: { t: Dictionary }) {
         </div>
 
         <div className={`${styles.grid} reveal`}>
-          {t.reviews.items.map((review) => (
-            <figure key={review.name} className={styles.card}>
+          {t.reviews.items.map((review, index) => (
+            <figure key={`${review.name}-${index}`} className={styles.card}>
               <div className={styles.stars} aria-label="5 von 5 Sternen">
                 <span aria-hidden="true">★★★★★</span>
               </div>

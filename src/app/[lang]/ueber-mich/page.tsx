@@ -6,6 +6,7 @@ import styles from "./page.module.css";
 import { PageFooter } from "@/components/PageFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getDictionary, isLang, SITE } from "@/content";
+import { buildNav } from "@/lib/nav";
 import { altLanguages, localePath, routes } from "@/lib/routes";
 
 type Props = { params: Promise<{ lang: string }> };
@@ -30,19 +31,12 @@ export default async function AboutPage({ params }: Props) {
   const t = getDictionary(lang);
   const a = t.about;
   const p = a.page;
-  const nav = [
-    { label: t.nav.home, href: routes.home(lang) },
-    { label: t.nav.about, href: routes.about(lang) },
-    { label: t.nav.areas, href: routes.areasAnchor(lang) },
-    { label: t.nav.blog, href: routes.blog(lang) },
-    { label: t.nav.contact, href: "#kontakt" },
-  ];
 
   return (
     <div className={styles.page}>
       <SiteHeader
         lang={lang}
-        nav={nav}
+        nav={buildNav(lang, t)}
         cta={t.cta}
         menuLabel={t.menuLabel}
         navLabel={t.navLabel}
