@@ -25,9 +25,13 @@
   color: var(--ink);
 }
 
+/* Sized so the headline sets on three lines in every locale. German goes to
+   two at 21ch and Turkish at 22ch, while 16ch dropped both to four, so 19ch
+   sits centrally in the band that holds three for all of them — far enough
+   from either cliff that a fallback font's metrics will not flip the count. */
 .title {
   margin: 22px auto 0;
-  max-width: 16ch;
+  max-width: 19ch;
 }
 
 .lead {

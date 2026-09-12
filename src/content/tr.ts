@@ -12,7 +12,7 @@ export const tr: Dictionary = {
     languageLabel: "Dil",
     nav: {
         home: "Ana Sayfa",
-        about: "Kişiye dair",
+        about: "Hakkımızda",
         areas: "Hukuk Alanları",
         blog: "Blog",
         contact: "İletişim"
@@ -347,13 +347,13 @@ export const tr: Dictionary = {
         ]
     },
     about: {
-        label: "Kişiye dair",
+        label: "Hakkımızda",
         title: "Alman hukukunda avukat, ana dilinizde danışmanlık",
         p1: "Meral Gören, Türk kökenli Alman vatandaşıdır. Heidelberg Ruprecht-Karls Üniversitesi'nde hukuk okumuş ve 2005 yılında birinci hukuk devlet sınavını vermiştir.",
         p2: "Heidelberg Eyalet Mahkemesi'nde iki yıllık avukatlık stajının ardından, 6 Haziran 2008'den bu yana avukatlık ruhsatına sahiptir ve tüm sulh, asliye ve istinaf mahkemelerinde temsil yetkilidir.",
         background: "Tüm hukuki sorularınızda size danışmanlık verir ve sizi temsil ederiz – başta genel medeni hukuk, iş hukuku, yabancılar hukuku, aile hukuku ve trafik hukuku olmak üzere, Almanca ve Türkçe.",
         cta: "İletişime geçin",
-        more: "Kişiye dair",
+        more: "Devamını okuyun",
         page: {
             lead: "Mannheim'da, Alman mahkemelerinde sizi temsil eden ve ana dilinizde danışmanlık veren avukat",
             wordmark: "Meral Gören",
