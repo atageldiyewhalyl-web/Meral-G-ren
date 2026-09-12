@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { CookieBanner } from "@/components/CookieBanner";
 import { JsonLd } from "@/components/JsonLd";
+import { graph, organizationNode, personNode, websiteNode } from "@/lib/schema";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { About } from "@/components/sections/About";
@@ -48,7 +49,7 @@ export default async function LandingPage({
 
       <SiteFooter lang={lang} t={t} />
       <CookieBanner lang={lang} t={t} />
-      <JsonLd t={t} />
+      <JsonLd data={graph(organizationNode(t), personNode(t), websiteNode(lang, t))} />
     </>
   );
 }

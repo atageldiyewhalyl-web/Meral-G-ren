@@ -3,11 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import styles from "./page.module.css";
+import { JsonLd } from "@/components/JsonLd";
 import { PageFooter } from "@/components/PageFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getDictionary, isLang, SITE } from "@/content";
 import { buildNav } from "@/lib/nav";
 import { altLanguages, localePath, routes } from "@/lib/routes";
+import { breadcrumbNode, graph, personNode, profilePageNode } from "@/lib/schema";
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -34,6 +36,13 @@ export default async function AboutPage({ params }: Props) {
 
   return (
     <div className={styles.page}>
+      <JsonLd
+        data={graph(
+          profilePageNode(lang, t),
+          personNode(t),
+          breadcrumbNode(lang, [{ name: t.nav.about, path: "/ueber-mich" }], t),
+        )}
+      />
       <SiteHeader
         lang={lang}
         nav={buildNav(lang, t)}

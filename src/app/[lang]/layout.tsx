@@ -15,6 +15,20 @@ type LayoutProps = {
   params: Promise<{ lang: string }>;
 };
 
+/**
+ * Default social preview. A file-convention `opengraph-image` inside app/[lang]
+ * resolves to "/-/opengraph-image.jpg" — Next's placeholder for the unresolved
+ * dynamic segment — which is both unshareable and dependent on an undocumented
+ * internal. A plain asset in public/ gives one stable URL for every locale, and
+ * pages that own a better image (blog posts) still override it.
+ */
+const OG_IMAGE = {
+  url: "/og-default.jpg",
+  width: 1200,
+  height: 630,
+  alt: "Rechtsanwältin Meral Gören, Rechtsanwaltskanzlei in Mannheim",
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -42,8 +56,28 @@ export async function generateMetadata({
         (other) => getDictionary(other as Lang).meta.locale,
       ),
       url: localePath(lang),
+      images: [OG_IMAGE],
     },
-    robots: { index: true, follow: true },
+    twitter: {
+      card: "summary_large_image",
+      title: t.meta.title,
+      description: t.meta.description,
+      images: [OG_IMAGE],
+    },
+    // Explicit index/follow plus the richer Google-specific directives: allow
+    // full-length snippets and large image previews, which is what an answer
+    // engine needs in order to quote the page at all.
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-snippet": -1,
+        "max-image-preview": "large",
+        "max-video-preview": -1,
+      },
+    },
   };
 }
 

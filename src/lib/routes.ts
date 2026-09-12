@@ -44,10 +44,31 @@ export function swapLocale(pathname: string, target: Lang): string {
   return localePath(target, stripLocale(pathname));
 }
 
+/**
+ * Regional hreflang variants.
+ *
+ * German is served from one set of pages regardless of country, so Austria and
+ * Switzerland point at the same German URL as Germany — this is a targeting
+ * hint, not duplicate content, and it stops Google from treating the German
+ * page as relevant to DE only. Turkish is claimed both bare and for Turkey
+ * itself, since the audience is split between the diaspora in Germany and
+ * readers in Turkey.
+ */
+const REGIONS: Partial<Record<Lang, string[]>> = {
+  de: ["de-DE", "de-AT", "de-CH"],
+  tr: ["tr-TR"],
+  en: [],
+};
+
 /** hreflang map for a locale-independent path such as "/blog". */
 export function altLanguages(path = "/") {
-  return {
-    ...Object.fromEntries(PUBLIC_LANGS.map((lang) => [lang, localePath(lang, path)])),
-    "x-default": localePath("de", path),
-  };
+  const entries: [string, string][] = [];
+  for (const lang of PUBLIC_LANGS) {
+    const href = localePath(lang, path);
+    entries.push([lang, href]);
+    for (const region of REGIONS[lang] ?? []) entries.push([region, href]);
+  }
+  // x-default is the page shown when no language matches — German, the primary.
+  entries.push(["x-default", localePath("de", path)]);
+  return Object.fromEntries(entries);
 }

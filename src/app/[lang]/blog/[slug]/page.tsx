@@ -13,6 +13,7 @@ import { SITE, getDictionary, isLang } from "@/content";
 import type { Dictionary, Lang, Post, PostBlock } from "@/content/types";
 import { buildNav } from "@/lib/nav";
 import { altLanguages, localePath, routes } from "@/lib/routes";
+import { breadcrumbNode, ID, organizationNode, personNode } from "@/lib/schema";
 
 type Props = { params: Promise<{ lang: string; slug: string }> };
 
@@ -55,11 +56,12 @@ function faqEntries(post: Post) {
   return [];
 }
 
-function jsonLd(lang: Lang, slug: string, post: Post) {
+function jsonLd(lang: Lang, slug: string, post: Post, t: Dictionary) {
   const url = `${SITE.url}${localePath(lang, `/blog/${slug}`)}`;
-  const graph: Record<string, unknown>[] = [
+  const nodes: Record<string, unknown>[] = [
     {
       "@type": "Article",
+      "@id": `${url}#article`,
       headline: post.title,
       description: post.excerpt,
       inLanguage: lang,
@@ -67,19 +69,35 @@ function jsonLd(lang: Lang, slug: string, post: Post) {
       dateModified: post.updated ?? post.iso,
       image: `${SITE.url}${post.image}`,
       mainEntityOfPage: url,
+      url,
       articleSection: post.category,
-      author: { "@type": "Person", name: SITE.person },
-      publisher: {
-        "@type": "LegalService",
-        name: SITE.name,
-        url: SITE.url,
-      },
+      wordCount: wordCount(post.body),
+      isPartOf: { "@id": ID.website },
+      // Pointers, not copies: the author and publisher resolve to the same
+      // entities the landing page defines, so every article reinforces one
+      // Kanzlei and one lawyer rather than describing new ones each time.
+      author: { "@id": ID.person },
+      publisher: { "@id": ID.organization },
+      about: { "@id": ID.organization },
     },
+    breadcrumbNode(
+      lang,
+      [
+        { name: t.page.blog.eyebrow, path: "/blog" },
+        { name: post.title, path: `/blog/${slug}` },
+      ],
+      t,
+    ),
+    // The article stands alone in search results, so it carries its own copy of
+    // the publisher and author entities rather than relying on the landing page.
+    organizationNode(t),
+    personNode(t),
   ];
   const faq = faqEntries(post);
   if (faq.length > 0) {
-    graph.push({
+    nodes.push({
       "@type": "FAQPage",
+      "@id": `${url}#faq`,
       inLanguage: lang,
       mainEntity: faq.map((item) => ({
         "@type": "Question",
@@ -88,7 +106,7 @@ function jsonLd(lang: Lang, slug: string, post: Post) {
       })),
     });
   }
-  return { "@context": "https://schema.org", "@graph": graph };
+  return { "@context": "https://schema.org", "@graph": nodes };
 }
 
 /** Every string a block carries, for a word count → estimated read time. */
@@ -343,7 +361,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(lang, slug, post)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(lang, slug, post, t)) }}
       />
 
       <main className={styles.main}>

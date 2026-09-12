@@ -3,9 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import styles from "./page.module.css";
+import { JsonLd } from "@/components/JsonLd";
 import { PageShell } from "@/components/PageShell";
 import { getDictionary, isLang } from "@/content";
 import { altLanguages, localePath, routes } from "@/lib/routes";
+import { blogNode, breadcrumbNode, graph } from "@/lib/schema";
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -36,6 +38,12 @@ export default async function BlogIndexPage({ params }: Props) {
       title={t.page.blog.title}
       lead={t.page.blog.lead}
     >
+      <JsonLd
+        data={graph(
+          blogNode(lang, t),
+          breadcrumbNode(lang, [{ name: t.page.blog.eyebrow, path: "/blog" }], t),
+        )}
+      />
       <div className={styles.grid}>
         {t.blog.posts.map((post, index) => (
           <article key={post.slug} className={styles.card}>

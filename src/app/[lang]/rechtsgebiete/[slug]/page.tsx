@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import type { CSSProperties } from "react";
 import styles from "./page.module.css";
 import { AreaServiceIcon } from "@/components/AreaServiceIcon";
+import { JsonLd } from "@/components/JsonLd";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { WhatsAppLead } from "@/components/WhatsAppLead";
@@ -11,6 +12,7 @@ import { Why } from "@/components/sections/Why";
 import { getDictionary, isLang, SITE } from "@/content";
 import type { Lang } from "@/content/types";
 import { buildNav } from "@/lib/nav";
+import { breadcrumbNode, graph, serviceNode } from "@/lib/schema";
 import { altLanguages, localePath, routes } from "@/lib/routes";
 
 type Props = { params: Promise<{ lang: string; slug: string }> };
@@ -107,6 +109,16 @@ export default async function AreaPage({ params }: Props) {
   } as CSSProperties;
   return (
     <div className={styles.page}>
+      <JsonLd
+        data={graph(
+          serviceNode(lang, area),
+          breadcrumbNode(
+            lang,
+            [{ name: area.title, path: `/rechtsgebiete/${area.slug}` }],
+            t,
+          ),
+        )}
+      />
       <SiteHeader
         lang={lang}
         nav={buildNav(lang, t)}
