@@ -348,14 +348,14 @@ export const tr: Dictionary = {
     },
     about: {
         label: "Kişiye dair",
-        title: "Türk kökenli Alman avukat.",
+        title: "Alman hukukunda avukat, ana dilinizde danışmanlık",
         p1: "Meral Gören, Türk kökenli Alman vatandaşıdır. Heidelberg Ruprecht-Karls Üniversitesi'nde hukuk okumuş ve 2005 yılında birinci hukuk devlet sınavını vermiştir.",
         p2: "Heidelberg Eyalet Mahkemesi'nde iki yıllık avukatlık stajının ardından, 6 Haziran 2008'den bu yana avukatlık ruhsatına sahiptir ve tüm sulh, asliye ve istinaf mahkemelerinde temsil yetkilidir.",
         background: "Tüm hukuki sorularınızda size danışmanlık verir ve sizi temsil ederiz – başta genel medeni hukuk, iş hukuku, yabancılar hukuku, aile hukuku ve trafik hukuku olmak üzere, Almanca ve Türkçe.",
         cta: "İletişime geçin",
         more: "Kişiye dair",
         page: {
-            lead: "Mannheim'da avukat – Türk kökenli Alman vatandaşı, Almanca ve Türkçe danışmanlık.",
+            lead: "Mannheim'da, Alman mahkemelerinde sizi temsil eden ve ana dilinizde danışmanlık veren avukat",
             wordmark: "Meral Gören",
             pull: {
                 before: "Görevimiz, ",
@@ -380,10 +380,10 @@ export const tr: Dictionary = {
                     label: "Büro"
                 }
             ],
-            closingTitle: "Konunuzu bize anlatın.",
+            closingTitle: "Durumunuzu bize anlatın",
             sections: [
                 {
-                    heading: "Kişiye dair",
+                    heading: "Hakkında",
                     body: [
                         "Meral Gören, Türk kökenli Alman vatandaşıdır. Heidelberg Ruprecht-Karls Üniversitesi'nde hukuk okumuş ve 2005 yılında birinci hukuk devlet sınavını vermiştir.",
                         "Ardından Heidelberg Eyalet Mahkemesi'nde iki yıllık avukatlık stajını tamamlamıştır. 6 Haziran 2008'den bu yana avukatlık ruhsatına sahiptir."
@@ -391,7 +391,7 @@ export const tr: Dictionary = {
                     image: "/images/about/profil.webp"
                 },
                 {
-                    heading: "Ruhsat",
+                    heading: "Baro kaydı ve yetki",
                     body: [
                         "Almanya Federal Cumhuriyeti'nde avukatlık ruhsatına sahip; tüm sulh, asliye ve istinaf mahkemelerinde temsil yetkilidir.",
                         "Bağlı olduğu baro: Karlsruhe Barosu (Rechtsanwaltskammer Karlsruhe)."
@@ -399,7 +399,7 @@ export const tr: Dictionary = {
                     image: "/images/about/zulassung.webp"
                 },
                 {
-                    heading: "İlkemiz",
+                    heading: "Yaklaşımımız",
                     body: [
                         "Görevimiz, sizi eksiksiz ve en iyi şekilde bilgilendirmek ve çıkarlarınızı mahkemede ve mahkeme dışında olabildiğince iyi temsil etmektir.",
                         "Çalışmamız; yetkinlik, kararlılık ve özenle öne çıkar. Anlaşılır bir dil kullanır, her adımda sizi bilgilendiririz."
@@ -407,7 +407,7 @@ export const tr: Dictionary = {
                     image: "/images/about/anspruch.webp"
                 },
                 {
-                    heading: "Çalışma alanları",
+                    heading: "Hukuk alanları",
                     body: [
                         "Tüm hukuki sorularınızda bize danışabilirsiniz – başta genel medeni hukuk, iş hukuku, yabancılar hukuku, aile hukuku ve trafik hukuku olmak üzere, Almanca ve Türkçe.",
                         "Türk hukukuna giren konularda Mannheim'daki Doğru Kanzlei ile birlikte çalışırız."
