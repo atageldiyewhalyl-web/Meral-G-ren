@@ -161,22 +161,10 @@
   display: block;
 }
 
-.menuToggle {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
-
-.menuToggle:focus-visible + .burger {
-  outline: 2px solid currentColor;
-  outline-offset: 3px;
-}
-
 .burger {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0;
   width: 44px;
   height: 44px;
   display: flex;
@@ -188,7 +176,13 @@
   border: 0;
   cursor: pointer;
   color: inherit;
-  list-style: none;
+  /* Safari needs this or the button will not report taps reliably. */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.burger:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
 }
 
 .burger span {
@@ -201,15 +195,15 @@
     opacity 180ms ease;
 }
 
-.menuToggle:checked + .burger span:first-child {
+.burger[aria-expanded="true"] span:first-child {
   transform: translateY(6px) rotate(45deg);
 }
 
-.menuToggle:checked + .burger span:nth-child(2) {
+.burger[aria-expanded="true"] span:nth-child(2) {
   opacity: 0;
 }
 
-.menuToggle:checked + .burger span:last-child {
+.burger[aria-expanded="true"] span:last-child {
   transform: translateY(-6px) rotate(-45deg);
 }
 
@@ -217,6 +211,7 @@
    data-at-top false while it is open — so it is always the light panel. */
 .menu {
   position: fixed;
+  z-index: 49;
   top: var(--header-h);
   left: 0;
   right: 0;
@@ -229,7 +224,7 @@
   display: none;
 }
 
-.menuToggle:checked ~ .menu {
+.menu[data-open="true"] {
   display: block;
 }
 
@@ -288,7 +283,8 @@
 }
 
 @media (min-width: 1024px) {
-  .menu {
+  .menu,
+  .menu[data-open="true"] {
     display: none;
   }
 }
