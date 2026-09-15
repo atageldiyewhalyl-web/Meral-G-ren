@@ -233,6 +233,10 @@
     transform: none;
   }
 
+  .label {
+    text-align: center;
+  }
+
   .title {
     max-width: 680px;
   }

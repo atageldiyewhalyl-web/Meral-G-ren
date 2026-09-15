@@ -60,7 +60,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: clamp(16px, 5vh, 64px) 16px;
+  padding: clamp(42px, 12vh, 96px) var(--gutter);
   background: rgb(4 14 22 / 0.62);
   overflow-y: auto;
   animation: fade 160ms ease;
@@ -69,19 +69,24 @@
 .modal {
   position: relative;
   width: 100%;
-  max-width: 560px;
-  padding: clamp(28px, 4vw, 44px);
-  border-radius: var(--radius);
+  max-width: 672px;
+  padding: clamp(28px, 3vw, 34px) 32px 24px;
+  border-top: 5px solid #a8792e;
+  border-radius: 2px;
   background: var(--paper);
   box-shadow: 0 30px 80px rgb(4 14 22 / 0.4);
 }
 
 .close {
   position: absolute;
-  top: 14px;
+  top: 12px;
   right: 14px;
   display: inline-flex;
-  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
   border: 0;
   border-radius: 999px;
   background: var(--paper-deep);
@@ -168,7 +173,7 @@
 .textarea {
   padding: 12px 14px;
   resize: vertical;
-  min-height: 110px;
+  min-height: 138px;
 }
 
 .input:focus,
@@ -197,10 +202,12 @@
 .submit {
   height: 52px;
   border: 0;
-  border-radius: var(--radius);
+  border-radius: 999px;
   background: var(--accent);
   color: var(--on-dark);
-  font: 600 15px/1 var(--font-sans);
+  font: 700 13px/1 var(--font-sans);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   cursor: pointer;
   transition: background-color 160ms ease;
 }
@@ -237,5 +244,9 @@
     margin-top: 8px;
     font-size: 12px;
     line-height: 18px;
+  }
+
+  .modal {
+    padding: 28px 20px 24px;
   }
 }

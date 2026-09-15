@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { fontVariables } from "../fonts";
 import "../globals.css";
+import { WhatsAppLeadProvider } from "@/components/WhatsAppLead";
 import { getDictionary, isLang, SITE } from "@/content";
 import { PUBLIC_LANGS, type Lang } from "@/content/types";
 import { altLanguages, localePath } from "@/lib/routes";
@@ -84,10 +85,14 @@ export async function generateMetadata({
 export default async function LangLayout({ children, params }: LayoutProps) {
   const { lang } = await params;
   if (!isLang(lang)) notFound();
+  const t = getDictionary(lang);
 
   return (
     <html lang={lang} data-theme="grey" className={fontVariables}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <WhatsAppLeadProvider lang={lang} t={t} />
+      </body>
     </html>
   );
 }

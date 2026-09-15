@@ -23,8 +23,8 @@ export async function POST(request: Request) {
   try {
     const delivered = await deliverLead(result.lead);
 
-    // In development the lead is only logged, which is enough to walk the whole
-    // flow through to /danke. In production an undelivered lead is a failure.
+    // Development can run without secrets while the UI is being built. In
+    // production, a lead must reach at least Supabase or Resend.
     if (!delivered && process.env.NODE_ENV === "production") {
       return NextResponse.json({ error: "not_configured" }, { status: 503 });
     }
