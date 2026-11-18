@@ -236,3 +236,25 @@
     line-height: 20px;
   }
 }
+
+/* "Cookie-Einstellungen" is a button (it opens the banner), styled like the legal links next to it. */
+.cookieLink {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font: 400 14px/22px var(--font-sans);
+  color: var(--on-dark-muted);
+}
+
+.cookieLink:hover {
+  color: var(--on-dark);
+}
+
+@media (max-width: 767px) {
+  .cookieLink {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}

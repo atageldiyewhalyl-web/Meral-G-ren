@@ -33,3 +33,19 @@
 .copyright {
   font: 400 14px/22px var(--font-sans);
 }
+
+/* "Cookie-Einstellungen" is a button (it opens the banner), styled like the links next to it. */
+.cookieLink {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+  font: 400 14px/22px var(--font-sans);
+  transition: color 180ms ease;
+}
+
+.cookieLink:hover {
+  color: var(--on-dark);
+}

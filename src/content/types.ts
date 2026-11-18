@@ -252,6 +252,8 @@ export interface Dictionary {
     waLink: string;
     formLink: string;
     route: string;
+    /** Opens the cookie banner again so consent can be changed. */
+    cookieSettings: string;
     /** Agency credit in the legal bar — links to the studio that built the site. */
     madeBy: string;
   };

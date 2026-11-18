@@ -1288,6 +1288,7 @@ export const de: Dictionary = {
         waLink: "WhatsApp",
         formLink: "Kontaktformular",
         route: "Anfahrt",
+        cookieSettings: "Cookie-Einstellungen",
         madeBy: "Site made by"
     },
     partner: {
@@ -1313,7 +1314,7 @@ export const de: Dictionary = {
     },
     cookie: {
         title: "Cookies & Datenschutz",
-        text: "Diese Website verwendet technisch notwendige Cookies. Optionale Cookies für Statistik setzen wir nur mit Ihrer Einwilligung (§ 25 TDDDG, Art. 6 DSGVO).",
+        text: "Technisch notwendig ist nur die Speicherung Ihrer Auswahl. Google Analytics nutzen wir nur mit Ihrer Einwilligung (§ 25 TDDDG, Art. 6 DSGVO).",
         acceptAll: "Alle akzeptieren",
         necessaryOnly: "Nur notwendige",
         customize: "Anpassen",
@@ -1321,7 +1322,7 @@ export const de: Dictionary = {
         necessary: "Notwendig",
         necessaryText: "Für den Betrieb der Seite erforderlich.",
         stats: "Statistik",
-        statsText: "Anonyme Nutzungsstatistik zur Verbesserung der Seite."
+        statsText: "Google Analytics: Seitenaufrufe und Anfragen, damit wir die Website verbessern können."
     },
     page: {
         home: "Startseite",
@@ -1441,13 +1442,14 @@ export const de: Dictionary = {
                 {
                     heading: "2. Hosting und Server-Logfiles",
                     paragraphs: [
-                        "Beim Aufruf der Website verarbeitet der Hoster [Platzhalter: Hoster] automatisch IP-Adresse, Zeitpunkt, aufgerufene Seite, Browser. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (sicherer Betrieb)."
+                        "Die Website wird bei Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA, gehostet. Beim Aufruf verarbeitet Vercel automatisch IP-Adresse, Zeitpunkt, aufgerufene Seite und Browser. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (sicherer Betrieb)."
                     ]
                 },
                 {
                     heading: "3. Kontaktformular und E-Mail",
                     paragraphs: [
-                        "Angaben aus dem Kontaktformular (Name, E-Mail, Telefon, Rechtsgebiet, Nachricht) werden zur Bearbeitung Ihrer Anfrage verarbeitet und per E-Mail an die Kanzlei übermittelt. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO sowie Ihre Einwilligung (lit. a). Löschung nach Abschluss der Anfrage, soweit keine Mandatierung erfolgt und keine Aufbewahrungspflichten bestehen."
+                        "Angaben aus dem Kontaktformular (Name, E-Mail, Telefon, Rechtsgebiet, Nachricht) werden zur Bearbeitung Ihrer Anfrage verarbeitet und per E-Mail an die Kanzlei übermittelt. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO sowie Ihre Einwilligung (lit. a). Löschung nach Abschluss der Anfrage, soweit keine Mandatierung erfolgt und keine Aufbewahrungspflichten bestehen.",
+                        "Anfragen aus dem Kontaktformular und dem WhatsApp-Formular werden in einer Datenbank des Dienstleisters Supabase Inc. gespeichert und über Resend (Plus Five Five, Inc.) per E-Mail zugestellt; beide werden im Auftrag der Kanzlei von der Agentur nüll. betreut. Die Server können in den USA stehen."
                     ]
                 },
                 {
@@ -1457,9 +1459,11 @@ export const de: Dictionary = {
                     ]
                 },
                 {
-                    heading: "5. Cookies",
+                    heading: "5. Cookies und Statistik",
                     paragraphs: [
-                        "Technisch notwendige Cookies werden auf Grundlage von § 25 Abs. 2 TDDDG gesetzt. Optionale Statistik-Cookies nur mit Ihrer Einwilligung (§ 25 Abs. 1 TDDDG, Art. 6 Abs. 1 lit. a DSGVO). Ihre Auswahl können Sie jederzeit über das Cookie-Banner ändern. [Platzhalter: eingesetzte Dienste]"
+                        "Technisch notwendig ist nur die Speicherung Ihrer Cookie-Auswahl in Ihrem Browser (§ 25 Abs. 2 TDDDG). Ihre Auswahl können Sie jederzeit über „Cookie-Einstellungen“ im Fußbereich der Seite ändern oder widerrufen.",
+                        "Google Analytics: Nur wenn Sie im Cookie-Banner zustimmen, nutzen wir Google Analytics 4 der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Dabei werden Cookies gesetzt und Nutzungsdaten verarbeitet (aufgerufene Seiten, Gerät und Browser, ungefährer Standort, abgeschickte Anfragen und Klicks auf Kontaktwege). Eine Übermittlung an Google LLC in den USA ist möglich. Google Signals und Werbefunktionen sind deaktiviert; Ereignisdaten werden nach 14 Monaten gelöscht. Rechtsgrundlage: Ihre Einwilligung (§ 25 Abs. 1 TDDDG, Art. 6 Abs. 1 lit. a DSGVO).",
+                        "Cookie-freie Zählung: Wie oft Telefonnummer, E-Mail-Adresse und WhatsApp angeklickt werden, zählen wir ohne Cookies und ohne IP-Adresse. Gespeichert werden nur die Art des Klicks, die Seite und der Zeitpunkt. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (Auswertung, welche Kontaktwege genutzt werden)."
                     ]
                 },
                 {

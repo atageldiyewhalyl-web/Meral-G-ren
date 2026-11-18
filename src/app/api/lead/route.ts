@@ -21,10 +21,10 @@ export async function POST(request: Request) {
   }
 
   try {
-    const delivered = await deliverLead(result.lead);
+    const delivered = await deliverLead(result.lead, request.headers.get("host") ?? "");
 
-    // Development can run without secrets while the UI is being built. In
-    // production, a lead must reach at least Supabase or Resend.
+    // Development can run without the secret while the UI is being built. In
+    // production, a lead must reach the meral-anfrage function.
     if (!delivered && process.env.NODE_ENV === "production") {
       return NextResponse.json({ error: "not_configured" }, { status: 503 });
     }

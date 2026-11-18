@@ -7,6 +7,7 @@ import styles from "./WhatsAppLead.module.css";
 import { SITE } from "@/content";
 import type { Dictionary, Lang } from "@/content/types";
 import { routes } from "@/lib/routes";
+import { countClick, track } from "@/lib/analytics";
 
 type Props = {
   lang: Lang;
@@ -86,7 +87,11 @@ export function WhatsAppLeadProvider({ lang, t }: { lang: Lang; t: Dictionary })
   const uid = useId();
 
   useEffect(() => {
+    // Every WhatsApp button and wa.me link ends up here, so this is where a
+    // WhatsApp click is counted (completed WhatsApp enquiries are counted as
+    // anfrage_submit with channel "whatsapp" on submit).
     const openWithDetail = (detail: WhatsAppLeadDetail = {}) => {
+      countClick("whatsapp");
       setForm((current) => ({ ...current, ...detail }));
       setFailed(false);
       setOpen(true);
@@ -159,7 +164,7 @@ export function WhatsAppLeadProvider({ lang, t }: { lang: Lang; t: Dictionary })
       consent: true,
       lang,
       source: "whatsapp",
-      submittedAt: new Date().toISOString(),
+      pagePath: window.location.pathname,
     };
 
     try {
@@ -176,6 +181,7 @@ export function WhatsAppLeadProvider({ lang, t }: { lang: Lang; t: Dictionary })
       return;
     }
 
+    track("anfrage_submit", { channel: "whatsapp", area: form.area });
     const text = encodeURIComponent(buildMessage(form, areaLabel, lang, pageUrl));
     window.location.assign(`https://wa.me/${WA_NUMBER}?text=${text}`);
   }

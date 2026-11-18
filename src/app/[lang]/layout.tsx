@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import { fontVariables } from "../fonts";
 import "../globals.css";
 import { WhatsAppLeadProvider } from "@/components/WhatsAppLead";
+import { Analytics } from "@/components/Analytics";
+import { ClickCounter } from "@/components/ClickCounter";
+import { CookieBanner } from "@/components/CookieBanner";
 import { getDictionary, isLang, SITE } from "@/content";
 import { PUBLIC_LANGS, type Lang } from "@/content/types";
 import { altLanguages, localePath } from "@/lib/routes";
@@ -92,6 +95,9 @@ export default async function LangLayout({ children, params }: LayoutProps) {
       <body>
         {children}
         <WhatsAppLeadProvider lang={lang} t={t} />
+        <CookieBanner lang={lang} t={t} />
+        <Analytics />
+        <ClickCounter />
       </body>
     </html>
   );

@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import styles from "./ContactForm.module.css";
 import type { Dictionary, Lang } from "@/content/types";
 import { routes } from "@/lib/routes";
+import { track } from "@/lib/analytics";
 
 type ContactFormProps = {
   lang: Lang;
@@ -31,9 +32,10 @@ export function ContactForm({ lang, t }: ContactFormProps) {
       const response = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, submittedAt: new Date().toISOString() }),
+        body: JSON.stringify({ ...payload, pagePath: location.pathname }),
       });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      track("anfrage_submit", { channel: "form", area: String(payload.area ?? "") });
       router.push(routes.thanks(lang));
     } catch (error) {
       console.error("[lead] submit failed", error);

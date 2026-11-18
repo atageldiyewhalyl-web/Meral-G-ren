@@ -1288,6 +1288,7 @@ export const en: Dictionary = {
         waLink: "WhatsApp",
         formLink: "Contact form",
         route: "Directions",
+        cookieSettings: "Cookie settings",
         madeBy: "Site made by"
     },
     partner: {
@@ -1313,7 +1314,7 @@ export const en: Dictionary = {
     },
     cookie: {
         title: "Cookies & privacy",
-        text: "This website uses technically necessary cookies. Optional statistics cookies are only set with your consent (§ 25 TDDDG, Art. 6 GDPR).",
+        text: "Only storing your choice is technically necessary. We use Google Analytics only with your consent (§ 25 TDDDG, Art. 6 GDPR).",
         acceptAll: "Accept all",
         necessaryOnly: "Necessary only",
         customize: "Customise",
@@ -1321,7 +1322,7 @@ export const en: Dictionary = {
         necessary: "Necessary",
         necessaryText: "Required for the site to work.",
         stats: "Statistics",
-        statsText: "Anonymous usage statistics, to improve the site."
+        statsText: "Google Analytics: page views and enquiries, so we can improve the site."
     },
     page: {
         home: "Home",
@@ -1441,13 +1442,14 @@ export const en: Dictionary = {
                 {
                     heading: "2. Hosting and server log files",
                     paragraphs: [
-                        "When you access the website, the host [Placeholder: host] automatically processes your IP address, the time of access, the page requested and your browser. Legal basis: Art. 6(1)(f) GDPR (secure operation)."
+                        "The website is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA. When you access it, Vercel automatically processes your IP address, the time of access, the page requested and your browser. Legal basis: Art. 6(1)(f) GDPR (secure operation)."
                     ]
                 },
                 {
                     heading: "3. Contact form and email",
                     paragraphs: [
-                        "The details from the contact form (name, email, phone, area of law, message) are processed in order to handle your enquiry and are sent to the office by email. Legal basis: Art. 6(1)(b) GDPR together with your consent (Art. 6(1)(a)). Deleted once the enquiry is concluded, provided no engagement follows and no retention obligations apply."
+                        "The details from the contact form (name, email, phone, area of law, message) are processed in order to handle your enquiry and are sent to the office by email. Legal basis: Art. 6(1)(b) GDPR together with your consent (Art. 6(1)(a)). Deleted once the enquiry is concluded, provided no engagement follows and no retention obligations apply.",
+                        "Enquiries from the contact form and the WhatsApp form are stored in a database of the service provider Supabase Inc. and delivered by email via Resend (Plus Five Five, Inc.); both are managed for the office by the agency nüll. The servers may be located in the USA."
                     ]
                 },
                 {
@@ -1457,9 +1459,11 @@ export const en: Dictionary = {
                     ]
                 },
                 {
-                    heading: "5. Cookies",
+                    heading: "5. Cookies and statistics",
                     paragraphs: [
-                        "Technically necessary cookies are set on the basis of § 25(2) TDDDG. Optional statistics cookies are set only with your consent (§ 25(1) TDDDG, Art. 6(1)(a) GDPR). You can change your choice at any time via the cookie banner. [Placeholder: services used]"
+                        "The only technically necessary storage is your cookie choice in your browser (§ 25(2) TDDDG). You can change or withdraw your choice at any time via \"Cookie settings\" at the bottom of the page.",
+                        "Google Analytics: only if you agree in the cookie banner, we use Google Analytics 4 by Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. Cookies are set and usage data is processed (pages viewed, device and browser, approximate location, enquiries sent and clicks on contact options). Data may be transferred to Google LLC in the USA. Google signals and advertising features are switched off; event data is deleted after 14 months. Legal basis: your consent (§ 25(1) TDDDG, Art. 6(1)(a) GDPR).",
+                        "Cookie-free counting: we count how often the phone number, email address and WhatsApp are clicked without cookies and without IP addresses. Only the type of click, the page and the time are stored. Legal basis: Art. 6(1)(f) GDPR (seeing which contact options are used)."
                     ]
                 },
                 {

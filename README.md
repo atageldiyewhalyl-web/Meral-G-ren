@@ -138,19 +138,38 @@ Sub-pages use `PageHeader`, which stays solid and in flow: their page head is
 light grey, so a transparent bar there would put white text on a pale
 background.
 
-## Contact form
+## Contact form, enquiries and tracking
 
 The form posts JSON to `/api/lead`, which revalidates every field server-side —
 including the consent checkbox, which is a legal requirement (Art. 6(1)(a)
-GDPR) — and then sends a notification e-mail. On success the visitor is sent to
-`/danke` (`/tr/danke`).
+GDPR) — and forwards the enquiry to the `meral-anfrage` function in nüll's
+Supabase project (`srnynewvauzymnljqskj`). The function stores it in
+`meral_anfragen` and mails it via Resend (recipients: Supabase secret
+`MERAL_NOTIFY_TO`, default Halyl only). On success the visitor is sent to
+`/danke` (`/tr/danke`). The WhatsApp lead form goes the same way with
+`channel = whatsapp` before it opens WhatsApp.
 
-Configure delivery in `.env.local`: `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`,
-`SMTP_PASSWORD`, `LEAD_NOTIFY_TO`, `LEAD_NOTIFY_FROM`.
+The site holds only `MERAL_INQUIRY_SECRET` (Vercel env + `.env.local`), shared
+with the functions. **Without it** the route returns 200 in development, but
+503 in production, so the visitor sees the error message and the phone number
+instead of a confirmation nobody received.
 
-**Without that configuration** the route logs the lead and returns 200 in
-development, but returns 503 in production so the visitor sees the error message
-and the phone number instead of a confirmation nobody received.
+Measurement for the monthly nüll report (`src/lib/analytics.ts`):
+
+- **Google Analytics 4** `G-19VRN9LC02` (property `properties/564939334`,
+  "Meral Gören Website" in the nüll tracking account). Loads only after
+  consent in the cookie banner; "Cookie-Einstellungen" in the footer reopens
+  it. Key events: `anfrage_submit` (param `channel`), `phone_click`,
+  `email_click`, `whatsapp_click`.
+- **Cookie-free counts** in Supabase: `meral_anfragen` (every enquiry) and
+  `meral_klicks` (phone/email links, WhatsApp buttons; kind + path only, no
+  IP or cookie). Monthly totals: view `meral_monatsuebersicht`. Rows from any
+  host other than `kanzlei-goeren.de` are flagged `is_test` (Supabase secret
+  `MERAL_LIVE_HOSTS` changes the list).
+
+Schema: `supabase/migrations/20261118030000_create_meral_tracking.sql`.
+Functions: `supabase functions deploy meral-anfrage --project-ref srnynewvauzymnljqskj --no-verify-jwt`
+(same for `meral-klick`).
 
 ## Before going live
 

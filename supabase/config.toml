@@ -1,0 +1,15 @@
+project_id = "Meral-Goeren"
+
+[db]
+major_version = 17
+
+[db.migrations]
+enabled = true
+schema_paths = []
+
+# Called server-to-server by the website with a shared secret, not with a Supabase JWT.
+[functions.meral-anfrage]
+verify_jwt = false
+
+[functions.meral-klick]
+verify_jwt = false

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./SiteFooter.module.css";
 import { Logo } from "./Logo";
+import { CookieSettingsLink } from "./CookieSettingsLink";
 import { SITE } from "@/content";
 import type { Dictionary, Lang } from "@/content/types";
 import { buildNav } from "@/lib/nav";
@@ -78,6 +79,7 @@ export function SiteFooter({ lang, t }: { lang: Lang; t: Dictionary }) {
           <div className={styles.legalLinks}>
             <Link href={routes.imprint(lang)}>{t.footer.imprint}</Link>
             <Link href={routes.privacy(lang)}>{t.footer.privacy}</Link>
+            <CookieSettingsLink label={t.footer.cookieSettings} className={styles.cookieLink} />
           </div>
           <a
             className={styles.madeBy}

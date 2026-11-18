@@ -45,6 +45,7 @@ export const SITE = {
   /** Cooperation partner for Turkish law. */
   partnerUrl: "https://www.hasandogru.de/en",
 
-  /** localStorage key for the cookie-consent decision. */
-  consentKey: "mgoeren-consent-v1",
+  /** localStorage key for the cookie-consent decision. Raised to v2 when
+      Google Analytics was added, so earlier answers are asked again. */
+  consentKey: "mgoeren-consent-v2",
 } as const;

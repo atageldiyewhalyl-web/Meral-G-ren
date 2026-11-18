@@ -43,6 +43,15 @@ export function setConsent(value: Consent): void {
   for (const listener of listeners) listener();
 }
 
+/**
+ * Shows the banner again (footer link "Cookie-Einstellungen"). The stored
+ * choice stays in force until the visitor picks again.
+ */
+export function reopenConsent(): void {
+  cache = null;
+  for (const listener of listeners) listener();
+}
+
 export function subscribeConsent(listener: () => void): () => void {
   listeners.add(listener);
   return () => {

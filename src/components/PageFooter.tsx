@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./PageFooter.module.css";
+import { CookieSettingsLink } from "./CookieSettingsLink";
 import type { Dictionary, Lang } from "@/content/types";
 import { routes } from "@/lib/routes";
 
@@ -12,6 +13,7 @@ export function PageFooter({ lang, t }: { lang: Lang; t: Dictionary }) {
           <Link href={routes.home(lang)}>{t.page.home}</Link>
           <Link href={routes.imprint(lang)}>{t.footer.imprint}</Link>
           <Link href={routes.privacy(lang)}>{t.footer.privacy}</Link>
+          <CookieSettingsLink label={t.footer.cookieSettings} className={styles.cookieLink} />
         </div>
         <p className={styles.copyright}>{t.footer.copyright}</p>
       </div>

@@ -1288,6 +1288,7 @@ export const tr: Dictionary = {
         waLink: "WhatsApp",
         formLink: "İletişim formu",
         route: "Yol tarifi",
+        cookieSettings: "Çerez ayarları",
         madeBy: "Site made by"
     },
     partner: {
@@ -1313,7 +1314,7 @@ export const tr: Dictionary = {
     },
     cookie: {
         title: "Çerezler ve gizlilik",
-        text: "Bu web sitesi teknik olarak gerekli çerezler kullanır. İstatistik amaçlı isteğe bağlı çerezler yalnızca onayınızla kullanılır (§ 25 TDDDG, GDPR md. 6).",
+        text: "Teknik olarak yalnızca seçiminizin kaydedilmesi gereklidir. Google Analytics'i yalnızca onayınızla kullanırız (§ 25 TDDDG, GDPR md. 6).",
         acceptAll: "Tümünü kabul et",
         necessaryOnly: "Yalnızca gerekli",
         customize: "Özelleştir",
@@ -1321,7 +1322,7 @@ export const tr: Dictionary = {
         necessary: "Gerekli",
         necessaryText: "Sitenin çalışması için zorunludur.",
         stats: "İstatistik",
-        statsText: "Siteyi iyileştirmek için anonim kullanım istatistiği."
+        statsText: "Google Analytics: siteyi iyileştirebilmemiz için sayfa görüntülemeleri ve talepler."
     },
     page: {
         home: "Ana Sayfa",
@@ -1435,13 +1436,14 @@ export const tr: Dictionary = {
                 {
                     heading: "2. Barındırma ve sunucu kayıtları",
                     paragraphs: [
-                        "Siteye erişimde barındırma sağlayıcısı [Yer tutucu] IP adresi, zaman, açılan sayfa ve tarayıcı bilgilerini otomatik işler. Hukuki dayanak: GDPR md. 6/1-f."
+                        "Site, Vercel Inc. (440 N Barranca Ave #4133, Covina, CA 91723, ABD) tarafından barındırılır. Siteye erişimde Vercel IP adresi, zaman, açılan sayfa ve tarayıcı bilgilerini otomatik işler. Hukuki dayanak: GDPR md. 6/1-f (güvenli işletim)."
                     ]
                 },
                 {
                     heading: "3. İletişim formu ve e-posta",
                     paragraphs: [
-                        "Formdaki bilgiler (ad, e-posta, telefon, hukuk alanı, mesaj) talebinizin işlenmesi için kullanılır ve e-posta ile büroya iletilir. Hukuki dayanak: GDPR md. 6/1-b ve onayınız (1-a). Vekâlet verilmez ve saklama yükümlülüğü yoksa talep sonrasında silinir."
+                        "Formdaki bilgiler (ad, e-posta, telefon, hukuk alanı, mesaj) talebinizin işlenmesi için kullanılır ve e-posta ile büroya iletilir. Hukuki dayanak: GDPR md. 6/1-b ve onayınız (1-a). Vekâlet verilmez ve saklama yükümlülüğü yoksa talep sonrasında silinir.",
+                        "İletişim formu ve WhatsApp formu üzerinden gelen talepler Supabase Inc. hizmet sağlayıcısının veritabanında saklanır ve Resend (Plus Five Five, Inc.) aracılığıyla e-posta ile iletilir; her ikisi de büro adına nüll. ajansı tarafından yönetilir. Sunucular ABD'de bulunabilir."
                     ]
                 },
                 {
@@ -1451,9 +1453,11 @@ export const tr: Dictionary = {
                     ]
                 },
                 {
-                    heading: "5. Çerezler",
+                    heading: "5. Çerezler ve istatistik",
                     paragraphs: [
-                        "Teknik olarak gerekli çerezler § 25/2 TDDDG uyarınca kullanılır. İsteğe bağlı istatistik çerezleri yalnızca onayınızla (§ 25/1 TDDDG, GDPR md. 6/1-a). Seçiminizi çerez bildirimi üzerinden değiştirebilirsiniz. [Yer tutucu: kullanılan hizmetler]"
+                        "Teknik olarak gerekli olan tek kayıt, çerez seçiminizin tarayıcınızda saklanmasıdır (§ 25/2 TDDDG). Seçiminizi sayfanın alt kısmındaki „Çerez ayarları“ üzerinden istediğiniz zaman değiştirebilir veya geri alabilirsiniz.",
+                        "Google Analytics: Yalnızca çerez bildiriminde onay verirseniz Google Ireland Limited'in (Gordon House, Barrow Street, Dublin 4, İrlanda) Google Analytics 4 hizmetini kullanırız. Bu sırada çerezler kaydedilir ve kullanım verileri işlenir (görüntülenen sayfalar, cihaz ve tarayıcı, yaklaşık konum, gönderilen talepler ve iletişim seçeneklerine tıklamalar). Veriler ABD'deki Google LLC'ye aktarılabilir. Google Signals ve reklam özellikleri kapalıdır; olay verileri 14 ay sonra silinir. Hukuki dayanak: onayınız (§ 25/1 TDDDG, GDPR md. 6/1-a).",
+                        "Çerezsiz sayım: Telefon numarası, e-posta adresi ve WhatsApp'a kaç kez tıklandığını çerez ve IP adresi kullanmadan sayarız. Yalnızca tıklamanın türü, sayfa ve zaman kaydedilir. Hukuki dayanak: GDPR md. 6/1-f (hangi iletişim yollarının kullanıldığının değerlendirilmesi)."
                     ]
                 },
                 {

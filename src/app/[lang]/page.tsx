@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { CookieBanner } from "@/components/CookieBanner";
 import { JsonLd } from "@/components/JsonLd";
 import { graph, organizationNode, personNode, websiteNode } from "@/lib/schema";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -48,7 +47,6 @@ export default async function LandingPage({
       </main>
 
       <SiteFooter lang={lang} t={t} />
-      <CookieBanner lang={lang} t={t} />
       <JsonLd data={graph(organizationNode(t), personNode(t), websiteNode(lang, t))} />
     </>
   );
