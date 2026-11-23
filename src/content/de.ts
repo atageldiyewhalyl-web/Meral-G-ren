@@ -1366,7 +1366,7 @@ export const de: Dictionary = {
             call: "Anrufen:",
                 role: "Rechtsanwältin, Mannheim"
         },
-        legalNote: "Alle in eckigen Klammern markierten Angaben sind Platzhalter und müssen vor Veröffentlichung von der Mandantin ergänzt bzw. juristisch geprüft werden.",
+        legalNote: "",
         blog: {
             eyebrow: "Blog",
             title: "Beiträge",
@@ -1406,24 +1406,6 @@ export const de: Dictionary = {
                     heading: "Berufsrechtliche Regelungen",
                     paragraphs: [
                         "Bundesrechtsanwaltsordnung (BRAO), Berufsordnung für Rechtsanwälte (BORA), Fachanwaltsordnung (FAO), Rechtsanwaltsvergütungsgesetz (RVG), Berufsregeln der Rechtsanwälte der Europäischen Union (CCBE). Einsehbar unter www.brak.de."
-                    ]
-                },
-                {
-                    heading: "Berufshaftpflichtversicherung",
-                    paragraphs: [
-                        "[Platzhalter: Versicherer, Anschrift, räumlicher Geltungsbereich]"
-                    ]
-                },
-                {
-                    heading: "Umsatzsteuer-ID",
-                    paragraphs: [
-                        "[Platzhalter: USt-IdNr. gemäß § 27a UStG]"
-                    ]
-                },
-                {
-                    heading: "Streitbeilegung",
-                    paragraphs: [
-                        "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit: https://ec.europa.eu/consumers/odr. Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle: [Platzhalter: bereit/nicht bereit]."
                     ]
                 }
             ]

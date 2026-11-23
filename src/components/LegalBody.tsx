@@ -20,7 +20,7 @@ export function LegalBody({
           ))}
         </section>
       ))}
-      <p className="note">{note}</p>
+      {note ? <p className="note">{note}</p> : null}
     </div>
   );
 }

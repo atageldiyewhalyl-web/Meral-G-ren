@@ -1366,7 +1366,7 @@ export const tr: Dictionary = {
             call: "Arayın:",
                 role: "Avukat, Mannheim"
         },
-        legalNote: "Köşeli parantez içindeki tüm bilgiler yer tutucudur; yayından önce müvekkil tarafından tamamlanmalı ve hukuki olarak kontrol edilmelidir.",
+        legalNote: "",
         blog: {
             eyebrow: "Blog",
             title: "Yazılar",
@@ -1406,18 +1406,6 @@ export const tr: Dictionary = {
                     heading: "Mesleki düzenlemeler",
                     paragraphs: [
                         "BRAO, BORA, FAO, RVG, CCBE meslek kuralları – www.brak.de adresinde."
-                    ]
-                },
-                {
-                    heading: "Mesleki sorumluluk sigortası",
-                    paragraphs: [
-                        "[Yer tutucu: sigortacı, adres, geçerlilik alanı]"
-                    ]
-                },
-                {
-                    heading: "KDV kimlik numarası",
-                    paragraphs: [
-                        "[Yer tutucu]"
                     ]
                 }
             ]

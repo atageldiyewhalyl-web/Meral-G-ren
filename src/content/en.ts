@@ -1366,7 +1366,7 @@ export const en: Dictionary = {
             call: "Call:",
                 role: "Rechtsanwältin, Mannheim"
         },
-        legalNote: "Everything marked in square brackets is a placeholder and must be completed and legally reviewed by the client before publication.",
+        legalNote: "",
         blog: {
             eyebrow: "Blog",
             title: "Articles",
@@ -1406,24 +1406,6 @@ export const en: Dictionary = {
                     heading: "Professional regulations",
                     paragraphs: [
                         "Federal Lawyers' Act (BRAO), Code of Conduct for Lawyers (BORA), Specialist Lawyers' Regulations (FAO), Lawyers' Remuneration Act (RVG), Code of Conduct for European Lawyers (CCBE). Available at www.brak.de."
-                    ]
-                },
-                {
-                    heading: "Professional indemnity insurance",
-                    paragraphs: [
-                        "[Placeholder: insurer, address, territorial scope]"
-                    ]
-                },
-                {
-                    heading: "VAT identification number",
-                    paragraphs: [
-                        "[Placeholder: VAT ID pursuant to § 27a UStG]"
-                    ]
-                },
-                {
-                    heading: "Dispute resolution",
-                    paragraphs: [
-                        "The European Commission provides a platform for online dispute resolution: https://ec.europa.eu/consumers/odr. Regarding participation in dispute resolution proceedings before a consumer arbitration board: [Placeholder: willing / not willing]."
                     ]
                 }
             ]
