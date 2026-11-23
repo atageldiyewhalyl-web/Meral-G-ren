@@ -64,7 +64,7 @@ export function organizationNode(t: Dictionary): Node {
       addressLocality: SITE.city,
       addressCountry: SITE.countryCode,
     },
-    // Approximate coordinates for R1 2-3, 68161 Mannheim. Worth confirming
+    // Approximate coordinates for R1, 16, 68161 Mannheim. Worth confirming
     // against the Google Business Profile pin once that profile exists, since
     // the map pin and this value should agree exactly.
     geo: {

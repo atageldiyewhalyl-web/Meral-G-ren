@@ -433,7 +433,7 @@ export const en: Dictionary = {
             },
             {
                 title: "Office in Mannheim",
-                text: "R1 2-3, 68161 Mannheim. Appointments in person or by phone."
+                text: "R1, 16, 68161 Mannheim. Appointments in person or by phone."
             },
             {
                 title: "Clear communication",
@@ -1387,7 +1387,7 @@ export const en: Dictionary = {
                 {
                     heading: "Provider",
                     paragraphs: [
-                        "Meral Gören – Rechtsanwältin\nR1 2-3\n68161 Mannheim\nGermany"
+                        "Meral Gören – Rechtsanwältin\nR1, 16\n68161 Mannheim\nGermany"
                     ]
                 },
                 {
@@ -1418,7 +1418,7 @@ export const en: Dictionary = {
                 {
                     heading: "1. Controller",
                     paragraphs: [
-                        "Meral Gören, Rechtsanwältin, R1 2-3, 68161 Mannheim, phone 06201 84 57 95, email anwalt@kanzlei-goeren.de."
+                        "Meral Gören, Rechtsanwältin, R1, 16, 68161 Mannheim, phone 06201 84 57 95, email anwalt@kanzlei-goeren.de."
                     ]
                 },
                 {

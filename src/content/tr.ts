@@ -433,7 +433,7 @@ export const tr: Dictionary = {
             },
             {
                 title: "Mannheim'da büro",
-                text: "R1 2-3, 68161 Mannheim. Yüz yüze veya telefonla randevu."
+                text: "R1, 16, 68161 Mannheim. Yüz yüze veya telefonla randevu."
             },
             {
                 title: "Açık iletişim",
@@ -1387,7 +1387,7 @@ export const tr: Dictionary = {
                 {
                     heading: "Sağlayıcı",
                     paragraphs: [
-                        "Meral Gören – Rechtsanwältin\nR1 2-3\n68161 Mannheim\nAlmanya"
+                        "Meral Gören – Rechtsanwältin\nR1, 16\n68161 Mannheim\nAlmanya"
                     ]
                 },
                 {
@@ -1418,7 +1418,7 @@ export const tr: Dictionary = {
                 {
                     heading: "1. Sorumlu",
                     paragraphs: [
-                        "Avukat Meral Gören, R1 2-3, 68161 Mannheim, Telefon 06201 84 57 95, E-posta anwalt@kanzlei-goeren.de."
+                        "Avukat Meral Gören, R1, 16, 68161 Mannheim, Telefon 06201 84 57 95, E-posta anwalt@kanzlei-goeren.de."
                     ]
                 },
                 {
