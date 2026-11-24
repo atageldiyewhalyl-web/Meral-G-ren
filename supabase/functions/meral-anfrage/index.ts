@@ -5,12 +5,15 @@
 // Secrets (supabase secrets set --project-ref srnynewvauzymnljqskj):
 //   MERAL_INQUIRY_SECRET  shared with the Vercel project
 //   MERAL_NOTIFY_TO       comma-separated recipients (default: Halyl only, until the site is launched)
+//   MERAL_WHATSAPP_NOTIFY_TO  extra recipients for live WhatsApp enquiries (default: the kanzlei's
+//                         address). Test enquiries never go to them.
 //   MERAL_LIVE_HOSTS      comma-separated hosts that count as real traffic (default: kanzlei-goeren.de)
 //   RESEND_API_KEY        already set for the project
 import { createClient } from "jsr:@supabase/supabase-js@2.49.8";
 
 const FROM_EMAIL = "Kanzlei Meral Gören Website <anfrage@forms.xn--nll-hoa.com>";
 const DEFAULT_TO = "halyl@xn--nll-hoa.com";
+const DEFAULT_WHATSAPP_TO = "anwalt@kanzlei-goeren.de";
 const DEFAULT_LIVE_HOSTS = "kanzlei-goeren.de,www.kanzlei-goeren.de";
 
 type Enquiry = {
@@ -133,12 +136,18 @@ Deno.serve(async (request) => {
   const apiKey = Deno.env.get("RESEND_API_KEY");
   if (apiKey) {
     const { subject, plain, html } = mail(enquiry, isTest);
+    const recipients = list(Deno.env.get("MERAL_NOTIFY_TO"), DEFAULT_TO);
+    if (enquiry.channel === "whatsapp" && !isTest) {
+      for (const address of list(Deno.env.get("MERAL_WHATSAPP_NOTIFY_TO"), DEFAULT_WHATSAPP_TO)) {
+        if (!recipients.includes(address)) recipients.push(address);
+      }
+    }
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
       body: JSON.stringify({
         from: FROM_EMAIL,
-        to: list(Deno.env.get("MERAL_NOTIFY_TO"), DEFAULT_TO),
+        to: recipients,
         reply_to: enquiry.email,
         subject,
         text: plain,
