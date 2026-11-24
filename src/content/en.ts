@@ -1393,7 +1393,7 @@ export const en: Dictionary = {
                 {
                     heading: "Contact",
                     paragraphs: [
-                        "Phone: 06201 84 57 95\nFax: 06201 84 57 96\nEmail: anwalt@kanzlei-goeren.de"
+                        "Phone: +49 176 31186560\nEmail: anwalt@kanzlei-goeren.de"
                     ]
                 },
                 {
@@ -1418,7 +1418,7 @@ export const en: Dictionary = {
                 {
                     heading: "1. Controller",
                     paragraphs: [
-                        "Meral Gören, Rechtsanwältin, R1, 16, 68161 Mannheim, phone 06201 84 57 95, email anwalt@kanzlei-goeren.de."
+                        "Meral Gören, Rechtsanwältin, R1, 16, 68161 Mannheim, phone +49 176 31186560, email anwalt@kanzlei-goeren.de."
                     ]
                 },
                 {

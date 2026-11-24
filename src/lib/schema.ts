@@ -53,7 +53,6 @@ export function organizationNode(t: Dictionary): Node {
     url: SITE.url,
     description: t.meta.description,
     telephone: SITE.phoneE164,
-    faxNumber: SITE.fax,
     email: SITE.email,
     priceRange: "€€",
     currenciesAccepted: "EUR",

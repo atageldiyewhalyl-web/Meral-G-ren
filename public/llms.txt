@@ -8,8 +8,7 @@
 - Name: Rechtsanwaltskanzlei Meral Gören
 - Rechtsanwältin: Meral Gören
 - Anschrift: R1, 16, 68161 Mannheim, Deutschland
-- Telefon: 06201 84 57 95
-- Telefax: 06201 84 57 96
+- Telefon: +49 176 31186560
 - E-Mail: anwalt@kanzlei-goeren.de
 - WhatsApp: https://wa.me/4917631186560
 - Sprachen: Deutsch, Türkisch

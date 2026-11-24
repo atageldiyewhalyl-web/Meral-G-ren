@@ -1393,7 +1393,7 @@ export const tr: Dictionary = {
                 {
                     heading: "İletişim",
                     paragraphs: [
-                        "Telefon: 06201 84 57 95\nFaks: 06201 84 57 96\nE-posta: anwalt@kanzlei-goeren.de"
+                        "Telefon: +49 176 31186560\nE-posta: anwalt@kanzlei-goeren.de"
                     ]
                 },
                 {
@@ -1418,7 +1418,7 @@ export const tr: Dictionary = {
                 {
                     heading: "1. Sorumlu",
                     paragraphs: [
-                        "Avukat Meral Gören, R1, 16, 68161 Mannheim, Telefon 06201 84 57 95, E-posta anwalt@kanzlei-goeren.de."
+                        "Avukat Meral Gören, R1, 16, 68161 Mannheim, Telefon +49 176 31186560, E-posta anwalt@kanzlei-goeren.de."
                     ]
                 },
                 {
