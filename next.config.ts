@@ -21,6 +21,28 @@ const SECURITY_HEADERS = [
   { key: "X-DNS-Prefetch-Control", value: "on" },
 ];
 
+/**
+ * Permanent redirects from the old static site (pre-2026-11-23), whose .html
+ * pages are still in Google's index. Without these they 404 and the rankings
+ * they hold are lost. URL list taken from the Wayback Machine and Search Console.
+ */
+const OLD_SITE_REDIRECTS: Array<[string, string]> = [
+  ["/index.html", "/"],
+  ["/index_tr.html", "/tr"],
+  ["/kanzlei.html", "/"],
+  ["/kanzlei_tr.html", "/tr"],
+  ["/anwalt.html", "/ueber-mich"],
+  ["/anwalt_tr.html", "/tr/ueber-mich"],
+  ["/rechtsgebiete.html", "/#rechtsgebiete"],
+  ["/rechtsgebiete_tr.html", "/tr#rechtsgebiete"],
+  ["/gebiete_tr.html", "/tr#rechtsgebiete"],
+  ["/impressum.html", "/impressum"],
+  ["/impressum_tr.html", "/tr/impressum"],
+  // The practice areas have no index page of their own; the overview lives on the homepage.
+  ["/rechtsgebiete", "/#rechtsgebiete"],
+  ["/tr/rechtsgebiete", "/tr#rechtsgebiete"],
+];
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -30,6 +52,9 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [{ source: "/:path*", headers: SECURITY_HEADERS }];
+  },
+  async redirects() {
+    return OLD_SITE_REDIRECTS.map(([source, destination]) => ({ source, destination, permanent: true }));
   },
 };
 
